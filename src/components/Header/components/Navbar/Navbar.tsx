@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import { NavbarItem } from "@/types/types";
+import { HeaderNavbarItem } from "@/types/types";
 
 interface NavbarProps {
-  items: NavbarItem[];
+  items: HeaderNavbarItem[];
 }
 
 const Navbar: React.FC<NavbarProps> = ({ items }) => {

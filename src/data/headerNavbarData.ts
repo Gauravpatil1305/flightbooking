@@ -1,6 +1,6 @@
-import { NavbarItem } from "@/types/types";
+import { HeaderNavbarItem } from "@/types/types";
 
-export const navbarData: NavbarItem[] = [
+export const headerNavbarData: HeaderNavbarItem[] = [
     { name: "Home", icon: "material-symbols:home-pin-outline", path: "/" },
     { name: "Ticket Management", icon: "material-symbols:airplane-ticket-outline-rounded", path: "/ticket-management"  },
     { name: "Experience", icon: "material-symbols:workspace-premium-rounded", path: "#"  },

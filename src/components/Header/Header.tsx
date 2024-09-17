@@ -1,12 +1,12 @@
 import React from "react";
 
 import Navbar from "./components/Navbar/Navbar";
-import { navbarData } from "@/data/navbarData";
+import { headerNavbarData } from "@/data/headerNavbarData";
 
 const Header = () => {
   return (
     <header>
-      <Navbar items={navbarData} />
+      <Navbar items={headerNavbarData} />
     </header>
   );
 }
