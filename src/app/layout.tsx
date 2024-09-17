@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import Navbar from "@/components/Navbar/Navbar";
-import { navbarData } from "@/data/navbarData";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Flight Routes",
@@ -17,10 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header>
-          <Navbar items={navbarData} />
-        </header>
+        <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
