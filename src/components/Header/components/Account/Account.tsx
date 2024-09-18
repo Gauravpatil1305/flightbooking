@@ -2,7 +2,7 @@ import React from "react";
 
 const Account = () => {
   return (
-    <div>
+    <div className="account">
       <button>
         <span>Sign In</span>
       </button>

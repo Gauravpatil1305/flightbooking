@@ -9,18 +9,20 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ items }) => {
   return (
-    <nav>
-      <ul>
-        {items.map((item) => (
-          <li key={item.name}>
-            <Link href={item.path}>
+    <div className="navbar">
+      <nav>
+        <ul>
+          {items.map((item) => (
+            <li key={item.name}>
+              <Link href={item.path}>
                 <Icon icon={item.icon} />
                 <span>{item.name}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
   );
 };
 
