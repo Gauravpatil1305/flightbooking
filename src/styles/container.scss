@@ -1,0 +1,51 @@
+$breakpoints: (
+    "xs": 0,
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+    "xxl": 1400px,
+);
+
+$container-max-widths: (
+    "sm": 540px,
+    "md": 720px,
+    "lg": 960px,
+    "xl": 1140px,
+    "xxl": 1320px,
+);
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    @each $breakpoint, $width in $container-max-widths {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            max-width: $width;
+        }
+    }
+}
+
+.container-fluid {
+    width: 100% !important;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@each $breakpoint, $min-width in $breakpoints {
+    .container-#{$breakpoint} {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 15px;
+        padding-left: 15px;
+
+        @if map-has-key($container-max-widths, $breakpoint) {
+            max-width: map-get($container-max-widths, $breakpoint);
+        }
+    }
+}
