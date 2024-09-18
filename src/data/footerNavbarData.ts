@@ -4,28 +4,28 @@ export const footerNavbarData: FooterNavbarItem[] = [
   {
     title: "Corporate",
     links: [
-      { name: "About", icon: "material-symbols:home-pin-outline", path: "#" },
-      { name: "Press/Media", icon: "material-symbols:flight-takeoff-rounded", path: "#" },
-      { name: "People & Culture", icon: "material-symbols:flight-takeoff-rounded", path: "#" },
-      { name: "Careers", icon: "material-symbols:airplane-ticket-outline-rounded", path: "#" }
+      { name: "About", path: "#" },
+      { name: "Press/Media", path: "#" },
+      { name: "People & Culture", path: "#" },
+      { name: "Careers", path: "#" }
     ]
   },
   {
     title: "Help",
     links: [
-      { name: "Write to Us", icon: "material-symbols:workspace-premium-rounded", path: "#" },
-      { name: "Frequently Asked Questions", icon: "material-symbols:campaign-rounded", path: "#" },
-      { name: "Special Assistance", icon: "material-symbols:campaign-rounded", path: "#" },
-      { name: "Contact", icon: "material-symbols:campaign-rounded", path: "#" }
+      { name: "Write to Us", path: "#" },
+      { name: "Frequently Asked Questions", path: "#" },
+      { name: "Special Assistance", path: "#" },
+      { name: "Contact", path: "#" }
     ]
   },
   {
     title: "Privacy & Security",
     links: [
-      { name: "General Rules", icon: "material-symbols:help-outline-rounded", path: "#" },
-      { name: "Passenger Rights", icon: "material-symbols:headphones-outline-rounded", path: "#" },
-      { name: "Cookies", icon: "material-symbols:headphones-outline-rounded", path: "#" },
-      { name: "Privacy", icon: "material-symbols:headphones-outline-rounded", path: "#" }
+      { name: "General Rules", path: "#" },
+      { name: "Passenger Rights", path: "#" },
+      { name: "Cookies", path: "#" },
+      { name: "Privacy", path: "#" }
     ]
   }
 ];

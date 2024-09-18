@@ -6,7 +6,6 @@ export interface HeaderNavbarItem {
 
 export interface FooterNavbarLink {
     name: string;
-    icon: string;
     path: string;
 }
 
