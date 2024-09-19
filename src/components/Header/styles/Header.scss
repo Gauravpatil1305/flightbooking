@@ -6,6 +6,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding-top: 15px;
+        padding-bottom: 15px;
         .navbar {
             nav {
                 ul {
@@ -21,6 +23,27 @@
                             color: $white;
                         }
                     }
+                }
+            }
+        }
+        .account {
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+                background-color: transparent;
+                border: solid 1px $white;
+                border-radius: 5px;
+                padding: 10px 15px;
+                transition-duration: 300ms;
+                cursor: pointer;
+                font-size: 0.9rem;
+                font-weight: 500;
+                color: $white;
+                &:hover {
+                    background-color: $white;
+                    color: $dark-gray;
                 }
             }
         }
