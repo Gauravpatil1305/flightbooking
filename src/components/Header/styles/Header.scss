@@ -8,13 +8,53 @@
         justify-content: space-between;
         padding-top: 15px;
         padding-bottom: 15px;
+        .menu-btn {
+            display: none;
+            @media (max-width: 768px) {
+                display: block;
+            }
+            background: none;
+            border: none;
+            color: $white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            &:focus {
+                outline: none;
+            }
+        }
         .navbar {
+            @media (max-width: 768px) {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 60%;
+                height: 100vh;
+                background-color: $dark-gray;
+                box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                z-index: 20;
+                &.open {
+                    transform: translateX(0);
+                    nav {
+                        display: block;
+                    }
+                }
+            }
             nav {
+                @media (max-width: 768px) {
+                    display: none;
+                }
                 ul {
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     gap: 15px;
+                    @media (max-width: 768px) {
+                        flex-direction: column;
+                        list-style: none;
+                        padding: 0;
+                    }
                     li {
                         a {
                             display: flex;
@@ -25,27 +65,52 @@
                     }
                 }
             }
-        }
-        .account {
-            button {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 5px;
-                background-color: transparent;
-                border: solid 1px $white;
-                border-radius: 5px;
-                padding: 10px 15px;
-                transition-duration: 300ms;
-                cursor: pointer;
-                font-size: 0.9rem;
-                font-weight: 500;
-                color: $white;
-                &:hover {
-                    background-color: $white;
-                    color: $dark-gray;
+            .close-btn {
+                display: none;
+                @media (max-width: 768px) {
+                    display: block;
                 }
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                font-size: 1.5rem;
+                color: $white;
+                cursor: pointer;
             }
         }
+    }
+    .account {
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            background-color: transparent;
+            border: solid 1px $white;
+            border-radius: 5px;
+            padding: 10px 15px;
+            transition-duration: 300ms;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: $white;
+            &:hover {
+                background-color: $white;
+                color: $dark-gray;
+            }
+        }
+    }
+    .overlay {
+        display: none;
+        @media (max-width: 768px) {
+            display: block;
+        }
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
     }
 }
