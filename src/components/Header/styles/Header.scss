@@ -12,6 +12,7 @@
             display: none;
             @media (max-width: 768px) {
                 display: block;
+                order: 3;
             }
             background: none;
             border: none;
@@ -20,6 +21,11 @@
             cursor: pointer;
             &:focus {
                 outline: none;
+            }
+        }
+        .logo {
+            @media (max-width: 768px) {
+                order: 2;
             }
         }
         .navbar {
@@ -78,25 +84,28 @@
                 cursor: pointer;
             }
         }
-    }
-    .account {
-        button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            background-color: transparent;
-            border: solid 1px $white;
-            border-radius: 5px;
-            padding: 10px 15px;
-            transition-duration: 300ms;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: $white;
-            &:hover {
-                background-color: $white;
-                color: $dark-gray;
+        .account {
+            @media (max-width: 768px) {
+                order: 1;
+            }
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+                background-color: transparent;
+                border: solid 1px $white;
+                border-radius: 5px;
+                padding: 10px 15px;
+                transition-duration: 300ms;
+                cursor: pointer;
+                font-size: 0.9rem;
+                font-weight: 500;
+                color: $white;
+                &:hover {
+                    background-color: $white;
+                    color: $dark-gray;
+                }
             }
         }
     }
