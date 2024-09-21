@@ -1,7 +1,13 @@
 @import "../../../styles/variables.scss";
 
 .header {
-    background-color: $dark-gray;
+    background-color: $dark-gray-tp;
+    @media (max-width: map-get($breakpoints, "md")) {
+        background-color: $dark-gray;
+    }
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     .content {
         display: flex;
         align-items: center;
@@ -48,6 +54,8 @@
                         transform: translateX(0);
                         nav {
                             display: block;
+                            position: relative;
+                            top: 70px;
                         }
                     }
                 }
@@ -67,63 +75,100 @@
                         padding: 0;
                     }
                     li {
+                        @media (max-width: map-get($breakpoints, "md")) {
+                            width: 100%;
+                        }
                         a {
                             display: flex;
                             align-items: center;
                             gap: 5px;
+                            font-weight: 600;
                             color: $white;
                             font-size: 1.15rem;
+                            padding: 4px 8px;
+                            @media (max-width: map-get($breakpoints, "md")) {
+                                padding: 10px 15px;
+                            }
                             svg {
                                 width: 30px;
                                 height: 30px;
                             }
                             &:hover {
+                                border-radius: 7px;
+                                @media (max-width: map-get($breakpoints, "md")) {
+                                    border-radius: 0px;
+                                }
+                                background-color: $white;
                                 color: $red;
                                 transition-duration: 300ms;
                             }
                         }
                         &.active {
                             a {
+                                border-radius: 7px;
+                                @media (max-width: map-get($breakpoints, "md")) {
+                                    border-radius: 0px;
+                                }
+                                background-color: $white;
                                 color: $red;
                             }
                         }
                     }
                 }
             }
-            .close-btn {
-                display: none;
-                @media (max-width: map-get($breakpoints, "md")) {
-                    display: block;
+            @media (max-width: map-get($breakpoints, "md")) {
+                .close-btn {
+                    position: absolute;
+                    top: 15px;
+                    left: 15px;
+                    font-size: 1.5rem;
+                    color: $white;
+                    cursor: pointer;
+                    svg {
+                        background-color: $white;
+                        border-radius: 7px;
+                        color: $red;
+                        width: 30px;
+                        height: 30px;
+                    }
                 }
-                position: absolute;
-                top: 20px;
-                left: 20px;
-                font-size: 1.5rem;
-                color: $white;
-                cursor: pointer;
             }
         }
         .account {
             @media (max-width: map-get($breakpoints, "md")) {
                 order: 1;
             }
-            button {
+            a {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 gap: 5px;
                 background-color: transparent;
                 border: solid 1px $white;
-                border-radius: 5px;
+                border-radius: 7px;
                 padding: 10px 15px;
                 transition-duration: 300ms;
                 cursor: pointer;
-                font-size: 0.9rem;
-                font-weight: 500;
+                font-size: 1rem;
+                font-weight: 600;
                 color: $white;
+                svg {
+                    display: none;
+                    @media (max-width: map-get($breakpoints, "md")) {
+                        display: block;
+                    }
+                    width: 24px;
+                    height: 24px;
+                }
+                span {
+                    display: block;
+                    @media (max-width: map-get($breakpoints, "md")) {
+                        display: none;
+                    }
+                }
                 &:hover {
                     background-color: $white;
-                    color: $dark-gray;
+                    color: $red;
                 }
             }
         }
