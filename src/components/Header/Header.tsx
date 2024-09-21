@@ -23,7 +23,11 @@ const Header = () => {
         <button className="menu-btn" onClick={toggleMenu}>
           <Icon icon="mdi:menu" />
         </button>
-        <Navbar items={headerNavbarData} isOpen={isOpen} toggleMenu={toggleMenu} />
+        <Navbar
+          items={headerNavbarData}
+          isOpen={isOpen}
+          toggleMenu={toggleMenu}
+        />
         <Account />
       </div>
     </header>

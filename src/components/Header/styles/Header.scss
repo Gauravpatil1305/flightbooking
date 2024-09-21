@@ -6,11 +6,13 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding: 15px 0;
+        @media (max-width: map-get($breakpoints, "md")) {
+            padding: 15px 20px;
+        }
         .menu-btn {
             display: none;
-            @media (max-width: 768px) {
+            @media (max-width: map-get($breakpoints, "md")) {
                 display: block;
                 order: 3;
             }
@@ -24,31 +26,34 @@
             }
         }
         .logo {
-            @media (max-width: 768px) {
+            @media (max-width: map-get($breakpoints, "md")) {
                 order: 2;
             }
         }
         .navbar {
-            @media (max-width: 768px) {
-                position: fixed;
-                top: 0;
-                right: 0;
-                width: 60%;
-                height: 100vh;
-                background-color: $dark-gray;
-                box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
-                transform: translateX(100%);
-                transition: transform 0.3s ease-in-out;
-                z-index: 20;
-                &.open {
-                    transform: translateX(0);
-                    nav {
-                        display: block;
+            @media (max-width: map-get($breakpoints, "md")) {
+                display: contents;
+                .mobile-navbar {
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    width: 60%;
+                    height: 100vh;
+                    background-color: $dark-gray;
+                    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+                    transform: translateX(100%);
+                    transition: transform 0.3s ease-in-out;
+                    z-index: 20;
+                    &.open {
+                        transform: translateX(0);
+                        nav {
+                            display: block;
+                        }
                     }
                 }
             }
             nav {
-                @media (max-width: 768px) {
+                @media (max-width: map-get($breakpoints, "md")) {
                     display: none;
                 }
                 ul {
@@ -56,7 +61,7 @@
                     align-items: center;
                     justify-content: center;
                     gap: 15px;
-                    @media (max-width: 768px) {
+                    @media (max-width: map-get($breakpoints, "md")) {
                         flex-direction: column;
                         list-style: none;
                         padding: 0;
@@ -73,7 +78,7 @@
             }
             .close-btn {
                 display: none;
-                @media (max-width: 768px) {
+                @media (max-width: map-get($breakpoints, "md")) {
                     display: block;
                 }
                 position: absolute;
@@ -85,7 +90,7 @@
             }
         }
         .account {
-            @media (max-width: 768px) {
+            @media (max-width: map-get($breakpoints, "md")) {
                 order: 1;
             }
             button {
@@ -111,7 +116,7 @@
     }
     .overlay {
         display: none;
-        @media (max-width: 768px) {
+        @media (max-width: map-get($breakpoints, "md")) {
             display: block;
         }
         position: fixed;

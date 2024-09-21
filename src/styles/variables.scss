@@ -8,6 +8,15 @@ $size: 1rem;
   font-size: $size;
 }
 
+$breakpoints: (
+    "xs": 0,
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+    "xxl": 1400px,
+);
+
 $blue: hsl(210, 100%, 50%);
 $light-blue: hsl(210, 100%, 85%);
 $white: hsl(0, 0%, 100%);
