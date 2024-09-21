@@ -60,7 +60,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    gap: 15px;
+                    gap: 20px;
                     @media (max-width: map-get($breakpoints, "md")) {
                         flex-direction: column;
                         list-style: none;
@@ -72,6 +72,20 @@
                             align-items: center;
                             gap: 5px;
                             color: $white;
+                            font-size: 1.15rem;
+                            svg {
+                                width: 30px;
+                                height: 30px;
+                            }
+                            &:hover {
+                                color: $red;
+                                transition-duration: 300ms;
+                            }
+                        }
+                        &.active {
+                            a {
+                                color: $red;
+                            }
                         }
                     }
                 }

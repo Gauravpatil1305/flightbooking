@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import { usePathname } from "next/navigation";
 import { HeaderNavbarItem } from "@/types/types";
 
 interface MobileNavbarProps {
@@ -11,7 +12,12 @@ interface MobileNavbarProps {
   toggleMenu: () => void;
 }
 
-const MobileNavbar: React.FC<MobileNavbarProps> = ({ items, isOpen, toggleMenu }) => {
+const MobileNavbar: React.FC<MobileNavbarProps> = ({
+  items,
+  isOpen,
+  toggleMenu,
+}) => {
+  const pathname = usePathname();
   return (
     <>
       <div className={`mobile-navbar ${isOpen ? "open" : ""}`}>
@@ -21,7 +27,10 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({ items, isOpen, toggleMenu }
         <nav>
           <ul>
             {items.map((item) => (
-              <li key={item.name}>
+              <li
+                key={item.name}
+                className={pathname === item.path ? "active" : ""}
+              >
                 <Link href={item.path} onClick={toggleMenu}>
                   <Icon icon={item.icon} />
                   <span>{item.name}</span>
