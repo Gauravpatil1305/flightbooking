@@ -16,19 +16,22 @@
         @media (max-width: map-get($breakpoints, "md")) {
             padding: 15px 20px;
         }
+        
         .menu-btn {
             display: none;
             @media (max-width: map-get($breakpoints, "md")) {
                 display: block;
-                order: 3;
             }
-            background: none;
-            border: none;
-            color: $white;
-            font-size: 1.5rem;
+            order: 3;
+            border: solid 1px $white;
+            border-radius: 7px;
+            background-color: $white;
+            padding: 5px 10px;
             cursor: pointer;
-            &:focus {
-                outline: none;
+            svg {
+                width: 30px;
+                height: 30px;
+                color: $red;
             }
         }
         .logo {
@@ -121,8 +124,6 @@
                     position: absolute;
                     top: 15px;
                     left: 15px;
-                    font-size: 1.5rem;
-                    color: $white;
                     cursor: pointer;
                     svg {
                         background-color: $white;
@@ -152,10 +153,17 @@
                 font-size: 1rem;
                 font-weight: 600;
                 color: $white;
+                @media (max-width: map-get($breakpoints, "md")) {
+                    background-color: $white;
+                    padding: 5px 10px;
+                }
                 svg {
                     display: none;
                     @media (max-width: map-get($breakpoints, "md")) {
                         display: block;
+                        width: 30px;
+                        height: 30px;
+                        color: $red;
                     }
                     width: 24px;
                     height: 24px;
