@@ -2,7 +2,7 @@
 
 .header {
     background-color: $dark-gray-tp;
-    @media (max-width: map-get($breakpoints, "md")) {
+    @media (max-width: $md-breakpoint) {
         background-color: $dark-gray;
     }
     position: sticky;
@@ -13,13 +13,12 @@
         align-items: center;
         justify-content: space-between;
         padding: 15px 0;
-        @media (max-width: map-get($breakpoints, "md")) {
+        @media (max-width: $md-breakpoint) {
             padding: 15px 20px;
         }
-        
         .menu-btn {
             display: none;
-            @media (max-width: map-get($breakpoints, "md")) {
+            @media (max-width: $md-breakpoint) {
                 display: block;
             }
             order: 3;
@@ -35,12 +34,12 @@
             }
         }
         .logo {
-            @media (max-width: map-get($breakpoints, "md")) {
+            @media (max-width: $md-breakpoint) {
                 order: 2;
             }
         }
         .navbar {
-            @media (max-width: map-get($breakpoints, "md")) {
+            @media (max-width: $md-breakpoint) {
                 display: contents;
                 .mobile-navbar {
                     position: fixed;
@@ -51,7 +50,7 @@
                     background-color: $dark-gray;
                     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
                     transform: translateX(100%);
-                    transition: transform 0.3s ease-in-out;
+                    transition: transform 0.5s ease-in-out;
                     z-index: 20;
                     &.open {
                         transform: translateX(0);
@@ -64,7 +63,7 @@
                 }
             }
             nav {
-                @media (max-width: map-get($breakpoints, "md")) {
+                @media (max-width: $md-breakpoint) {
                     display: none;
                 }
                 ul {
@@ -72,13 +71,13 @@
                     align-items: center;
                     justify-content: center;
                     gap: 20px;
-                    @media (max-width: map-get($breakpoints, "md")) {
+                    @media (max-width: $md-breakpoint) {
                         flex-direction: column;
                         list-style: none;
                         padding: 0;
                     }
                     li {
-                        @media (max-width: map-get($breakpoints, "md")) {
+                        @media (max-width: $md-breakpoint) {
                             width: 100%;
                         }
                         a {
@@ -89,7 +88,7 @@
                             color: $white;
                             font-size: 1.15rem;
                             padding: 4px 8px;
-                            @media (max-width: map-get($breakpoints, "md")) {
+                            @media (max-width: $md-breakpoint) {
                                 padding: 10px 15px;
                             }
                             svg {
@@ -98,18 +97,15 @@
                             }
                             &:hover {
                                 border-radius: 7px;
-                                @media (max-width: map-get($breakpoints, "md")) {
-                                    border-radius: 0px;
-                                }
                                 background-color: $white;
                                 color: $red;
-                                transition-duration: 300ms;
+                                transition: background-color 300ms, color 300ms;
                             }
                         }
                         &.active {
                             a {
                                 border-radius: 7px;
-                                @media (max-width: map-get($breakpoints, "md")) {
+                                @media (max-width: $md-breakpoint) {
                                     border-radius: 0px;
                                 }
                                 background-color: $white;
@@ -119,7 +115,7 @@
                     }
                 }
             }
-            @media (max-width: map-get($breakpoints, "md")) {
+            @media (max-width: $md-breakpoint) {
                 .close-btn {
                     position: absolute;
                     top: 15px;
@@ -136,7 +132,7 @@
             }
         }
         .account {
-            @media (max-width: map-get($breakpoints, "md")) {
+            @media (max-width: $md-breakpoint) {
                 order: 1;
             }
             a {
@@ -153,13 +149,13 @@
                 font-size: 1rem;
                 font-weight: 600;
                 color: $white;
-                @media (max-width: map-get($breakpoints, "md")) {
+                @media (max-width: $md-breakpoint) {
                     background-color: $white;
                     padding: 5px 10px;
                 }
                 svg {
                     display: none;
-                    @media (max-width: map-get($breakpoints, "md")) {
+                    @media (max-width: $md-breakpoint) {
                         display: block;
                         width: 30px;
                         height: 30px;
@@ -170,7 +166,7 @@
                 }
                 span {
                     display: block;
-                    @media (max-width: map-get($breakpoints, "md")) {
+                    @media (max-width: $md-breakpoint) {
                         display: none;
                     }
                 }
@@ -183,7 +179,7 @@
     }
     .overlay {
         display: none;
-        @media (max-width: map-get($breakpoints, "md")) {
+        @media (max-width: $md-breakpoint) {
             display: block;
         }
         position: fixed;
