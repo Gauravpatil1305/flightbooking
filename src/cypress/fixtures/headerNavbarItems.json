@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Home",
+    "path": "/",
+    "icon": "mdi:home"
+  },
+  {
+    "name": "About",
+    "path": "/about",
+    "icon": "mdi:information"
+  },
+  {
+    "name": "Services",
+    "path": "/services",
+    "icon": "mdi:briefcase"
+  },
+  {
+    "name": "Contact",
+    "path": "/contact",
+    "icon": "mdi:contact-phone"
+  },
+  {
+    "name": "Login",
+    "path": "/login",
+    "icon": "mdi:login"
+  }
+]
