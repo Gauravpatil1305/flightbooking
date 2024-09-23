@@ -8,7 +8,7 @@ describe("Navbar Component", () => {
 
   it("Should render DesktopNavbar on large screens", () => {
     cy.viewport("macbook-15"); // Desktop size
-    cy.get("nav ul li").should("have.length", 5); // Check that there are 5 items in the navbar
+    cy.get("nav ul li").should("have.length", 7); // Check that there are 7 items in the navbar
   });
 
   it("Should switch to MobileNavbar on mobile screens", () => {

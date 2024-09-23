@@ -2,26 +2,36 @@
   {
     "name": "Home",
     "path": "/",
-    "icon": "mdi:home"
+    "icon": "material-symbols:home-pin-outline"
   },
   {
-    "name": "About",
-    "path": "/about",
-    "icon": "mdi:information"
+    "name": "Ticket",
+    "path": "/ticket-management",
+    "icon": "material-symbols:airplane-ticket-outline-rounded"
   },
   {
-    "name": "Services",
-    "path": "/services",
-    "icon": "mdi:briefcase"
+    "name": "Experience",
+    "path": "/experience",
+    "icon": "material-symbols:workspace-premium-rounded"
+  },
+  {
+    "name": "Campaign",
+    "path": "/campaign",
+    "icon": "material-symbols:campaign-rounded"
+  },
+  {
+    "name": "Destination",
+    "path": "/destination",
+    "icon": "material-symbols:flight-takeoff-rounded"
+  },
+  {
+    "name": "Help",
+    "path": "/help",
+    "icon": "material-symbols:help-outline-rounded"
   },
   {
     "name": "Contact",
     "path": "/contact",
-    "icon": "mdi:contact-phone"
-  },
-  {
-    "name": "Login",
-    "path": "/login",
-    "icon": "mdi:login"
+    "icon": "material-symbols:headphones-outline-rounded"
   }
 ]
