@@ -13,3 +13,9 @@ export interface FooterNavbarItem {
     title: string;
     links: FooterNavbarLink[];
 }
+
+export interface SocialMediaItem {
+    name: string;
+    url: string;
+    icon: string;
+}
