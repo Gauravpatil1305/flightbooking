@@ -8,6 +8,7 @@ import { headerNavbarData } from "@/data/headerNavbarData";
 
 import "./styles/Header.scss";
 import { Icon } from "@iconify/react";
+import Alert from "./components/Alert/Alert";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +19,9 @@ const Header = () => {
 
   return (
     <header className="header">
+      <div className="alert">
+        <Alert />
+      </div>
       <div className="container content">
         <Logo />
         <button className="menu-btn" onClick={toggleMenu}>

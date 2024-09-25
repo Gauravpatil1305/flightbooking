@@ -4,6 +4,15 @@ export interface HeaderNavbarItem {
     path: string;
 }
 
+export type AlertItem = {
+    id: number;
+    title: string;
+    content: string;
+    headerShow: number;
+    link: string;
+    date: string;
+};
+
 export interface FooterNavbarLink {
     name: string;
     path: string;
