@@ -19,9 +19,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="alert">
-        <Alert />
-      </div>
+      <Alert />
       <div className="container content">
         <Logo />
         <button className="menu-btn" onClick={toggleMenu}>

@@ -17,7 +17,7 @@ const AlertComponent: React.FC = () => {
           (prevIndex) => (prevIndex + 1) % filteredAlerts.length
         );
       }
-    }, 5000);
+    }, 8000);
     return () => clearInterval(interval);
   }, [isVisible, filteredAlerts.length]);
 
@@ -41,38 +41,58 @@ const AlertComponent: React.FC = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="alert-container">
-      {filteredAlerts.length > 0 ? (
-        <div className="alert-content">
-          <Icon icon="fluent:alert-on-16-filled" />
-          <h4>{filteredAlerts[currentAlertIndex].title}</h4>
-          <p>{filteredAlerts[currentAlertIndex].content}</p>
-          <p className="alert-date">{filteredAlerts[currentAlertIndex].date}</p>
-          <button onClick={handleClose} className="close-button">
-            ✖
-          </button>
-          <div className="navigation-buttons">
-            {filteredAlerts.length > 1 && (
-              <>
-                <button onClick={handlePrev}>Prev</button>
-                <button onClick={handleNext}>Next</button>
-              </>
-            )}
+    <div className="alert">
+      <div className="container">
+        {filteredAlerts.length > 0 ? (
+          <div className="alert-content">
+            <div className="alert-item">
+              <div className="alert-icon">
+                <Icon icon="fluent:alert-on-16-filled" />
+              </div>
+              <div className="alert-details">
+                <p className="alert-date">
+                  {filteredAlerts[currentAlertIndex].date}
+                </p>
+                <h4 className="alert-title">
+                  {filteredAlerts[currentAlertIndex].title}
+                </h4>
+                <p className="alert-description">
+                  {filteredAlerts[currentAlertIndex].content}
+                </p>
+                {filteredAlerts[currentAlertIndex].link && (
+                  <a
+                    href={filteredAlerts[currentAlertIndex].link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="more-button"
+                  >
+                    More
+                  </a>
+                )}
+              </div>
+            </div>
+            <div className="alert-navigation">
+              <div className="navigation-buttons">
+                {filteredAlerts.length > 1 && (
+                  <>
+                    <button onClick={handlePrev} className="prev-button">
+                      Prev
+                    </button>
+                    <button onClick={handleNext} className="next-button">
+                      Next
+                    </button>
+                  </>
+                )}
+              </div>
+              <button onClick={handleClose} className="close-button">
+                ✖
+              </button>
+            </div>
           </div>
-          {filteredAlerts[currentAlertIndex].link && (
-            <a
-              href={filteredAlerts[currentAlertIndex].link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="more-button"
-            >
-              More
-            </a>
-          )}
-        </div>
-      ) : (
-        <div>No alerts available.</div>
-      )}
+        ) : (
+          <div>No alerts available.</div>
+        )}
+      </div>
     </div>
   );
 };

@@ -21,7 +21,7 @@ export const alertData: AlertItem[] = [
       id: 3, 
       title: "Campaign Offers", 
       content: "Get a 30% discount on your ticket purchases.", 
-      headerShow: 0,
+      headerShow: 1,
       link: "#",
       date: "2024-09-27"
     }
