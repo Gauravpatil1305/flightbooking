@@ -19,3 +19,9 @@ export interface SocialMediaItem {
     url: string;
     icon: string;
 }
+
+export interface MarketLink {
+    name: string;
+    icon: string;
+    url: string;
+}

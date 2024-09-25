@@ -6,15 +6,23 @@ import "./styles/Footer.scss";
 import Logo from "./components/Logo/Logo";
 import SocialMedia from "./components/SocialMedia/SocialMedia";
 import Newsletter from "./components/Newsletter/Newsletter";
+import BrandActions from "./components/BrandActions/BrandActions";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="container content">
-        <Logo />
-        <Newsletter />
-        <SocialMedia />
-        <Navbar items={footerNavbarData} />
+        <div>
+          <Logo />
+          <Newsletter />
+          <SocialMedia />
+        </div>
+        <div>
+          <Navbar items={footerNavbarData} />
+        </div>
+        <div>
+          <BrandActions />
+        </div>
       </div>
     </footer>
   );
