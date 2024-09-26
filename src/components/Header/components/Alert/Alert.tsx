@@ -59,6 +59,10 @@ const AlertComponent: React.FC = () => {
                 <p className="alert-description">
                   {filteredAlerts[currentAlertIndex].content}
                 </p>
+              </div>
+            </div>
+            <div className="alert-navigation">
+              <div className="alert-link">
                 {filteredAlerts[currentAlertIndex].link && (
                   <a
                     href={filteredAlerts[currentAlertIndex].link}
@@ -66,12 +70,10 @@ const AlertComponent: React.FC = () => {
                     rel="noopener noreferrer"
                     className="more-button"
                   >
-                    More
+                    + More
                   </a>
                 )}
               </div>
-            </div>
-            <div className="alert-navigation">
               <div className="navigation-buttons">
                 {filteredAlerts.length > 1 && (
                   <>
@@ -85,7 +87,7 @@ const AlertComponent: React.FC = () => {
                 )}
               </div>
               <button onClick={handleClose} className="close-button">
-                ✖
+                x
               </button>
             </div>
           </div>

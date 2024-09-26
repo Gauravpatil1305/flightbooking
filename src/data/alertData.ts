@@ -7,7 +7,7 @@ export const alertData: AlertItem[] = [
       content: "Some flights have been delayed due to weather conditions.", 
       headerShow: 1,
       link: "#",
-      date: "2024-09-25"
+      date: "2024.09.25"
     },
     { 
       id: 2, 
@@ -15,7 +15,7 @@ export const alertData: AlertItem[] = [
       content: "New security measures have been implemented for all passengers.", 
       headerShow: 1,
       link: "#",
-      date: "2024-09-26"
+      date: "2024.09.26"
     },
     { 
       id: 3, 
@@ -23,7 +23,7 @@ export const alertData: AlertItem[] = [
       content: "Get a 30% discount on your ticket purchases.", 
       headerShow: 1,
       link: "#",
-      date: "2024-09-27"
+      date: "2024.09.27"
     }
   ];
   

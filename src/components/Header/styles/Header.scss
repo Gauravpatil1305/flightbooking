@@ -195,11 +195,65 @@
                         height: 30px;
                     }
                 }
+                .alert-details {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: center;
+                    flex-direction: column;
+                    gap: 5px;
+                    .alert-date {
+                        font-size: 0.6rem;
+                    }
+                    .alert-title {
+                        font-size: 0.8rem;
+                    }
+                    .alert-description {
+                        font-size: 0.8rem;
+                    }
+                }
             }
             .alert-navigation {
                 display: flex;
                 align-items: center;
                 gap: 10px;
+                .alert-link {
+                    .more-button {
+                        background-color: $white;
+                        color: $red;
+                        border-radius: 4px;
+                        padding: 3px 5px;
+                        font-size: 0.8rem;
+                        font-weight: bold;
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                    }
+                }
+                .navigation-buttons {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    .prev-button, .next-button {
+                        background-color: $white;
+                        color: $red;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        padding: 3px 5px;
+                        font-size: 0.8rem;
+                        font-weight: bold;
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                    }
+                }
+                .close-button {
+                    background-color: $white;
+                    color: $red;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    padding: 3px 5px;
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                }
             }
         }
     }
