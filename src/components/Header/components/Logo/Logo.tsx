@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Logo = () => {
   return (
-    <div className="logo">
+    <div className="header-logo">
       <Link href="/">
         <Image
           src="/img/logo.png"
