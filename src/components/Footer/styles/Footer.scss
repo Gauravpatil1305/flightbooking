@@ -7,6 +7,27 @@
         align-items: center;
         justify-content: space-between;
         flex-direction: column;
-        padding: 15px 0;
+        padding: 15px;
+        .footer-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .footer-navbar {
+            .navbar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+        .footer-brand-actions {
+            width: 100%;
+            .brand-actions-content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
     }
 }

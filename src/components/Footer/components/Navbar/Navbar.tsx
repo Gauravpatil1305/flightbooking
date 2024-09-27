@@ -8,9 +8,9 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ items }) => {
   return (
-    <div>
+    <div className="navbar">
       {items.map((item) => (
-        <div key={item.title}>
+        <div className="navbar-content" key={item.title}>
           <h4>{item.title}</h4>
           <ul>
             {item.links.map((link) => (

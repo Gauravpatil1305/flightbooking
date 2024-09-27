@@ -12,15 +12,15 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="container content">
-        <div>
+        <div className="footer-info">
           <Logo />
           <Newsletter />
           <SocialMedia />
         </div>
-        <div>
+        <div className="footer-navbar">
           <Navbar items={footerNavbarData} />
         </div>
-        <div>
+        <div className="footer-brand-actions">
           <BrandActions />
         </div>
       </div>

@@ -4,26 +4,31 @@ export const socialMediaItem: SocialMediaItem[] = [
   {
     name: "Facebook",
     url: "https://facebook.com",
-    icon: "logos:facebook",
+    icon: "/img/social/facebook.svg",
   },
   {
     name: "Twitter",
     url: "https://twitter.com",
-    icon: "logos:twitter",
+    icon: "/img/social/twitter.svg",
   },
   {
     name: "LinkedIn",
     url: "https://linkedin.com",
-    icon: "logos:linkedin-icon",
+    icon: "/img/social/linkedin.svg",
   },
   {
     name: "Youtube",
     url: "https://youtube.com",
-    icon: "logos:youtube-icon",
+    icon: "/img/social/youtube.svg",
   },
   {
     name: "Instagram",
     url: "https://instagram.com",
-    icon: "skill-icons:instagram",
+    icon: "/img/social/instagram.svg",
+  },
+  {
+    name: "Whatsapp",
+    url: "https://whatsapp.com",
+    icon: "/img/social/whatsapp.svg",
   },
 ];

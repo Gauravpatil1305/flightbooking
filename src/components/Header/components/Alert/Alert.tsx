@@ -71,7 +71,10 @@ const Alert: React.FC = () => {
                   rel="noopener noreferrer"
                   className="more-button"
                 >
-                  + More
+                  <p>
+                    <span className="plus">+</span>
+                    <span className="more">More</span>
+                  </p>
                 </a>
               )}
             </div>

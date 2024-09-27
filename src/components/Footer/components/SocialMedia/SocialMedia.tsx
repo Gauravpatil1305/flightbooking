@@ -1,7 +1,7 @@
 import React from "react";
 import { socialMediaItem } from "@/data/socialMediaData";
 import { SocialMediaItem } from "@/types/types";
-import { Icon } from "@iconify/react";
+import Image from "next/image";
 
 const SocialMedia: React.FC = () => {
   return (
@@ -13,7 +13,12 @@ const SocialMedia: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Icon icon={link.icon} />
+          <Image
+            src={link.icon}
+            alt={link.name}
+            width={24}
+            height={24}
+          />
         </a>
       ))}
     </div>

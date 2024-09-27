@@ -6,7 +6,7 @@ import { marketLinks } from "@/data/marketData";
 
 const BrandActions: React.FC = () => {
   return (
-    <div>
+    <div className="brand-actions-content">
       <div>
         <p>© 2024 Flight Routes</p>
       </div>
