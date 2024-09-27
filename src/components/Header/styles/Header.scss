@@ -190,6 +190,7 @@
                 align-items: center;
                 gap: 10px;
                 .alert-icon {
+                    line-height: 0;
                     svg {
                         width: 30px;
                         height: 30px;
@@ -218,10 +219,14 @@
                 gap: 10px;
                 .alert-link {
                     .more-button {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                         background-color: $white;
                         color: $red;
                         border-radius: 4px;
-                        padding: 3px 5px;
+                        width: 55px;
+                        height: 25px;
                         font-size: 0.8rem;
                         font-weight: bold;
                         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -232,26 +237,36 @@
                     align-items: center;
                     gap: 5px;
                     .prev-button, .next-button {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                         background-color: $white;
                         color: $red;
                         border: none;
                         border-radius: 4px;
                         cursor: pointer;
-                        padding: 3px 5px;
-                        font-size: 0.8rem;
+                        width: 25px;
+                        height: 25px;
+                        font-size: 1.3rem;
                         font-weight: bold;
+                        line-height: 0;
                         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
                     }
                 }
                 .close-button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     background-color: $white;
                     color: $red;
                     border: none;
                     border-radius: 4px;
                     cursor: pointer;
-                    padding: 3px 5px;
-                    font-size: 0.8rem;
+                    width: 25px;
+                    height: 25px;
+                    font-size: 1rem;
                     font-weight: bold;
+                    line-height: 0;
                     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
                 }
             }
