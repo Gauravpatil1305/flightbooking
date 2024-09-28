@@ -27,5 +27,50 @@ export const footerNavbarData: FooterNavbarItem[] = [
       { name: "Cookies", path: "#" },
       { name: "Privacy", path: "#" }
     ]
+  },
+  {
+    title: "Services",
+    links: [
+      { name: "Flight Status", path: "#" },
+      { name: "Airport Transfers", path: "#" },
+      { name: "Onboard Meals", path: "#" },
+      { name: "Travel Insurance", path: "#" }
+    ]
+  },
+  {
+    title: "Travel Info",
+    links: [
+      { name: "Baggage Policy", path: "#" },
+      { name: "Visa Requirements", path: "#" },
+      { name: "Travel Restrictions", path: "#" },
+      { name: "Destination Guides", path: "#" }
+    ]
+  },
+  {
+    title: "Loyalty Program",
+    links: [
+      { name: "Membership Benefits", path: "#" },
+      { name: "Partner Airlines", path: "#" },
+      { name: "Earn & Redeem Miles", path: "#" },
+      { name: "Loyalty Program FAQ", path: "#" }
+    ]
+  },
+  {
+    title: "Legal",
+    links: [
+      { name: "Terms & Conditions", path: "#" },
+      { name: "User Agreement", path: "#" },
+      { name: "Data Protection", path: "#" },
+      { name: "Legal Notice", path: "#" }
+    ]
+  },
+  {
+    title: "Sustainability",
+    links: [
+      { name: "Our Commitment", path: "#" },
+      { name: "Carbon Offsetting", path: "#" },
+      { name: "Green Initiatives", path: "#" },
+      { name: "Sustainable Travel Tips", path: "#" }
+    ]
   }
 ];
