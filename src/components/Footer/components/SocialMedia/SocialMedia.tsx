@@ -5,19 +5,19 @@ import Image from "next/image";
 
 const SocialMedia: React.FC = () => {
   return (
-    <div>
-      {socialMediaItem.map((link: SocialMediaItem) => (
+    <div className="footer-socialmedia">
+      {socialMediaItem.map((social: SocialMediaItem) => (
         <a
-          key={link.name}
-          href={link.url}
+          key={social.name}
+          href={social.url}
           target="_blank"
           rel="noopener noreferrer"
         >
           <Image
-            src={link.icon}
-            alt={link.name}
-            width={24}
-            height={24}
+            src={social.icon}
+            alt={social.name}
+            width={40}
+            height={40}
           />
         </a>
       ))}

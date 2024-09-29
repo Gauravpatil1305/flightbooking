@@ -72,5 +72,23 @@ export const footerNavbarData: FooterNavbarItem[] = [
       { name: "Green Initiatives", path: "#" },
       { name: "Sustainable Travel Tips", path: "#" }
     ]
+  },
+  {
+    title: "Partnerships",
+    links: [
+      { name: "Corporate Partners", path: "#" },
+      { name: "Affiliates", path: "#" },
+      { name: "Travel Agents", path: "#" },
+      { name: "Tour Operators", path: "#" }
+    ]
+  },
+  {
+    title: "Travel Preparation",
+    links: [
+      { name: "Packing Tips", path: "#" },
+      { name: "Airport Information", path: "#" },
+      { name: "Health & Safety Guidelines", path: "#" },
+      { name: "Travel Checklist", path: "#" }
+    ]
   }
 ];

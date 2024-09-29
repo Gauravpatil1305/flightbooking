@@ -11,12 +11,12 @@ const Navbar: React.FC<NavbarProps> = ({ items }) => {
     <div className="navbar">
       {items.map((item) => (
         <div className="navbar-content" key={item.title}>
-          <h4>{item.title}</h4>
-          <ul>
+          <h4 className="navbar-title">{item.title}</h4>
+          <ul className="navbar-list">
             {item.links.map((link) => (
-              <li key={link.name}>
+              <li className="navbar-item" key={link.name}>
                 <Link href={link.path}>
-                  <span>{link.name}</span>
+                  <span className="navbar-link">{link.name}</span>
                 </Link>
               </li>
             ))}
