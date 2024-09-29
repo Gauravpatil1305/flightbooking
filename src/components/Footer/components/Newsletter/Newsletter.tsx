@@ -1,56 +1,51 @@
 "use client";
 
 import React, { useState } from "react";
-import { Tooltip } from "react-tooltip";
-import "react-tooltip/dist/react-tooltip.css";
+import SuccessMessage from "./components/SuccessMessage";
+import ErrorMessage from "./components/ErrorMessage";
+
 const Newsletter: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
-  const [tooltipContent, setTooltipContent] = useState<string>("");
+  const [error, setError] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     if (!email) {
-      setTooltipContent("Please enter your email address");
+      setError("Please enter your email address");
+    } else if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address");
     } else {
       setIsSubmitted(true);
-      setEmail("");
-      setTooltipContent("Success!");
-      setTimeout(() => {
-        setTooltipContent("");
-      }, 2000);
+      setError("");
     }
   };
 
   return (
-    <div>
-      {isSubmitted ? (
-        <p>Thank you! You&apos;ve subscribed to our newsletter.</p>
-      ) : (
-        <>
-          <h3>Subscribe to Our Newsletter</h3>
-          <p>Enter your email address to receive updates and special offers.</p>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <button
-              type="submit"
-              data-tooltip-id="newsletter-tooltip"
-              data-tooltip-content={tooltipContent}
-              data-tooltip-place="top"
-            >
-              Subscribe
-            </button>
-            <Tooltip id="newsletter-tooltip" place="top" />
-          </form>
-        </>
+    <div className="footer-newsletter">
+      {isSubmitted && (
+        <SuccessMessage message="Thank you! You've subscribed to our newsletter." />
       )}
+      <h3 className="title">Subscribe to Our Newsletter</h3>
+      <p className="description">
+        Enter your email address to receive updates and special offers.
+      </p>
+      <form onSubmit={handleSubmit} className="form" noValidate>
+        <input
+          type="email"
+          placeholder="Enter your email address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="input"
+        />
+        <button type="submit" className="submitButton">
+          Subscribe
+        </button>
+      </form>
+      {error && <ErrorMessage message={error} />}
     </div>
   );
 };

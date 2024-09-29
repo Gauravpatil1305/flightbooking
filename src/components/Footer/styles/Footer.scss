@@ -7,12 +7,85 @@
         align-items: center;
         justify-content: space-between;
         flex-direction: column;
-        padding: 15px;
+        gap: 70px;
+        padding: 80px 15px;
         .footer-info {
             display: flex;
             align-items: center;
             justify-content: space-between;
             width: 100%;
+            .footer-newsletter {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                .title {
+                    font-size: 1.5rem;
+                    margin-bottom: 10px;
+                    color: $white;
+                }
+                .description {
+                    font-size: 1rem;
+                    margin-bottom: 20px;
+                    color: $white;
+                }
+                .form {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    width: 100%;
+                    .input {
+                        font-size: 1rem;
+                        padding: 15px;
+                        border-radius: 5px;
+                        border: none;
+                        width: 100%;
+                    }
+                    .submitButton {
+                        padding: 15px;
+                        background-color: $red;
+                        color: $white;
+                        border: none;
+                        border-radius: 5px;
+                        font-size: 1rem;
+                        font-weight: bold;
+                        cursor: pointer;
+                    }
+                }
+                .popUpMessage {
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    padding: 15px;
+                    border-radius: 5px;
+                    color: $white;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    z-index: 1000;
+                    animation: fadeInOut 3s ease-in-out;
+                    p {
+                        margin: 0;
+                        font-size: 1rem;
+                    }
+                    @keyframes fadeInOut {
+                        0% {
+                            opacity: 0;
+                            transform: translateY(20px);
+                        }
+                        10% {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                        90% {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                        100% {
+                            opacity: 0;
+                            transform: translateY(20px);
+                        }
+                    }
+                }
+            }
         }
         .footer-navbar {
             .navbar {
