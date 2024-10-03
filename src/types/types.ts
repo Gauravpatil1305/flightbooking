@@ -34,3 +34,10 @@ export interface MarketLink {
     icon: string;
     url: string;
 }
+
+export interface HeroWallpaper {
+    id: number;
+    imagePath: string;
+    country: string;
+    countryFlagIcon: string;
+}

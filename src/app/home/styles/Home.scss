@@ -1,0 +1,60 @@
+@import "../../../styles/variables.scss";
+
+.home {
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    
+    .imageWrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 8px;
+      color: #fff;
+
+      h2 {
+        margin: 0;
+      }
+
+      .flagIcon {
+        margin-left: 10px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .prev,
+    .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.7);
+      }
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+  }
+}
