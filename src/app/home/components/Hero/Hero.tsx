@@ -77,15 +77,21 @@ const Hero = () => {
           <Icon icon={countryFlagIcon} className="flagIcon" />
         </div>
       </div>
-      <button className="prev" onClick={prevSlide}>
-        Prev
-      </button>
-      <button className="next" onClick={nextSlide}>
-        Next
-      </button>
-      <button className="playPause" onClick={togglePlayPause}>
-        {isPlaying ? "Pause" : "Play"}
-      </button>
+      <div className="navigation-buttons">
+        <button className="prev-button" onClick={prevSlide}>
+          <Icon icon="mingcute:left-fill" />
+        </button>
+        <button className="next-button" onClick={nextSlide}>
+          <Icon icon="mingcute:right-fill" />
+        </button>
+        <button className="playPause-button" onClick={togglePlayPause}>
+          {isPlaying ? (
+            <Icon icon="mingcute:pause-fill" />
+          ) : (
+            <Icon icon="mingcute:play-fill" />
+          )}
+        </button>
+      </div>
     </div>
   );
 };
