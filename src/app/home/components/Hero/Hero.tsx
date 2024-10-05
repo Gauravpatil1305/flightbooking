@@ -17,7 +17,7 @@ const shuffleArray = (array: HeroWallpaper[]): HeroWallpaper[] => {
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [shuffledWallpapers, setShuffledWallpapers] =
     useState<HeroWallpaper[]>(heroWallpapers);
   const slideIntervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -37,7 +37,7 @@ const Hero = () => {
     if (isPlaying) {
       slideIntervalRef.current = setInterval(() => {
         nextSlide();
-      }, 5000);
+      }, 6000);
     }
 
     return () => {
@@ -72,25 +72,27 @@ const Hero = () => {
             className={`slide ${index === currentIndex ? "active" : ""}`}
           />
         ))}
-        <div className="overlay">
-          <h2>{country}</h2>
-          <Icon icon={countryFlagIcon} className="flagIcon" />
-        </div>
       </div>
-      <div className="navigation-buttons">
-        <button className="prev-button" onClick={prevSlide}>
-          <Icon icon="mingcute:left-fill" />
-        </button>
-        <button className="next-button" onClick={nextSlide}>
-          <Icon icon="mingcute:right-fill" />
-        </button>
-        <button className="playPause-button" onClick={togglePlayPause}>
-          {isPlaying ? (
-            <Icon icon="mingcute:pause-fill" />
-          ) : (
-            <Icon icon="mingcute:play-fill" />
-          )}
-        </button>
+      <div className="overlay">
+        <div className="detail-card">
+          <Icon icon={countryFlagIcon} className="flagIcon" />
+          <h2>{country}</h2>
+        </div>
+        <div className="navigation-buttons">
+          <button className="prev-button" onClick={prevSlide}>
+            <Icon icon="mingcute:left-fill" />
+          </button>
+          <button className="next-button" onClick={nextSlide}>
+            <Icon icon="mingcute:right-fill" />
+          </button>
+          <button className="playPause-button" onClick={togglePlayPause}>
+            {isPlaying ? (
+              <Icon icon="mingcute:pause-fill" />
+            ) : (
+              <Icon icon="mingcute:play-fill" />
+            )}
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 @import "../../../styles/variables.scss";
 
 .header {
-    background-color: $dark-gray-tp;
+    background-color: $dark-gray;
     @media (max-width: $md-breakpoint) {
         background-color: $dark-gray;
     }
