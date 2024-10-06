@@ -36,24 +36,67 @@
             .detail-card {
                 display: flex;
                 align-items: center;
-                gap: 5px;
-                background: $overlay;
-                padding: 10px;
-                border-radius: 8px;
-                h2 {
+                justify-content: flex-start;
+                flex:1;
+                .detail-content {
+                    display: flex;
+                    align-items: center;
+                    width: max-content;
+                    gap: 5px;
+                    background: $overlay;
+                    padding: 10px;
+                    border-radius: 8px;
+                    h2 {
+                        color: $white;
+                        font-size: 1rem;
+                        font-weight: 600;
+                    }
+                    .flagIcon {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+            .mouseIcon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex:2;
+                .content {
+                    transform: translateX(-50%);
+                    animation: mouseMove 1.5s infinite;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    background: $overlay;
+                    padding: 10px;
+                    border-radius: 8px;
                     color: $white;
-                    font-size: 1rem;
-                    font-weight: 600;
+                    width: max-content;
+                    @media (max-width: 767px) {
+                        display: none;
+                    }
+                    @keyframes mouseMove {
+                        0% {
+                            transform: translateY(0);
+                        }
+                        50% {
+                            transform: translateY(-10px);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    }
                 }
-                .flagIcon {
-                    width: 20px;
-                    height: 20px;
-                }
+
             }
             .navigation-buttons {
                 display: flex;
                 align-items: center;
+                justify-content: flex-end;
                 gap: 5px;
+                flex:1;
                 .prev-button,
                 .next-button, 
                 .playPause-button {
