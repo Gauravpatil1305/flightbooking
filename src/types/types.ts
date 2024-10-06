@@ -41,3 +41,10 @@ export interface HeroWallpaper {
     country: string;
     countryFlagIcon: string;
 }
+
+export interface ExtraServiceItem {
+    id: number;
+    title: string;
+    description: string;
+    icon: string;
+}
