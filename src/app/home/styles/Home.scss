@@ -19,8 +19,8 @@
                 opacity: 0;
                 transition: opacity 1s ease-in-out;
                 &.active {
-                  opacity: 1;
-                  z-index: 1;
+                    opacity: 1;
+                    z-index: 1;
                 }
             }
         }
@@ -113,6 +113,78 @@
                     font-size: 1.3rem;
                     font-weight: bold;
                     line-height: 0;
+                }
+            }
+        }
+    }
+    .extra-service {
+        .content {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 20px;
+            padding: 20px 0px;
+            .extra-service-card {
+                position: relative;
+                overflow: hidden;
+                background-color: $white;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease-in-out;
+                &:hover {
+                    transform: translateY(-10px);
+                }
+                .extra-service-header {
+                    background-size: cover;
+                    background-position: center;
+                    padding: 20px;
+                    text-align: center;
+                    color: $white;
+                    position: relative;
+                    height: 340px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    transition: all 0.3s ease-in-out;
+                    h3 {
+                    margin-top: 10px;
+                    font-size: 1.5rem;
+                    }
+                    .extra-service-icon {
+                    font-size: 40px;
+                    }
+                }
+                .extra-service-details {
+                    position: absolute;
+                    bottom: -100%;
+                    width: 100%;
+                    background-color: rgba(255, 255, 255, 0.9);
+                    padding: 20px;
+                    text-align: center;
+                    transition: all 0.3s ease-in-out;
+                    p {
+                    font-size: 0.9rem;
+                    color: $dark-gray;
+                    }
+                    .details-button {
+                    display: inline-block;
+                    margin-top: 10px;
+                    padding: 10px 20px;
+                    background-color: $red;
+                    color:  $white;
+                    border-radius: 4px;
+                    text-decoration: none;
+                    transition: background-color 0.3s ease;
+                        &:hover {
+                            background-color: $red;
+                        }
+                    }
+                }
+                &:hover .extra-service-header {
+                    transform: translateY(-100px);
+                }
+                &:hover .extra-service-details {
+                    bottom: 0;
                 }
             }
         }

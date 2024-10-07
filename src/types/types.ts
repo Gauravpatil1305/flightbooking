@@ -47,4 +47,6 @@ export interface ExtraServiceItem {
     title: string;
     description: string;
     icon: string;
+    link: string;
+    backgroundImage: string;
 }
