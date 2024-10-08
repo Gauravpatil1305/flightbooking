@@ -6,6 +6,13 @@ const ExtraService: React.FC = () => {
   return (
     <div className="extra-service">
       <div className="container">
+        <div className="headline">
+          <div className="title">Extra Services</div>
+          <div className="description">
+            Enhance your journey with our additional services, tailored to your
+            travel needs.
+          </div>
+        </div>
         <div className="content">
           {extraServices.map((service) => (
             <div key={service.id} className="extra-service-card">
