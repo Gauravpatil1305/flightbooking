@@ -20,7 +20,12 @@ const ExtraService: React.FC = () => {
                 className="extra-service-header"
                 style={{ backgroundImage: `url(${service.backgroundImage})` }}
               >
-                <Icon icon={service.icon} className="extra-service-icon" />
+                <div className="extra-service-icon">
+                  <Icon
+                    icon={service.icon}
+                    className="extra-service-icon-content"
+                  />
+                </div>
                 <h3>{service.title}</h3>
               </div>
               <div className="extra-service-details">
