@@ -4,7 +4,7 @@
     .hero {
         position: relative;
         width: 100%;
-        height: calc(100vh - 164px);
+        height: 450px;
         overflow: hidden;
         .imageWrapper {
             position: relative;
@@ -56,40 +56,6 @@
                         height: 20px;
                     }
                 }
-            }
-            .mouseIcon {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex:2;
-                .content {
-                    transform: translateX(-50%);
-                    animation: mouseMove 1.5s infinite;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    cursor: pointer;
-                    background: $overlay;
-                    padding: 10px;
-                    border-radius: 8px;
-                    color: $white;
-                    width: max-content;
-                    @media (max-width: 767px) {
-                        display: none;
-                    }
-                    @keyframes mouseMove {
-                        0% {
-                            transform: translateY(0);
-                        }
-                        50% {
-                            transform: translateY(-10px);
-                        }
-                        100% {
-                            transform: translateY(0);
-                        }
-                    }
-                }
-
             }
             .navigation-buttons {
                 display: flex;

@@ -80,11 +80,6 @@ const Hero = () => {
             <h2>{country}</h2>
           </div>
         </div>
-        <div className="mouseIcon">
-          <div className="content">
-            <Icon icon="bi:mouse" width="30" height="30" />
-          </div>
-        </div>
         <div className="navigation-buttons">
           <button className="prev-button" onClick={prevSlide}>
             <Icon icon="mingcute:left-fill" />
