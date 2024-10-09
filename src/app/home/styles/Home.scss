@@ -203,7 +203,7 @@
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
-                    gap: 10px;
+                    gap: 8px;
                     p {
                         font-size: 0.9rem;
                         color: $dark-gray;
@@ -230,7 +230,7 @@
                     transform: translateY(-100px);
                 }
                 &:hover .extra-service-details {
-                    bottom: 10px;
+                    bottom: 5px;
                 }
             }
         }

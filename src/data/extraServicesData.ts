@@ -65,7 +65,7 @@ export const extraServices: ExtraServiceItem[] = [
     id: 8,
     title: "Airport Transfer",
     description: "Book a comfortable transfer service to and from the airport.",
-    icon: "mdi:car-hatchback",
+    icon: "mdi:bus",
     link: "/help",
     backgroundImage: "/img/extra-service/airport-transfer.jpg",
   },
@@ -74,7 +74,7 @@ export const extraServices: ExtraServiceItem[] = [
     title: "Meet & Greet Service",
     description:
       "Enjoy personalized meet & greet services upon arrival at the airport.",
-    icon: "mdi:account-check-outline",
+    icon: "mdi:customer-service",
     link: "/help",
     backgroundImage: "/img/extra-service/meet-greet-service.jpg",
   },
@@ -83,7 +83,7 @@ export const extraServices: ExtraServiceItem[] = [
     title: "Food & Beverages",
     description:
       "Pre-order delicious meals and beverages to enhance your flight experience.",
-    icon: "mdi:food",
+    icon: "mdi:food-fork-drink",
     link: "/help",
     backgroundImage: "/img/extra-service/food-beverages.jpg",
   },
