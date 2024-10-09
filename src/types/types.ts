@@ -50,3 +50,8 @@ export interface ExtraServiceItem {
     link: string;
     backgroundImage: string;
 }
+
+export interface CabinClass {
+    title: string;
+    link: string;
+}
