@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { cabinClassData } from "@/data/cabinClassData";
 
 const CabinClass = () => {
@@ -14,9 +15,25 @@ const CabinClass = () => {
         </div>
         <div className="content">
           {cabinClassData.map((cabin) => (
-            <a href={cabin.link} key={cabin.title} className="cabin-card">
-              <div>{cabin.title}</div>
-            </a>
+            <div key={cabin.title} className="cabin-card">
+              <div className="cabin-content">
+                <h3>{cabin.title}</h3>
+                <ul>
+                  {cabin.features.map((feature, i) => (
+                    <li key={i}>{feature}</li>
+                  ))}
+                </ul>
+                <a href={cabin.link} key={cabin.title} className="more-button">More</a>
+              </div>
+              <div className="cabin-image">
+                <Image
+                  src={cabin.image}
+                  alt={cabin.title}
+                  width={500}
+                  height={500}
+                />
+              </div>
+            </div>
           ))}
         </div>
       </div>
