@@ -252,8 +252,7 @@
             .cabin-card {
                 display: flex;
                 align-items: center;
-                justify-content: flex-end;
-                gap: 30px;
+                justify-content: space-between;
                 background-color: $white;
                 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
                 &:nth-child(odd) {
@@ -266,17 +265,47 @@
                 }
                 .cabin-content {
                     padding: 20px;
+                    color: $dark-gray;
+                    min-width: 400px;
                     h3 {
-                        font-size: 1rem;
-                        margin-bottom: 10px;
+                        font-size: 1.2rem;
+                        margin-bottom: 20px;
                     }
                     ul {
-                        list-style-type: disc;
-                        padding-left: 10px;
+                        list-style-type: none;
+                        li {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            padding-left: 0;
+                            font-size: 1rem;
+                            margin-bottom: 15px;
+                            .check-icon {
+                                color: $red;
+                            }
+                        }
                     }
-                    li {
-                        font-size: 1rem;
-                        margin-bottom: 5px;
+                    .button {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        margin-top: 20px;
+                        .more-button {
+                            display: inline-block;
+                            font-size: 0.9rem;
+                            padding: 8px 15px;
+                            background-color: $red;
+                            color:  $white;
+                            border-radius: 4px;
+                            text-decoration: none;
+                            transition: background-color 0.3s ease;
+                            border: solid 1px transparent;
+                            &:hover {
+                                background-color: $white;
+                                color: $red;
+                                border-color: $red;
+                            }
+                        }
                     }
                 }
                 .cabin-image {
@@ -287,6 +316,7 @@
                         width: 200px;
                         height: 200px;
                         border-radius: 50%;
+                        object-fit: cover;
                     }
                 }
             }

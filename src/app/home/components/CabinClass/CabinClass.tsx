@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { cabinClassData } from "@/data/cabinClassData";
+import { Icon } from "@iconify/react";
 
 const CabinClass = () => {
   return (
@@ -20,10 +21,17 @@ const CabinClass = () => {
                 <h3>{cabin.title}</h3>
                 <ul>
                   {cabin.features.map((feature, i) => (
-                    <li key={i}>{feature}</li>
+                    <li key={i}>
+                      <Icon icon="mdi:check" className="check-icon" />
+                      {feature}
+                    </li>
                   ))}
                 </ul>
-                <a href={cabin.link} key={cabin.title} className="more-button">More</a>
+                <div className="button">
+                  <a href={cabin.link} key={cabin.title} className="more-button">
+                    More
+                  </a>
+                </div>
               </div>
               <div className="cabin-image">
                 <Image
