@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { aboutUsData } from "@/data/aboutUsData";
 
@@ -8,29 +8,56 @@ const AboutUs: React.FC = () => {
   const { airportsFacilities, destinations, dailyFlights, professionals } =
     aboutUsData[0];
 
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const currentRef = ref.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
   const animatedAirportsFacilities = useSpring({
     from: { value: 0 },
-    to: { value: airportsFacilities },
+    to: { value: isVisible ? airportsFacilities : 0 },
     config: { duration: 2000 },
   });
   const animatedDestinations = useSpring({
     from: { value: 0 },
-    to: { value: destinations },
+    to: { value: isVisible ? destinations : 0 },
     config: { duration: 2000 },
   });
   const animatedDailyFlights = useSpring({
     from: { value: 0 },
-    to: { value: dailyFlights },
+    to: { value: isVisible ? dailyFlights : 0 },
     config: { duration: 2000 },
   });
   const animatedProfessionals = useSpring({
     from: { value: 0 },
-    to: { value: professionals },
+    to: { value: isVisible ? professionals : 0 },
     config: { duration: 2000 },
   });
 
   return (
-    <div className="about-us-container">
+    <div className="about-us" ref={ref}>
       <div className="about-us-background" />
       <div className="about-us-content">
         <div className="circle">
