@@ -57,3 +57,10 @@ export interface CabinClass {
   link: string;
   features: string[];
 }
+
+export interface AboutUsItem {
+  airportsFacilities: number;
+  destinations: number;
+  dailyFlights: number;
+  professionals: number;
+}
