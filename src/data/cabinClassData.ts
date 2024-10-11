@@ -8,25 +8,37 @@ export const cabinClassData: CabinClass[] = [
     features: [
       "Affordable fares",
       "Complimentary snacks",
-      "In-flight entertainment",
+      "Standard in-flight entertainment",
     ],
   },
   {
     title: "Premium Class",
     image: "/img/cabin-class/premium.jpg",
     link: "/premium-class",
-    features: ["Enhanced seating", "Additional baggage", "Dedicated check-in"],
+    features: [
+      "Wider seats and more legroom",
+      "Extra baggage allowance",
+      "Enhanced in-flight entertainment",
+    ],
   },
   {
     title: "Business Class",
     image: "/img/cabin-class/business.jpg",
     link: "/business-class",
-    features: ["Priority boarding", "Extra legroom", "Exclusive meal options"],
+    features: [
+      "Priority boarding",
+      "Reclining seats with extra legroom",
+      "Exclusive gourmet meals",
+    ],
   },
   {
     title: "First Class",
     image: "/img/cabin-class/first.jpg",
     link: "/first-class",
-    features: ["Luxury seats", "Premium dining", "Personalized service"],
+    features: [
+      "Private suites (on select routes)",
+      "Luxury seating with full recline",
+      "Personalized fine dining",
+    ],
   },
 ];

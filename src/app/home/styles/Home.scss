@@ -104,6 +104,16 @@
                 font-size: 1rem;
                 font-weight: 500;
             }
+            &::after {
+                content: "";
+                position: relative;
+                display: block;
+                background-color: $red;
+                width: 40px;
+                height: 2px;
+                border-radius: 5px;
+                margin-top: 10px;
+            }
         }
         .content {
             display: grid;
@@ -222,6 +232,16 @@
                 font-size: 1rem;
                 font-weight: 500;
             }
+            &::after {
+                content: "";
+                position: relative;
+                display: block;
+                background-color: $red;
+                width: 40px;
+                height: 2px;
+                border-radius: 5px;
+                margin-top: 10px;
+            }
         }
         .content {
             display: grid;
@@ -232,7 +252,8 @@
             .cabin-card {
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: flex-end;
+                gap: 30px;
                 background-color: $white;
                 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
                 &:nth-child(odd) {
