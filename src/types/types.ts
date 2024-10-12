@@ -59,8 +59,12 @@ export interface CabinClass {
 }
 
 export interface AboutUsItem {
-  airportsFacilities: number;
+  airportsServed: number;
   destinations: number;
   dailyFlights: number;
   professionals: number;
+  fleetSize: number;
+  loyaltyMembers: number;
+  carbonEmissionsSaved: number;
+  partnerships: number;
 }

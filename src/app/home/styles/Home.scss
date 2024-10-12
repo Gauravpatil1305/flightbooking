@@ -346,9 +346,9 @@
             transition: transform 0.5s ease;
         }
         .about-us-content {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, auto);
             position: relative;
             z-index: 1;
             .circle {
