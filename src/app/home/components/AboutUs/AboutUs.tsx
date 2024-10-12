@@ -104,55 +104,71 @@ const AboutUs: React.FC = () => {
         <div className="content">
           <div className="about-us-background" />
           <div className="about-us-content">
-            <div className="circle">
-              <animated.div>
-                {animatedAirportsServed.value.to((val) => Math.floor(val))}
-              </animated.div>
-              <span>Airports Served</span>
+            <div className="data">
+              <div className="circle">
+                <animated.div>
+                  {animatedAirportsServed.value.to((val) => Math.floor(val))}
+                </animated.div>
+              </div>
+              <span className="title">Airports Served</span>
             </div>
-            <div className="circle">
-              <animated.div>
-                {animatedDestinations.value.to((val) => Math.floor(val))}
-              </animated.div>
-              <span>Destinations</span>
+            <div className="data">
+              <div className="circle">
+                <animated.div>
+                  {animatedDestinations.value.to((val) => Math.floor(val))}
+                </animated.div>
+              </div>
+              <span className="title">Destinations</span>
             </div>
-            <div className="circle">
-              <animated.div>
-                {animatedDailyFlights.value.to((val) => Math.floor(val))}
-              </animated.div>
-              <span>Daily Flights</span>
+            <div className="data">
+              <div className="circle">
+                <animated.div>
+                  {animatedDailyFlights.value.to((val) => Math.floor(val))}
+                </animated.div>
+              </div>
+              <span className="title">Daily Flights</span>
             </div>
-            <div className="circle">
-              <animated.div>
-                {animatedProfessionals.value.to((val) => Math.floor(val))}
-              </animated.div>
-              <span>Professionals</span>
+            <div className="data">
+              <div className="circle">
+                <animated.div>
+                  {animatedProfessionals.value.to((val) => Math.floor(val))}
+                </animated.div>
+              </div>
+              <span className="title">Professionals</span>
             </div>
-            <div className="circle">
-              <animated.div>
-                {animatedFleetSize.value.to((val) => Math.floor(val))}
-              </animated.div>
-              <span>Fleet Size</span>
+            <div className="data">
+              <div className="circle">
+                <animated.div>
+                  {animatedFleetSize.value.to((val) => Math.floor(val))}
+                </animated.div>
+              </div>
+              <span className="title">Fleet Size</span>
             </div>
-            <div className="circle">
-              <animated.div>
-                {animatedLoyaltyMembers.value.to((val) => Math.floor(val))}
-              </animated.div>
-              <span>Loyalty Program Members</span>
+            <div className="data">
+              <div className="circle">
+                <animated.div>
+                  {animatedLoyaltyMembers.value.to((val) => Math.floor(val))}
+                </animated.div>
+              </div>
+              <span className="title">Loyalty Members</span>
             </div>
-            <div className="circle">
-              <animated.div>
-                {animatedCarbonEmissionsSaved.value.to((val) =>
-                  Math.floor(val)
-                )}
-              </animated.div>
-              <span>Carbon Emissions Saved (tons)</span>
+            <div className="data">
+              <div className="circle">
+                <animated.div>
+                  {animatedCarbonEmissionsSaved.value.to((val) =>
+                    Math.floor(val)
+                  )}
+                </animated.div>
+              </div>
+              <span className="title">Carbon Savings (tons)</span>
             </div>
-            <div className="circle">
-              <animated.div>
-                {animatedPartnerships.value.to((val) => Math.floor(val))}
-              </animated.div>
-              <span>Partnerships</span>
+            <div className="data">
+              <div className="circle">
+                <animated.div>
+                  {animatedPartnerships.value.to((val) => Math.floor(val))}
+                </animated.div>
+              </div>
+              <span className="title">Partnerships</span>
             </div>
           </div>
         </div>
