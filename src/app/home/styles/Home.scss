@@ -547,8 +547,25 @@
                 gap: 20px;
                 padding: 20px;
             }
-            .faq-image {
+            .faq-image-content {
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 flex: 1;
+                .faq-img {
+                    animation: faqAnimated 2s infinite;
+                    @keyframes faqAnimated {
+                        0% {
+                            transform: translateY(0);
+                        }
+                        50% {
+                            transform: translateY(-10px);
+                        }
+                        100% {
+                            transform: translateY(0);
+                        }
+                    }
+                }
             }
             .faq-content {
                 flex: 1;

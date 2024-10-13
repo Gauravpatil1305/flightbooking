@@ -25,14 +25,14 @@ const Faq = () => {
         </div>
         <div className="content">
           <div className="faq-container">
-            <div className="faq-image">
+            <div className="faq-image-content">
               <Image
-                src="/img/campaign/1.jpg"
+                src="/img/faq/faq-1.svg"
                 alt="FAQ Image"
-                width={600}
+                width={400}
                 height={400}
                 objectFit="cover"
-                className="image-style"
+                className="faq-img"
                 priority
               />
             </div>

@@ -19,4 +19,28 @@ export const faqData: FaqItem[] = [
     answer:
       "Refunds can be requested via our customer service portal or through the travel agent you booked with.",
   },
+  {
+    id: 4,
+    question: "What is the check-in process?",
+    answer:
+      "You can check in online through our website or mobile app starting 24 hours before your flight departure.",
+  },
+  {
+    id: 5,
+    question: "What should I do if my flight is delayed?",
+    answer:
+      "If your flight is delayed, please check your email or our website for updates. You can also contact our customer service for assistance.",
+  },
+  {
+    id: 6,
+    question: "Can I travel with pets?",
+    answer:
+      "Yes, pets are allowed on our flights. Please check our pet travel policy for specific regulations and requirements.",
+  },
+  {
+    id: 7,
+    question: "How do I add special assistance to my booking?",
+    answer:
+      "To add special assistance to your booking, please contact our customer service at least 48 hours before your flight.",
+  },
 ];
