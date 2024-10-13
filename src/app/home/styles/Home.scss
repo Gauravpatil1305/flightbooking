@@ -334,7 +334,7 @@
     .about-us {
         position: relative;
         overflow: hidden;
-        height: 600px;
+        height: 645px;
         .headline {
             display: flex;
             flex-direction: column;
@@ -367,6 +367,7 @@
             }
         }
         .content {
+            padding: 20px 0px;
             .about-us-background {
                 background-image: url('/img/about-us/about-bg.jpg');
                 background-size: cover;
@@ -393,8 +394,8 @@
                     flex-direction: column;
                     gap: 10px;
                     .circle {
-                        width: 130px;
-                        height: 130px;
+                        width: 150px;
+                        height: 150px;
                         border: solid 3px $dark-gray;
                         border-radius: 50%;
                         display: flex;
@@ -454,6 +455,7 @@
             }
         }
         .content {
+            padding: 20px 0px;
             .campaignSwiper {
                 .swiper-slide {
                     display: flex;
@@ -461,11 +463,20 @@
                     align-items: center;
                     .campaign-slide {
                         text-align: center;
-                        img {
+                        .image-container {
+                            position: relative;
                             width: 100%;
-                            border-radius: 8px;
+                            height: 200px;
+                            img {
+                                object-fit: cover;
+                                border-radius: 8px;
+                            }
                         }
                         .campaign-info {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 5px;
                             margin-top: 10px;
                             h3 {
                                 font-size: 1.2rem;
@@ -475,8 +486,20 @@
                             p {
                                 font-size: 1rem;
                                 color: $dark-gray;
+                                line-height: 1.2;
                             }
                         }
+                    }
+                }
+                .swiper-button-next,
+                .swiper-button-prev {
+                    background-color: $red;
+                    color: $white;
+                    border-radius: 8px;
+                    width: 35px;
+                    height: 35px;
+                    &::after {
+                        font-size: 1rem;
                     }
                 }
             }

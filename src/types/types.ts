@@ -74,4 +74,5 @@ export interface CampaignItem {
   title: string;
   description: string;
   imageUrl: string;
+  url: string
 }

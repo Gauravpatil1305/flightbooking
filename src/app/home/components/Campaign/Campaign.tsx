@@ -29,18 +29,21 @@ const Campaign: React.FC = () => {
             {campaigns.map((campaign) => (
               <SwiperSlide key={campaign.id}>
                 <div className="campaign-slide">
-                  <Image
-                    src={campaign.imageUrl}
-                    alt={campaign.title}
-                    width={300}
-                    height={200}
-                    layout="responsive"
-                    objectFit="cover"
-                  />
-                  <div className="campaign-info">
-                    <h3>{campaign.title}</h3>
-                    <p>{campaign.description}</p>
-                  </div>
+                  <a href={campaign.url}>
+                    <div className="image-container">
+                      <Image
+                        src={campaign.imageUrl}
+                        alt={campaign.title}
+                        fill
+                        objectFit="cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      />
+                    </div>
+                    <div className="campaign-info">
+                      <h3>{campaign.title}</h3>
+                      <p>{campaign.description}</p>
+                    </div>
+                  </a>
                 </div>
               </SwiperSlide>
             ))}
