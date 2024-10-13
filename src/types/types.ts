@@ -68,3 +68,10 @@ export interface AboutUsItem {
   carbonEmissionsSaved: number;
   partnerships: number;
 }
+
+export interface CampaignItem {
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+}

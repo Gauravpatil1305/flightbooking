@@ -453,5 +453,33 @@
                 margin-top: 10px;
             }
         }
+        .content {
+            .campaignSwiper {
+                .swiper-slide {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .campaign-slide {
+                        text-align: center;
+                        img {
+                            width: 100%;
+                            border-radius: 8px;
+                        }
+                        .campaign-info {
+                            margin-top: 10px;
+                            h3 {
+                                font-size: 1.2rem;
+                                font-weight: bold;
+                                color: $dark-gray;
+                            }
+                            p {
+                                font-size: 1rem;
+                                color: $dark-gray;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

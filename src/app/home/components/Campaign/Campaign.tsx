@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
+import { campaigns } from "@/data/campaignData";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
@@ -25,15 +26,24 @@ const Campaign: React.FC = () => {
             modules={[Navigation]}
             className="campaignSwiper"
           >
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-            <SwiperSlide>Slide 5</SwiperSlide>
-            <SwiperSlide>Slide 6</SwiperSlide>
-            <SwiperSlide>Slide 7</SwiperSlide>
-            <SwiperSlide>Slide 8</SwiperSlide>
-            <SwiperSlide>Slide 9</SwiperSlide>
+            {campaigns.map((campaign) => (
+              <SwiperSlide key={campaign.id}>
+                <div className="campaign-slide">
+                  <Image
+                    src={campaign.imageUrl}
+                    alt={campaign.title}
+                    width={300}
+                    height={200}
+                    layout="responsive"
+                    objectFit="cover"
+                  />
+                  <div className="campaign-info">
+                    <h3>{campaign.title}</h3>
+                    <p>{campaign.description}</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>
