@@ -25,7 +25,7 @@ export const campaigns: CampaignItem[] = [
     title: "Business Class Upgrades",
     description:
       "Upgrade to Business Class for half the price on selected routes.",
-    imageUrl: "/img/campaign/1.jpg",
+    imageUrl: "/img/campaign/4.jpg",
   },
   {
     id: 5,
@@ -52,12 +52,12 @@ export const campaigns: CampaignItem[] = [
     id: 8,
     title: "Family Travel Packages",
     description: "Get family packages with discounted fares for children.",
-    imageUrl: "/img/campaign/2.jpg",
+    imageUrl: "/img/campaign/4.jpg",
   },
   {
     id: 9,
     title: "Last Minute Deals",
     description: "Find amazing last-minute deals for spontaneous travelers.",
-    imageUrl: "/img/campaign/3.jpg",
+    imageUrl: "/img/campaign/2.jpg",
   },
 ];
