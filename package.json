@@ -16,7 +16,8 @@
     "react-dom": "^18",
     "react-redux": "^9.1.2",
     "react-spring": "^9.7.4",
-    "sass": "^1.78.0"
+    "sass": "^1.78.0",
+    "swiper": "^11.1.14"
   },
   "devDependencies": {
     "@types/node": "^20",
