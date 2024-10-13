@@ -24,19 +24,22 @@ const Faq = () => {
           </div>
         </div>
         <div className="content">
-          <div className="faq-container">
-            <div className="faq-image-content">
+          <div className="faq-detail">
+            <div className="faq-image">
               <Image
                 src="/img/faq/faq-1.svg"
                 alt="FAQ Image"
                 width={400}
                 height={400}
                 objectFit="cover"
-                className="faq-img"
                 priority
               />
+              <a href="/help" className="all-button">
+                All Questions
+                <Icon icon="mingcute:right-fill" />
+              </a>
             </div>
-            <div className="faq-content">
+            <div className="faq-questions">
               {faqData.map((item: FaqItem, index: number) => (
                 <div
                   key={item.id}
