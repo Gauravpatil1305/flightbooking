@@ -76,3 +76,9 @@ export interface CampaignItem {
   imageUrl: string;
   url: string
 }
+
+export interface FaqItem {
+  id: number;
+  question: string;
+  answer: string;
+}
