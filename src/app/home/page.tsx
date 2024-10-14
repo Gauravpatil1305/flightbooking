@@ -5,6 +5,7 @@ import CabinClass from './components/CabinClass/CabinClass';
 import AboutUs from './components/AboutUs/AboutUs';
 import Campaign from './components/Campaign/Campaign';
 import Faq from './components/Faq/Faq';
+import Destination from './components/Destination/Destination';
 
 import "./styles/Home.scss";
 
@@ -17,6 +18,7 @@ const Home: React.FC = () => {
       <AboutUs />
       <Campaign />
       <Faq />
+      <Destination />
     </section>
   );
 };

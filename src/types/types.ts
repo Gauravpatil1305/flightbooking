@@ -82,3 +82,12 @@ export interface FaqItem {
   question: string;
   answer: string;
 }
+
+export interface PopularDestination {
+  country: string;
+}
+
+export interface PopularDestinationsRegion {
+  region: string;
+  destinations: PopularDestination[];
+}
