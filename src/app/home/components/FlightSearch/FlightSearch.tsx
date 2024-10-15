@@ -29,17 +29,19 @@ const FlightSearch = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder="Airport Code"
-          value={airport}
-          onChange={(e) => setAirport(e.target.value)}
-          required
-        />
-        <button type="submit">Search</button>
-      </form>
+    <div className="flight-search">
+      <div className="container">
+        <form onSubmit={handleSearch}>
+          <input
+            type="text"
+            placeholder="Airport Code"
+            value={airport}
+            onChange={(e) => setAirport(e.target.value)}
+            required
+          />
+          <button type="submit">Search</button>
+        </form>
+      </div>
     </div>
   );
 };
