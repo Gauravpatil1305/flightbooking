@@ -91,3 +91,11 @@ export interface PopularDestinationsRegion {
   region: string;
   destinations: PopularDestination[];
 }
+
+export interface BlogItem {
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+  url: string
+}
