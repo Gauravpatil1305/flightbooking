@@ -7,6 +7,7 @@ import Campaign from './components/Campaign/Campaign';
 import Faq from './components/Faq/Faq';
 import Destination from './components/Destination/Destination';
 import Blog from './components/Blog/Blog';
+import FlightSearch from './components/FlightSearch/FlightSearch';
 
 import "./styles/Home.scss";
 
@@ -14,6 +15,7 @@ const Home: React.FC = () => {
   return (
     <section className='home'>
       <Hero />
+      <FlightSearch />
       <ExtraService />
       <CabinClass />
       <AboutUs />
