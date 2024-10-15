@@ -11,27 +11,27 @@ const FlightsPage = () => {
   const error = useSelector((state: RootState) => state.flights.error);
 
   if (loading) {
-    return <div>Yükleniyor...</div>;
+    return <div>Loading...</div>;
   }
 
   if (error) {
-    return <div>Hata: {error}</div>;
+    return <div>Error: {error}</div>;
   }
 
   return (
     <div>
-      <h1>Uçuş Sonuçları</h1>
+      <h1>Flight Results</h1>
       {flights.length === 0 ? (
-        <p>Hiçbir uçuş bulunamadı.</p>
+        <p>No flights found.</p>
       ) : (
         <ul>
           {flights.map((flight: Flight, index: number) => (
             <li key={index}>
               <p>
-                <strong>Uçuş:</strong> {flight.callsign}
+                <strong>Flight:</strong> {flight.callsign}
               </p>
               <p>
-                <strong>Havaalanı:</strong> {flight.origin_country}
+                <strong>Airport:</strong> {flight.origin_country}
               </p>
             </li>
           ))}

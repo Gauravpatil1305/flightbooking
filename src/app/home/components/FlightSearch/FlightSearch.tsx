@@ -1,9 +1,9 @@
-"use client"; // Mark this component as a Client Component
+"use client";
 
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { fetchFlights } from "@/redux/slices/flightSlice";
-import { useRouter } from "next/navigation"; // next/router yerine next/navigation kullanıyoruz
+import { useRouter } from "next/navigation";
 import type { AppDispatch } from "@/redux/store";
 
 const FlightSearch = () => {
@@ -14,20 +14,17 @@ const FlightSearch = () => {
   const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Havaalanı kodunu kontrol et
     if (airport.trim() === "") {
-      alert("Havaalanı kodunu girin!");
+      alert("Please enter the airport code!");
       return;
     }
 
     try {
-      // Redux'tan gelen action ile uçuş verilerini çekin
       await dispatch(fetchFlights(airport)).unwrap();
-      // Başarılı bir şekilde sonuçları aldıysanız, yeni sayfaya yönlendir
       router.push("/flights");
     } catch (error) {
-      console.error("Uçuş arama hatası:", error);
-      alert("Uçuş arama sırasında bir hata oluştu. Lütfen tekrar deneyin.");
+      console.error("Flight search error:", error);
+      alert("An error occurred while searching for flights. Please try again.");
     }
   };
 
@@ -36,12 +33,12 @@ const FlightSearch = () => {
       <form onSubmit={handleSearch}>
         <input
           type="text"
-          placeholder="Havaalanı Kodu"
+          placeholder="Airport Code"
           value={airport}
           onChange={(e) => setAirport(e.target.value)}
           required
         />
-        <button type="submit">Ara</button>
+        <button type="submit">Search</button>
       </form>
     </div>
   );
