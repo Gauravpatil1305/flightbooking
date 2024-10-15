@@ -683,6 +683,8 @@
                 margin-bottom: 35px;
                 .tab {
                     padding: 15px 25px;
+                    color: $dark-gray;
+                    font-weight: bold;
                     background-color: $very-light-gray;
                     border: solid 1px $red;
                     border-radius: 5px;
@@ -707,6 +709,7 @@
                     align-items: center;
                     gap: 5px;
                     padding: 10px;
+                    color: $dark-gray;
                     background-color: $very-light-gray;
                     border: 1px solid $red;
                     border-radius: 5px;
