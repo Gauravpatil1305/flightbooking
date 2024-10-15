@@ -256,7 +256,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(2, auto);
-            gap: 30px;
+            grid-gap: 30px;
             padding: 20px 0px;
             .cabin-card {
                 display: flex;
@@ -677,13 +677,14 @@
         .content {
             padding: 20px 0px;
             .tabs {
-                display: flex;
-                gap: 15px;
-                margin-bottom: 20px;
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                grid-gap: 30px;
+                margin-bottom: 35px;
                 .tab {
                     padding: 15px 25px;
                     background-color: $very-light-gray;
-                    border: none;
+                    border: solid 1px $red;
                     border-radius: 5px;
                     cursor: pointer;
                     font-size: 1rem;
@@ -697,9 +698,6 @@
                     }
                 }
             }
-            .destinationsContainer {
-                width: 100%;
-            }
             .countries {
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
@@ -708,16 +706,22 @@
                     display: flex;
                     align-items: center;
                     gap: 5px;
-                    padding: 15px;
-                    border: 1px solid $red;
-                    border-radius: 8px;
+                    padding: 10px;
                     background-color: $very-light-gray;
-                    &:hover {
-                        background-color: $dark-gray;
-                        cursor: pointer;
-                    }
+                    border: 1px solid $red;
+                    border-radius: 5px;
+                    font-size: 1rem;
                     .icon {
                         color: $red;
+                        font-size: 1.2rem;
+                    }
+                    &:hover {
+                        background-color: $red;
+                        color: $white;
+                        cursor: pointer;
+                        .icon {
+                            color: $white;
+                        }
                     }
                 }
             }
