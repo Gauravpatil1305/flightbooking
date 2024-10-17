@@ -38,6 +38,7 @@ const FlightSearch = () => {
             value={airport}
             onChange={(e) => setAirport(e.target.value)}
             required
+            aria-label="Airport Code"
           />
           <button type="submit">Search</button>
         </form>

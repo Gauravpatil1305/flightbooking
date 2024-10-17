@@ -3,12 +3,12 @@ import { getFlights } from "@/services/flightApi";
 import { Flight } from "@/types/typesFlight";
 
 export const fetchFlights = createAsyncThunk<Flight[], string>(
-    "flights/fetchFlights",
-    async (airport) => {
-      const response = await getFlights(airport);
-      return response;
-    }
-  );
+  "flights/fetchFlights",
+  async (airport) => {
+    const response = await getFlights(airport);
+    return response;
+  }
+);
 
 const flightSlice = createSlice({
   name: "flights",
