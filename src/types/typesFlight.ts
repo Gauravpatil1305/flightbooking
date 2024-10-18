@@ -5,7 +5,7 @@ export interface Flight {
   arrivalTime: string;
   from: string;
   to: string;
-  price: string;
+  price: number;
   passengers: number;
 }
 
