@@ -16,14 +16,55 @@ const FlightSearch = () => {
   useEffect(() => {
     const today = new Date().toISOString().split("T")[0];
     setDepartureDate(today);
+
+    const savedHistory = localStorage.getItem("searchHistory");
+    if (savedHistory) {
+      setSearchHistory(JSON.parse(savedHistory));
+    }
   }, []);
 
   const handleSearch = () => {
     const query = `/flights?fromCountry=${fromCountry}&toCountry=${toCountry}&departureDate=${departureDate}&returnDate=${returnDate}&tripType=${tripType}&passengerCount=${passengerCount}`;
 
-    setSearchHistory((prev) => [query, ...prev.slice(0, 2)]);
+    const newHistory = [query, ...searchHistory].slice(0, 3);
+    setSearchHistory(newHistory);
+    localStorage.setItem("searchHistory", JSON.stringify(newHistory));
 
     router.push(query);
+  };
+
+  const handleHistoryClick = (query: string) => {
+    const params = new URLSearchParams(query.split("?")[1]);
+    setFromCountry(params.get("fromCountry") || "");
+    setToCountry(params.get("toCountry") || "");
+    setDepartureDate(params.get("departureDate") || "");
+    setReturnDate(params.get("returnDate") || "");
+    setTripType(params.get("tripType") || "roundtrip");
+    setPassengerCount(Number(params.get("passengerCount")) || 1);
+  };
+
+  const formatSearchQuery = (query: string) => {
+    const params = new URLSearchParams(query.split("?")[1]);
+    const from = params.get("fromCountry");
+    const to = params.get("toCountry");
+    const departure = new Date(
+      params.get("departureDate")!
+    ).toLocaleDateString();
+    const returnDateParam = params.get("returnDate");
+    const returnDate = returnDateParam
+      ? new Date(returnDateParam).toLocaleDateString()
+      : null;
+    const passengerCount = params.get("passengerCount");
+
+    return (
+      <div>
+        <span>{from}</span>
+        <span>{to}</span>
+        <span>{departure}</span>
+        {returnDate && <span>{returnDate}</span>}
+        <span>{passengerCount}</span>
+      </div>
+    );
   };
 
   return (
@@ -103,7 +144,9 @@ const FlightSearch = () => {
           <h2>Search History</h2>
           <ul>
             {searchHistory.map((query, index) => (
-              <li key={index}>{query}</li>
+              <li key={index} onClick={() => handleHistoryClick(query)}>
+                {formatSearchQuery(query)}
+              </li>
             ))}
           </ul>
         </div>
