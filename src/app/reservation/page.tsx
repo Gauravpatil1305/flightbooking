@@ -29,7 +29,8 @@ const Reservation = () => {
           <p>
             Arrival: {new Date(outboundFlightData.arrivalTime).toLocaleString()}
           </p>
-          <p>Price: ${outboundFlightData.price}</p>
+          <p>Class: {outboundFlightData.class}</p>
+          <p>Price: ${outboundFlightData.totalPrice.toFixed(2)}</p>
           <p>Passengers: {outboundFlightData.passengers}</p>
         </div>
       )}
@@ -48,9 +49,14 @@ const Reservation = () => {
           <p>
             Arrival: {new Date(returnFlightData.arrivalTime).toLocaleString()}
           </p>
-          <p>Price: ${returnFlightData.price}</p>
+          <p>Class: {returnFlightData.class}</p>
+          <p>Price: ${returnFlightData.totalPrice.toFixed(2)}</p>
           <p>Passengers: {returnFlightData.passengers}</p>
         </div>
+      )}
+
+      {!outboundFlightData && !returnFlightData && (
+        <p>No flight information available.</p>
       )}
     </div>
   );

@@ -152,28 +152,34 @@ const FlightsPage = () => {
   };
 
   const handleContinue = () => {
+    const outboundFlightDetails = {
+      ...selectedOutboundFlight,
+      class: outboundClass,
+      totalPrice: outboundFlightPrice
+        ? outboundFlightPrice *
+          (outboundClass
+            ? classPriceMultiplier[flightClasses.indexOf(outboundClass)]
+            : 1)
+        : 0,
+    };
+
+    const returnFlightDetails = selectedReturnFlight
+      ? {
+          ...selectedReturnFlight,
+          class: returnClass,
+          totalPrice: returnFlightPrice
+            ? returnFlightPrice *
+              (returnClass
+                ? classPriceMultiplier[flightClasses.indexOf(returnClass)]
+                : 1)
+            : 0,
+        }
+      : null;
+
     const queryParams = new URLSearchParams({
-      outboundFlight: JSON.stringify({
-        ...selectedOutboundFlight,
-        class: outboundClass,
-        totalPrice: outboundFlightPrice
-          ? outboundFlightPrice *
-            (outboundClass
-              ? classPriceMultiplier[flightClasses.indexOf(outboundClass)]
-              : 1)
-          : 0,
-      }),
-      returnFlight: selectedReturnFlight
-        ? JSON.stringify({
-            ...selectedReturnFlight,
-            class: returnClass,
-            totalPrice: returnFlightPrice
-              ? returnFlightPrice *
-                (returnClass
-                  ? classPriceMultiplier[flightClasses.indexOf(returnClass)]
-                  : 1)
-              : 0,
-          })
+      outboundFlight: JSON.stringify(outboundFlightDetails),
+      returnFlight: returnFlightDetails
+        ? JSON.stringify(returnFlightDetails)
         : "",
     });
 
