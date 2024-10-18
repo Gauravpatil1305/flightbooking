@@ -1,14 +1,19 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { faker } from "@faker-js/faker";
 import { Flight } from "@/types/typesFlight";
 
 const FlightsPage = () => {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const [outboundFlights, setOutboundFlights] = useState<Flight[]>([]);
   const [returnFlights, setReturnFlights] = useState<Flight[]>([]);
+  const [selectedOutboundFlight, setSelectedOutboundFlight] =
+    useState<Flight | null>(null);
+  const [selectedReturnFlight, setSelectedReturnFlight] =
+    useState<Flight | null>(null);
 
   const fromCountry = searchParams.get("fromCountry") || "Unknown Origin";
   const toCountry = searchParams.get("toCountry") || "Unknown Destination";
@@ -45,7 +50,6 @@ const FlightsPage = () => {
         });
       }
 
-      console.log("Generated Flights:", flightData);
       if (isReturn) {
         setReturnFlights(flightData);
       } else {
@@ -68,6 +72,19 @@ const FlightsPage = () => {
     passengerCount,
   ]);
 
+  const handleContinue = () => {
+    if (selectedOutboundFlight) {
+      const queryParams = new URLSearchParams({
+        outboundFlight: JSON.stringify(selectedOutboundFlight),
+        returnFlight: selectedReturnFlight
+          ? JSON.stringify(selectedReturnFlight)
+          : "",
+      });
+
+      router.push(`/reservation?${queryParams.toString()}`);
+    }
+  };
+
   return (
     <div>
       <h1>Flight Results</h1>
@@ -85,7 +102,7 @@ const FlightsPage = () => {
             <strong>Price</strong> - <strong>Passengers</strong>
           </li>
           {outboundFlights.map((flight, index) => (
-            <li key={index}>
+            <li key={index} onClick={() => setSelectedOutboundFlight(flight)}>
               {flight.airline} - {flight.flightNumber} - {flight.from} -{" "}
               {flight.to} - {new Date(flight.departureTime).toLocaleString()} -{" "}
               {new Date(flight.arrivalTime).toLocaleString()} - ${flight.price}{" "}
@@ -109,7 +126,7 @@ const FlightsPage = () => {
                 - <strong>Price</strong> - <strong>Passengers</strong>
               </li>
               {returnFlights.map((flight, index) => (
-                <li key={index}>
+                <li key={index} onClick={() => setSelectedReturnFlight(flight)}>
                   {flight.airline} - {flight.flightNumber} - {flight.from} -{" "}
                   {flight.to} -{" "}
                   {new Date(flight.departureTime).toLocaleString()} -{" "}
@@ -122,6 +139,31 @@ const FlightsPage = () => {
             <p>No return flights found.</p>
           )}
         </>
+      )}
+
+      {selectedOutboundFlight && (
+        <div>
+          <h3>Selected Outbound Flight:</h3>
+          <p>
+            {selectedOutboundFlight.airline} -{" "}
+            {selectedOutboundFlight.flightNumber} from{" "}
+            {selectedOutboundFlight.from} to {selectedOutboundFlight.to}
+          </p>
+        </div>
+      )}
+
+      {selectedReturnFlight && (
+        <div>
+          <h3>Selected Return Flight:</h3>
+          <p>
+            {selectedReturnFlight.airline} - {selectedReturnFlight.flightNumber}{" "}
+            from {selectedReturnFlight.from} to {selectedReturnFlight.to}
+          </p>
+        </div>
+      )}
+
+      {selectedOutboundFlight && (
+        <button onClick={handleContinue}>Continue</button>
       )}
     </div>
   );
