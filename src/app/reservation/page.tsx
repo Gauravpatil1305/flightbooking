@@ -3,7 +3,7 @@
 import React from "react";
 import { useSearchParams } from "next/navigation";
 
-const Reservation = () => {
+const ReservationPage = () => {
   const searchParams = useSearchParams();
   const outboundFlight = searchParams.get("outboundFlight");
   const returnFlight = searchParams.get("returnFlight");
@@ -62,4 +62,4 @@ const Reservation = () => {
   );
 };
 
-export default Reservation;
+export default ReservationPage;

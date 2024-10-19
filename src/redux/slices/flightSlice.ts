@@ -1,38 +1,48 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getFlights } from "@/services/flightApi";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { searchFlights } from "@/services/flightApi";
 import { Flight } from "@/types/typesFlight";
 
-export const fetchFlights = createAsyncThunk<Flight[], string>(
-  "flights/fetchFlights",
-  async (airport) => {
-    const response = await getFlights(airport);
-    return response;
-  }
-);
+interface FlightState {
+  outboundFlights: Flight[];
+  returnFlights: Flight[];
+  isLoading: boolean;
+  error: string | null;
+  searchHistory: string[];
+}
+
+const initialState: FlightState = {
+  outboundFlights: [],
+  returnFlights: [],
+  isLoading: false,
+  error: null,
+  searchHistory: [],
+};
 
 const flightSlice = createSlice({
   name: "flights",
-  initialState: {
-    results: [] as Flight[],
-    loading: false,
-    error: null as string | null,
+  initialState,
+  reducers: {
+    setSearchHistory(state, action: PayloadAction<string[]>) {
+      state.searchHistory = action.payload;
+    },
   },
-  reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchFlights.pending, (state) => {
-        state.loading = true;
+      .addCase(searchFlights.pending, (state) => {
+        state.isLoading = true;
         state.error = null;
       })
-      .addCase(fetchFlights.fulfilled, (state, action) => {
-        state.loading = false;
-        state.results = action.payload;
+      .addCase(searchFlights.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.outboundFlights = action.payload.outboundFlights;
+        state.returnFlights = action.payload.returnFlights;
       })
-      .addCase(fetchFlights.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message || null;
+      .addCase(searchFlights.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message || "Error fetching flights";
       });
   },
 });
 
+export const { setSearchHistory } = flightSlice.actions;
 export default flightSlice.reducer;

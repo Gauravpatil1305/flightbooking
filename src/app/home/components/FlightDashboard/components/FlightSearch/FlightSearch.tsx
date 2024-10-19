@@ -2,32 +2,45 @@
 
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchHistory } from "@/redux/slices/flightSlice";
+
+interface RootState {
+  flight: {
+    searchHistory: string[];
+  };
+}
 
 const FlightSearch = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
+  const storedSearchHistory = useSelector(
+    (state: RootState) => state.flight.searchHistory
+  );
   const [fromCountry, setFromCountry] = useState("");
   const [toCountry, setToCountry] = useState("");
   const [departureDate, setDepartureDate] = useState("");
   const [returnDate, setReturnDate] = useState("");
   const [tripType, setTripType] = useState("roundtrip");
   const [passengerCount, setPassengerCount] = useState(1);
-  const [searchHistory, setSearchHistory] = useState<string[]>([]);
 
   useEffect(() => {
     const today = new Date().toISOString().split("T")[0];
     setDepartureDate(today);
 
-    const savedHistory = localStorage.getItem("searchHistory");
-    if (savedHistory) {
-      setSearchHistory(JSON.parse(savedHistory));
+    if (storedSearchHistory.length === 0) {
+      const savedHistory = localStorage.getItem("searchHistory");
+      if (savedHistory) {
+        dispatch(setSearchHistory(JSON.parse(savedHistory)));
+      }
     }
-  }, []);
+  }, [storedSearchHistory, dispatch]);
 
   const handleSearch = () => {
     const query = `/flights?fromCountry=${fromCountry}&toCountry=${toCountry}&departureDate=${departureDate}&returnDate=${returnDate}&tripType=${tripType}&passengerCount=${passengerCount}`;
 
-    const newHistory = [query, ...searchHistory].slice(0, 3);
-    setSearchHistory(newHistory);
+    const newHistory = [query, ...storedSearchHistory].slice(0, 3);
+    dispatch(setSearchHistory(newHistory));
     localStorage.setItem("searchHistory", JSON.stringify(newHistory));
 
     router.push(query);
@@ -139,11 +152,11 @@ const FlightSearch = () => {
       </div>
       <button onClick={handleSearch}>Search</button>
 
-      {searchHistory.length > 0 && (
+      {storedSearchHistory.length > 0 && (
         <div>
           <h2>Search History</h2>
           <ul>
-            {searchHistory.map((query, index) => (
+            {storedSearchHistory.map((query, index) => (
               <li key={index} onClick={() => handleHistoryClick(query)}>
                 {formatSearchQuery(query)}
               </li>
