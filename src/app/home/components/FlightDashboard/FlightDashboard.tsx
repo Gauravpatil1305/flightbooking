@@ -26,19 +26,23 @@ const FlightDashboard: React.FC = () => {
 
   return (
     <div className="flight-dashboard">
-      <div className="tabs">
-        <button onClick={() => setActiveTab("searchFlights")}>
-          Search Flights
-        </button>
-        <button onClick={() => setActiveTab("checkIn")}>Check-In</button>
-        <button onClick={() => setActiveTab("manageMyBooking")}>
-          Manage My Booking
-        </button>
-        <button onClick={() => setActiveTab("flightStatus")}>
-          Flight Status
-        </button>
+      <div className="container">
+        <div className="content">
+          <div className="tabs">
+            <button onClick={() => setActiveTab("searchFlights")}>
+              Search Flights
+            </button>
+            <button onClick={() => setActiveTab("checkIn")}>Check-In</button>
+            <button onClick={() => setActiveTab("manageMyBooking")}>
+              Manage My Booking
+            </button>
+            <button onClick={() => setActiveTab("flightStatus")}>
+              Flight Status
+            </button>
+          </div>
+          <div className="tab-content">{renderTabContent()}</div>
+        </div>
       </div>
-      <div className="tab-content">{renderTabContent()}</div>
     </div>
   );
 };
