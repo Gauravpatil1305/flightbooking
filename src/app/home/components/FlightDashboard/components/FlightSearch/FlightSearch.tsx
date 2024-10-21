@@ -4,6 +4,13 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchHistory } from "@/redux/slices/flightSlice";
+import FromCountry from "./components/FromCountry/FromCountry";
+import ToCountry from "./components/ToCountry/ToCountry";
+import DepartureDate from "./components/DepartureDate/DepartureDate";
+import ReturnDate from "./components/ReturnDate/ReturnDate";
+import TripType from "./components/TripType/TripType";
+import PassengerCount from "./components/PassengerCount/PassengerCount";
+import SearchHistory from "./components/SearchHistory/SearchHistory";
 
 interface RootState {
   flight: {
@@ -83,86 +90,32 @@ const FlightSearch = () => {
   return (
     <div>
       <h1>Search Flights</h1>
-      <div>
-        <label>
-          From Country:
-          <input
-            type="text"
-            value={fromCountry}
-            onChange={(e) => setFromCountry(e.target.value)}
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          To Country:
-          <input
-            type="text"
-            value={toCountry}
-            onChange={(e) => setToCountry(e.target.value)}
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          Departure Date:
-          <input
-            type="date"
-            value={departureDate}
-            min={new Date().toISOString().split("T")[0]}
-            onChange={(e) => setDepartureDate(e.target.value)}
-          />
-        </label>
-      </div>
+      <FromCountry fromCountry={fromCountry} setFromCountry={setFromCountry} />
+      <ToCountry toCountry={toCountry} setToCountry={setToCountry} />
+      <DepartureDate
+        departureDate={departureDate}
+        setDepartureDate={setDepartureDate}
+      />
       {tripType === "roundtrip" && (
-        <div>
-          <label>
-            Return Date:
-            <input
-              type="date"
-              value={returnDate}
-              min={departureDate}
-              onChange={(e) => setReturnDate(e.target.value)}
-            />
-          </label>
-        </div>
+        <ReturnDate
+          returnDate={returnDate}
+          setReturnDate={setReturnDate}
+          departureDate={departureDate}
+        />
       )}
-      <div>
-        <label>
-          Trip Type:
-          <select
-            value={tripType}
-            onChange={(e) => setTripType(e.target.value)}
-          >
-            <option value="roundtrip">Round Trip</option>
-            <option value="oneway">One Way</option>
-          </select>
-        </label>
-      </div>
-      <div>
-        <label>
-          Passenger Count:
-          <input
-            type="number"
-            value={passengerCount}
-            onChange={(e) => setPassengerCount(Number(e.target.value))}
-            min="1"
-          />
-        </label>
-      </div>
+      <TripType tripType={tripType} setTripType={setTripType} />
+      <PassengerCount
+        passengerCount={passengerCount}
+        setPassengerCount={setPassengerCount}
+      />
       <button onClick={handleSearch}>Search</button>
 
       {storedSearchHistory.length > 0 && (
-        <div>
-          <h2>Search History</h2>
-          <ul>
-            {storedSearchHistory.map((query, index) => (
-              <li key={index} onClick={() => handleHistoryClick(query)}>
-                {formatSearchQuery(query)}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <SearchHistory
+          storedSearchHistory={storedSearchHistory}
+          handleHistoryClick={handleHistoryClick}
+          formatSearchQuery={formatSearchQuery}
+        />
       )}
     </div>
   );
