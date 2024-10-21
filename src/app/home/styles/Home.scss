@@ -819,5 +819,44 @@
         position: relative;
         z-index: 1;
         background-color: $white;
+        .content {
+            padding-top: 40px;
+            padding-bottom: 10px;
+            .tab-wrapper {
+                border-radius: 8px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                .tabs {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    .tab-title {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        padding: 25px 10px;
+                        background-color: $very-light-gray;
+                        border-left: solid 1px $light-gray;
+                        border-right: solid 1px $light-gray;
+                        border-bottom: solid 2px $very-light-gray;
+                        &:first-child {
+                            border-left: none;
+                            border-radius: 8px 0px 0px 0px;
+                        }
+                        &:last-child {
+                            border-right: none;
+                            border-radius: 0px 8px 0px 0px;
+                        }
+                        &.active-tab {
+                            background-color: $white;
+                            border-bottom: solid 2px $red;
+                        }
+                        &:hover {
+                            background-color: $white;
+                            border-bottom: solid 2px $red;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

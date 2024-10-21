@@ -5,6 +5,7 @@ import FlightSearch from "./components/FlightSearch/FlightSearch";
 import CheckIn from "./components/CheckIn/CheckIn";
 import ManageMyBooking from "./components/ManageMyBooking/ManageMyBooking";
 import FlightStatus from "./components/FlightStatus/FlightStatus";
+import { Icon } from "@iconify/react";
 
 const FlightDashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>("searchFlights");
@@ -28,19 +29,43 @@ const FlightDashboard: React.FC = () => {
     <div className="flight-dashboard">
       <div className="container">
         <div className="content">
-          <div className="tabs">
-            <button onClick={() => setActiveTab("searchFlights")}>
-              Search Flights
-            </button>
-            <button onClick={() => setActiveTab("checkIn")}>Check-In</button>
-            <button onClick={() => setActiveTab("manageMyBooking")}>
-              Manage My Booking
-            </button>
-            <button onClick={() => setActiveTab("flightStatus")}>
-              Flight Status
-            </button>
+          <div className="tab-wrapper">
+            <div className="tabs">
+              <div
+                className={`tab-title ${
+                  activeTab === "searchFlights" ? "active-tab" : ""
+                }`}
+                onClick={() => setActiveTab("searchFlights")}
+              >
+                <Icon icon="mdi:airplane-search" /> Search Flights
+              </div>
+              <div
+                className={`tab-title ${
+                  activeTab === "checkIn" ? "active-tab" : ""
+                }`}
+                onClick={() => setActiveTab("checkIn")}
+              >
+                <Icon icon="mdi:ticket-confirmation" /> Check-In
+              </div>
+              <div
+                className={`tab-title ${
+                  activeTab === "manageMyBooking" ? "active-tab" : ""
+                }`}
+                onClick={() => setActiveTab("manageMyBooking")}
+              >
+                <Icon icon="mdi:airplane-cog" /> Manage My Booking
+              </div>
+              <div
+                className={`tab-title ${
+                  activeTab === "flightStatus" ? "active-tab" : ""
+                }`}
+                onClick={() => setActiveTab("flightStatus")}
+              >
+                <Icon icon="mdi:clock-fast" /> Flight Status
+              </div>
+            </div>
+            <div className="tab-content">{renderTabContent()}</div>
           </div>
-          <div className="tab-content">{renderTabContent()}</div>
         </div>
       </div>
     </div>
