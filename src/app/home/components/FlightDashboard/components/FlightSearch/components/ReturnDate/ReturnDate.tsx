@@ -20,6 +20,7 @@ const ReturnDate: React.FC<ReturnDateProps> = ({
           value={returnDate}
           min={departureDate}
           onChange={(e) => setReturnDate(e.target.value)}
+          placeholder="Return Date"
         />
       </label>
     </div>

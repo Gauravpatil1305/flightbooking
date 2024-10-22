@@ -77,7 +77,7 @@ const FlightSearch = () => {
     const passengerCount = params.get("passengerCount");
 
     return (
-      <div>
+      <div className="search-history-item">
         <span>{from}</span>
         <span>{to}</span>
         <span>{departure}</span>
@@ -88,28 +88,31 @@ const FlightSearch = () => {
   };
 
   return (
-    <div>
-      <h1>Search Flights</h1>
-      <FromCountry fromCountry={fromCountry} setFromCountry={setFromCountry} />
-      <ToCountry toCountry={toCountry} setToCountry={setToCountry} />
-      <DepartureDate
-        departureDate={departureDate}
-        setDepartureDate={setDepartureDate}
-      />
-      {tripType === "roundtrip" && (
-        <ReturnDate
-          returnDate={returnDate}
-          setReturnDate={setReturnDate}
-          departureDate={departureDate}
+    <div className="flight-search-wrapper">
+      <div className="flight-search">
+        <FromCountry
+          fromCountry={fromCountry}
+          setFromCountry={setFromCountry}
         />
-      )}
-      <TripType tripType={tripType} setTripType={setTripType} />
-      <PassengerCount
-        passengerCount={passengerCount}
-        setPassengerCount={setPassengerCount}
-      />
-      <button onClick={handleSearch}>Search</button>
-
+        <ToCountry toCountry={toCountry} setToCountry={setToCountry} />
+        <DepartureDate
+          departureDate={departureDate}
+          setDepartureDate={setDepartureDate}
+        />
+        {tripType === "roundtrip" && (
+          <ReturnDate
+            returnDate={returnDate}
+            setReturnDate={setReturnDate}
+            departureDate={departureDate}
+          />
+        )}
+        <TripType tripType={tripType} setTripType={setTripType} />
+        <PassengerCount
+          passengerCount={passengerCount}
+          setPassengerCount={setPassengerCount}
+        />
+        <button onClick={handleSearch}>Search</button>
+      </div>
       {storedSearchHistory.length > 0 && (
         <SearchHistory
           storedSearchHistory={storedSearchHistory}

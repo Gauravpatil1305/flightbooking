@@ -11,14 +11,12 @@ const FromCountry: React.FC<FromCountryProps> = ({
 }) => {
   return (
     <div>
-      <label>
-        From Country:
-        <input
-          type="text"
-          value={fromCountry}
-          onChange={(e) => setFromCountry(e.target.value)}
-        />
-      </label>
+      <input
+        type="text"
+        value={fromCountry}
+        onChange={(e) => setFromCountry(e.target.value)}
+        placeholder="From"
+      />
     </div>
   );
 };

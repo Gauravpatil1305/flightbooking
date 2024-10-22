@@ -8,14 +8,12 @@ interface ToCountryProps {
 const ToCountry: React.FC<ToCountryProps> = ({ toCountry, setToCountry }) => {
   return (
     <div>
-      <label>
-        To Country:
-        <input
-          type="text"
-          value={toCountry}
-          onChange={(e) => setToCountry(e.target.value)}
-        />
-      </label>
+      <input
+        type="text"
+        value={toCountry}
+        onChange={(e) => setToCountry(e.target.value)}
+        placeholder="To"
+      />
     </div>
   );
 };

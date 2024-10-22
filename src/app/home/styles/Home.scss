@@ -832,12 +832,16 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        gap: 5px;
                         cursor: pointer;
                         padding: 25px 10px;
                         background-color: $very-light-gray;
                         border-left: solid 1px $light-gray;
                         border-right: solid 1px $light-gray;
-                        border-bottom: solid 2px $very-light-gray;
+                        border-bottom: solid 2px $light-gray;
+                        color: $dark-gray;
+                        font-size: 1.1rem;
+                        font-weight: 600;
                         &:first-child {
                             border-left: none;
                             border-radius: 8px 0px 0px 0px;
@@ -853,6 +857,44 @@
                         &:hover {
                             background-color: $white;
                             border-bottom: solid 2px $red;
+                        }
+                        svg {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }
+                .tab-content {
+                    .flight-search-wrapper {
+                        .flight-search {
+                            display: grid;
+                            grid-template-columns: repeat(7, 1fr);
+                            grid-gap: 10px;
+                            align-items: center;
+                            input, select {
+                                width: 100%;
+                                padding: 10px;
+                                border: 1px solid $light-gray;
+                                border-radius: 5px;
+                                font-size: 1rem;
+                                &:focus {
+                                    border-color: $red;
+                                    outline: none;
+                                }
+                            }
+                            button {
+                                background-color: $red;
+                                color: $white;
+                                font-size: 1rem;
+                                padding: 10px 20px;
+                                border: none;
+                                border-radius: 5px;
+                                cursor: pointer;
+                                transition: background-color 0.3s ease;
+                                &:hover {
+                                    background-color: $red;
+                                }
+                            }
                         }
                     }
                 }

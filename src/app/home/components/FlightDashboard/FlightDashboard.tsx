@@ -45,7 +45,7 @@ const FlightDashboard: React.FC = () => {
                 }`}
                 onClick={() => setActiveTab("checkIn")}
               >
-                <Icon icon="mdi:ticket-confirmation" /> Check-In
+                <Icon icon="mdi:airplane-check" /> Check-In
               </div>
               <div
                 className={`tab-title ${
@@ -53,7 +53,7 @@ const FlightDashboard: React.FC = () => {
                 }`}
                 onClick={() => setActiveTab("manageMyBooking")}
               >
-                <Icon icon="mdi:airplane-cog" /> Manage My Booking
+                <Icon icon="mdi:airplane-cog" /> Manage Booking
               </div>
               <div
                 className={`tab-title ${
@@ -61,7 +61,7 @@ const FlightDashboard: React.FC = () => {
                 }`}
                 onClick={() => setActiveTab("flightStatus")}
               >
-                <Icon icon="mdi:clock-fast" /> Flight Status
+                <Icon icon="mdi:airplane-clock" /> Flight Status
               </div>
             </div>
             <div className="tab-content">{renderTabContent()}</div>
