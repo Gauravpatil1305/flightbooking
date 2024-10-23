@@ -12,11 +12,11 @@ const SearchHistory: React.FC<SearchHistoryProps> = ({
   formatSearchQuery,
 }) => {
   return (
-    <div>
-      <h2>Search History</h2>
-      <ul>
+    <div className="search-history">
+      <span className="search-history-title">Recently Searched</span>
+      <ul className="search-history-list">
         {storedSearchHistory.map((query, index) => (
-          <li key={index} onClick={() => handleHistoryClick(query)}>
+          <li className="search-history-item" key={index} onClick={() => handleHistoryClick(query)}>
             {formatSearchQuery(query)}
           </li>
         ))}

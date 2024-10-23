@@ -11,6 +11,7 @@ import ReturnDate from "./components/ReturnDate/ReturnDate";
 import TripType from "./components/TripType/TripType";
 import PassengerCount from "./components/PassengerCount/PassengerCount";
 import SearchHistory from "./components/SearchHistory/SearchHistory";
+import { Icon } from "@iconify/react";
 
 interface RootState {
   flight: {
@@ -77,12 +78,29 @@ const FlightSearch = () => {
     const passengerCount = params.get("passengerCount");
 
     return (
-      <div className="search-history-item">
-        <span>{from}</span>
-        <span>{to}</span>
-        <span>{departure}</span>
-        {returnDate && <span>{returnDate}</span>}
-        <span>{passengerCount}</span>
+      <div className="search-history-item-content">
+        <div className="search-history-route">
+          <span className="search-history-from">{from}</span>
+          <Icon icon="mdi:airplane-takeoff" className="search-history-icon" />
+          <span className="search-history-to">{to}</span>
+        </div>
+        <div className="search-history-details">
+          <div className="search-history-date">
+            <span className="search-history-departure">{departure}</span>
+            <Icon
+              icon="mdi:calendar-expand-horizontal"
+              className="search-history-date-icon"
+            />
+            {returnDate && (
+              <span className="search-history-return">{returnDate}</span>
+            )}
+          </div>
+          <div className="search-history-passenger">
+            <span className="search-history-passenger-content">
+              {passengerCount} Passenger
+            </span>
+          </div>
+        </div>
       </div>
     );
   };

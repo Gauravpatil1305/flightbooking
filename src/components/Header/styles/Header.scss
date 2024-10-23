@@ -88,6 +88,8 @@
                             color: $white;
                             font-size: 1.15rem;
                             padding: 4px 8px;
+                            transition-duration: 200ms;
+                            border-radius: 7px;
                             @media (max-width: $md-breakpoint) {
                                 padding: 10px 15px;
                             }
