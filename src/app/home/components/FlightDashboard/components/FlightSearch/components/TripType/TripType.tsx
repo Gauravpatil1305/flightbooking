@@ -6,15 +6,31 @@ interface TripTypeProps {
 }
 
 const TripType: React.FC<TripTypeProps> = ({ tripType, setTripType }) => {
+  const isRoundTrip = tripType === "roundtrip";
+
   return (
-    <div>
-      <label>
-        Trip Type:
-        <select value={tripType} onChange={(e) => setTripType(e.target.value)}>
-          <option value="roundtrip">Round Trip</option>
-          <option value="oneway">One Way</option>
-        </select>
-      </label>
+    <div className="toggle-container">
+      <div
+        className={`toggle-bg ${isRoundTrip ? "toggle-left" : "toggle-right"}`}
+      >
+        <div className="toggle-text">
+          {isRoundTrip ? "Round Trip" : "One Way"}
+        </div>
+      </div>
+      <div className="toggle-options">
+        <span
+          className={`option option-trip ${isRoundTrip ? "active" : ""}`}
+          onClick={() => setTripType("roundtrip")}
+        >
+          Round Trip
+        </span>
+        <span
+          className={`option option-one ${!isRoundTrip ? "active" : ""}`}
+          onClick={() => setTripType("oneway")}
+        >
+          One Way
+        </span>
+      </div>
     </div>
   );
 };

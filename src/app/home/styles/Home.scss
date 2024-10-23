@@ -870,32 +870,97 @@
                         padding: 30px;
                         border-radius: 8px;
                         .flight-search {
-                            display: grid;
-                            grid-template-columns: repeat(7, 1fr);
-                            grid-gap: 10px;
-                            align-items: center;
-                            input, select {
-                                width: 100%;
-                                padding: 10px;
-                                border: 1px solid $light-gray;
-                                border-radius: 5px;
-                                font-size: 1rem;
-                                &:focus {
-                                    border-color: $red;
-                                    outline: none;
-                                }
+                            .trip-type-selector {
+                                margin-bottom: 15px;
+                                border-radius: 8px;
+                                .toggle-container {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    position: relative;
+                                    width: 320px;
+                                    height: 40px;
+                                    background-color: $very-light-gray;
+                                    border: solid 1px $red;
+                                    border-radius: 8px;
+                                    padding: 5px;
+                                    cursor: pointer;
+                                    user-select: none;
+                                    .toggle-bg {
+                                        position: absolute;
+                                        left: 5px;
+                                        width: 50%;
+                                        height: 30px;
+                                        background-color: $red;
+                                        border-radius: 4px;
+                                        transition: all 0.4s ease;
+                                        line-height: 0;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        color: $white;
+                                        &.toggle-left {
+                                            left: 5px;
+                                        }
+                                        &.toggle-right {
+                                            left: calc(50% - 5px);
+                                        }
+                                        .toggle-text {
+                                            font-size: 0.8rem;
+                                        }
+                                    }
+                                    .toggle-options {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        width: 100%;
+                                        padding: 0 10px;
+                                        .option {
+                                            font-size: 0.8rem;
+                                            color: $dark-gray;
+                                            transition: color 0.3s;
+                                            cursor: pointer;
+                                            flex: 1;
+                                            &.option-trip {
+                                                text-align: center;
+                                            }
+                                            &.option-one {
+                                                text-align: center;
+                                            }
+                                            &.active {
+                                                color: $red;
+                                            }
+                                        }
+                                    }
+                                }                                 
                             }
-                            button {
-                                background-color: $red;
-                                color: $white;
-                                font-size: 1rem;
-                                padding: 10px 20px;
-                                border: none;
-                                border-radius: 5px;
-                                cursor: pointer;
-                                transition: background-color 0.3s ease;
-                                &:hover {
+                            .flight-search-fields {
+                                display: grid;
+                                grid-template-columns: repeat(6, 1fr);
+                                grid-gap: 10px;
+                                align-items: center;
+                                input, select {
+                                    width: 100%;
+                                    padding: 10px;
+                                    border: 1px solid $light-gray;
+                                    border-radius: 5px;
+                                    font-size: 1rem;
+                                    &:focus {
+                                        border-color: $red;
+                                        outline: none;
+                                    }
+                                }
+                                button {
                                     background-color: $red;
+                                    color: $white;
+                                    font-size: 1rem;
+                                    padding: 10px 20px;
+                                    border: none;
+                                    border-radius: 5px;
+                                    cursor: pointer;
+                                    transition: background-color 0.3s ease;
+                                    &:hover {
+                                        background-color: $red;
+                                    }
                                 }
                             }
                         }

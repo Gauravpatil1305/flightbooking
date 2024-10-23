@@ -47,7 +47,7 @@ const FlightSearch = () => {
   const handleSearch = () => {
     const query = `/flights?fromCountry=${fromCountry}&toCountry=${toCountry}&departureDate=${departureDate}&returnDate=${returnDate}&tripType=${tripType}&passengerCount=${passengerCount}`;
 
-    const newHistory = [query, ...storedSearchHistory].slice(0, 3);
+    const newHistory = [query, ...storedSearchHistory].slice(0, 4);
     dispatch(setSearchHistory(newHistory));
     localStorage.setItem("searchHistory", JSON.stringify(newHistory));
 
@@ -108,28 +108,47 @@ const FlightSearch = () => {
   return (
     <div className="flight-search-wrapper">
       <div className="flight-search">
-        <FromCountry
-          fromCountry={fromCountry}
-          setFromCountry={setFromCountry}
-        />
-        <ToCountry toCountry={toCountry} setToCountry={setToCountry} />
-        <DepartureDate
-          departureDate={departureDate}
-          setDepartureDate={setDepartureDate}
-        />
-        {tripType === "roundtrip" && (
-          <ReturnDate
-            returnDate={returnDate}
-            setReturnDate={setReturnDate}
-            departureDate={departureDate}
+        <div className="trip-type-selector">
+          <TripType tripType={tripType} setTripType={setTripType} />
+        </div>
+        <div className="flight-search-fields">
+          <FromCountry
+            fromCountry={fromCountry}
+            setFromCountry={setFromCountry}
           />
-        )}
-        <TripType tripType={tripType} setTripType={setTripType} />
-        <PassengerCount
-          passengerCount={passengerCount}
-          setPassengerCount={setPassengerCount}
-        />
-        <button onClick={handleSearch}>Search</button>
+          <ToCountry toCountry={toCountry} setToCountry={setToCountry} />
+          <DepartureDate
+            departureDate={departureDate}
+            setDepartureDate={setDepartureDate}
+          />
+          {tripType === "roundtrip" ? (
+            <ReturnDate
+              returnDate={returnDate}
+              setReturnDate={setReturnDate}
+              departureDate={departureDate}
+            />
+          ) : (
+            <div
+              style={{
+                opacity: 0.5,
+                pointerEvents: "none",
+              }}
+            >
+              <ReturnDate
+                returnDate={returnDate}
+                setReturnDate={setReturnDate}
+                departureDate={departureDate}
+              />
+            </div>
+          )}
+          <PassengerCount
+            passengerCount={passengerCount}
+            setPassengerCount={setPassengerCount}
+          />
+          <button className="search-button" onClick={handleSearch}>
+            Search
+          </button>
+        </div>
       </div>
       {storedSearchHistory.length > 0 && (
         <SearchHistory
