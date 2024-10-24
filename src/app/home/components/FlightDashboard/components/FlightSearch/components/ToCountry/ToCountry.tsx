@@ -7,13 +7,18 @@ interface ToCountryProps {
 
 const ToCountry: React.FC<ToCountryProps> = ({ toCountry, setToCountry }) => {
   return (
-    <div>
+    <div className="input-container">
       <input
         type="text"
         value={toCountry}
         onChange={(e) => setToCountry(e.target.value)}
-        placeholder="To"
+        placeholder=" "
+        className="floating-input"
+        id="toCountry"
       />
+      <label htmlFor="toCountry" className="floating-label">
+        To
+      </label>
     </div>
   );
 };

@@ -871,7 +871,7 @@
                         border-radius: 8px;
                         .flight-search {
                             .trip-type-selector {
-                                margin-bottom: 15px;
+                                margin-bottom: 20px;
                                 border-radius: 8px;
                                 .toggle-container {
                                     display: flex;
@@ -938,6 +938,44 @@
                                 grid-template-columns: repeat(6, 1fr);
                                 grid-gap: 10px;
                                 align-items: center;
+                                .input-container {
+                                    position: relative;
+                                    width: 100%;
+                                    .floating-input {
+                                        width: 100%;
+                                        padding: 20px;
+                                        font-size: 1rem;
+                                        background-color: $white;
+                                        border: 1px solid $light-gray;
+                                        border-radius: 4px;
+                                        outline: none;
+                                        transition: border-color 0.3s ease;
+                                        &:focus {
+                                            border-color: $red;
+                                            background-color: $white;
+                                        }
+                                    }
+                                    .floating-label {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 10px;
+                                        font-size: 1rem;
+                                        color: $dark-gray;
+                                        pointer-events: none;
+                                        background-color: transparent;
+                                        padding: 0 4px;
+                                        transition: all 0.3s ease;
+                                        transform: translateY(-50%);
+                                    }
+                                    .floating-input:focus + .floating-label,
+                                    .floating-input:not(:placeholder-shown) + .floating-label {
+                                        top: 0px;
+                                        left: 15px;
+                                        font-size: 0.8rem;
+                                        color: $red;
+                                        background-color: $white;
+                                    }
+                                }
                                 input, select {
                                     width: 100%;
                                     padding: 10px;
@@ -965,7 +1003,7 @@
                             }
                         }
                         .search-history {
-                            margin-top: 15px;
+                            margin-top: 20px;
                             .search-history-title {
                                 color: $dark-gray;
                                 font-size: 0.8rem;
