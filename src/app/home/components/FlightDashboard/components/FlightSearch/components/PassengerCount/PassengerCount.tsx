@@ -10,15 +10,18 @@ const PassengerCount: React.FC<PassengerCountProps> = ({
   setPassengerCount,
 }) => {
   return (
-    <div>
-      <label>
-        Passenger Count:
-        <input
-          type="number"
-          value={passengerCount}
-          min="1"
-          onChange={(e) => setPassengerCount(Number(e.target.value))}
-        />
+    <div className="input-container">
+      <input
+        type="number"
+        value={passengerCount}
+        min="1"
+        onChange={(e) => setPassengerCount(Number(e.target.value))}
+        placeholder=" "
+        className="floating-input"
+        id="passengerCount"
+      />
+      <label htmlFor="passengerCount" className="floating-label">
+        Passenger Count
       </label>
     </div>
   );
