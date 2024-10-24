@@ -87,10 +87,12 @@ const FlightSearch = () => {
         <div className="search-history-details">
           <div className="search-history-date">
             <span className="search-history-departure">{departure}</span>
-            <Icon
-              icon="mdi:calendar-expand-horizontal"
-              className="search-history-date-icon"
-            />
+            {returnDate && (
+              <Icon
+                icon="mdi:calendar-expand-horizontal"
+                className="search-history-date-icon"
+              />
+            )}
             {returnDate && (
               <span className="search-history-return">{returnDate}</span>
             )}
@@ -146,6 +148,7 @@ const FlightSearch = () => {
             setPassengerCount={setPassengerCount}
           />
           <button className="search-button" onClick={handleSearch}>
+            <Icon icon="mdi:search" />
             Search
           </button>
         </div>
