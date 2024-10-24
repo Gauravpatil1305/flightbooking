@@ -12,16 +12,18 @@ const ReturnDate: React.FC<ReturnDateProps> = ({
   departureDate,
 }) => {
   return (
-    <div>
-      <label>
-        Return Date:
-        <input
-          type="date"
-          value={returnDate}
-          min={departureDate}
-          onChange={(e) => setReturnDate(e.target.value)}
-          placeholder="Return Date"
-        />
+    <div className="input-container">
+      <input
+        type="date"
+        value={returnDate}
+        min={departureDate}
+        onChange={(e) => setReturnDate(e.target.value)}
+        placeholder=" "
+        className="floating-input"
+        id="returnDate"
+      />
+      <label htmlFor="returnDate" className="floating-label">
+        Return Date
       </label>
     </div>
   );
