@@ -1129,6 +1129,78 @@
                             }
                         }
                     }
+                    .manage-booking-wrapper {
+                        padding: 30px;
+                        border-radius: 8px;
+                        .manage-booking {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            grid-gap: 10px;
+                            .input-container {
+                                position: relative;
+                                width: 100%;
+                                .floating-input {
+                                    width: 100%;
+                                    max-height: 60px;
+                                    padding: 20px;
+                                    font-size: 1rem;
+                                    background-color: $white;
+                                    border: 1px solid $light-gray;
+                                    border-radius: 4px;
+                                    outline: none;
+                                    transition: border-color 0.3s ease;
+                                    &:focus {
+                                        border-color: $red;
+                                        background-color: $white;
+                                    }
+                                }
+                                .floating-label {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 10px;
+                                    font-size: 1rem;
+                                    color: $dark-gray;
+                                    pointer-events: none;
+                                    background-color: transparent;
+                                    padding: 0 4px;
+                                    transition: all 0.3s ease;
+                                    transform: translateY(-50%);
+                                }
+                                .floating-input:focus + .floating-label,
+                                .floating-input:not(:placeholder-shown) + .floating-label {
+                                    top: 0px;
+                                    left: 15px;
+                                    font-size: 0.8rem;
+                                    color: $red;
+                                    background-color: $white;
+                                }
+                            }
+                            .manage-booking-button {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 5px;
+                                font-size: 1.2rem;
+                                padding: 20px;
+                                max-height: 60px;
+                                background-color: $red;
+                                color:  $white;
+                                border-radius: 4px;
+                                text-decoration: none;
+                                transition: background-color 0.3s ease;
+                                border: solid 1px transparent;
+                                cursor: pointer;
+                                &:hover {
+                                    background-color: $white;
+                                    color: $red;
+                                    border-color: $red;
+                                }
+                                svg {
+                                    font-size: 1.5rem;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
