@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 interface DepartureTimeProps {
   departureTime: string;
@@ -9,6 +9,14 @@ const DepartureTime: React.FC<DepartureTimeProps> = ({
   departureTime,
   setDepartureTime,
 }) => {
+  useEffect(() => {
+    if (!departureTime) {
+      const now = new Date();
+      const currentTime = now.toTimeString().slice(0, 5);
+      setDepartureTime(currentTime);
+    }
+  }, [departureTime, setDepartureTime]);
+
   return (
     <div className="input-container">
       <input

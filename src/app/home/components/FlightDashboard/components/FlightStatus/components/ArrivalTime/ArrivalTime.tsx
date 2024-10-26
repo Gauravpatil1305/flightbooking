@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 interface ArrivalTimeProps {
   arrivalTime: string;
@@ -9,6 +9,14 @@ const ArrivalTime: React.FC<ArrivalTimeProps> = ({
   arrivalTime,
   setArrivalTime,
 }) => {
+  useEffect(() => {
+    if (!arrivalTime) {
+      const now = new Date();
+      const currentTime = now.toTimeString().slice(0, 5);
+      setArrivalTime(currentTime);
+    }
+  }, [arrivalTime, setArrivalTime]);
+
   return (
     <div className="input-container">
       <input
