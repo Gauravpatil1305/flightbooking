@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 interface FlightDateProps {
   date: string;
@@ -6,6 +6,13 @@ interface FlightDateProps {
 }
 
 const FlightDate: React.FC<FlightDateProps> = ({ date, setDate }) => {
+  useEffect(() => {
+    if (!date) {
+      const today = new Date().toISOString().split("T")[0];
+      setDate(today);
+    }
+  }, [date, setDate]);
+
   return (
     <div className="input-container">
       <input
