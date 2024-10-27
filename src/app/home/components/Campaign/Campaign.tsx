@@ -35,7 +35,7 @@ const Campaign: React.FC = () => {
                         src={campaign.imageUrl}
                         alt={campaign.title}
                         fill
-                        objectFit="cover"
+                        style={{ objectFit: 'cover' }}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                       />
                     </div>
