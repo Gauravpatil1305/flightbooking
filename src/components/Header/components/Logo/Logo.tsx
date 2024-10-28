@@ -9,8 +9,8 @@ const Logo = () => {
         <Image
           src="/img/logo.png"
           alt="FlightRoutes Logo"
-          width={100}
-          height={30}
+          width={200}
+          height={200}
         />
       </Link>
     </div>
