@@ -551,6 +551,9 @@
                     justify-content: space-evenly;
                     flex: 1;
                     img {
+                        width: 100%;
+                        height: auto;
+                        object-fit: cover;
                         animation: faqAnimated 2s infinite;
                         @keyframes faqAnimated {
                             0% {

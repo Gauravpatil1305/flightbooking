@@ -31,7 +31,6 @@ const Faq = () => {
                 alt="FAQ Image"
                 width={400}
                 height={400}
-                style={{ objectFit: 'cover' }}
                 priority
               />
               <a href="/help" className="all-button">
