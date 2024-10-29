@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "imagePath": "/img/hero/france.jpg",
+    "country": "France",
+    "countryFlagIcon": "twemoji:flag-france"
+  },
+  {
+    "id": 2,
+    "imagePath": "/img/hero/spain.jpg",
+    "country": "Spain",
+    "countryFlagIcon": "twemoji:flag-spain"
+  },
+  {
+    "id": 3,
+    "imagePath": "/img/hero/china.jpg",
+    "country": "China",
+    "countryFlagIcon": "twemoji:flag-china"
+  },
+  {
+    "id": 4,
+    "imagePath": "/img/hero/italy.jpg",
+    "country": "Italy",
+    "countryFlagIcon": "twemoji:flag-italy"
+  },
+  {
+    "id": 5,
+    "imagePath": "/img/hero/turkiye.jpg",
+    "country": "Turkiye",
+    "countryFlagIcon": "twemoji:flag-turkiye"
+  },
+  {
+    "id": 6,
+    "imagePath": "/img/hero/mexico.jpg",
+    "country": "Mexico",
+    "countryFlagIcon": "twemoji:flag-mexico"
+  },
+  {
+    "id": 7,
+    "imagePath": "/img/hero/thailand.jpg",
+    "country": "Thailand",
+    "countryFlagIcon": "twemoji:flag-thailand"
+  },
+  {
+    "id": 8,
+    "imagePath": "/img/hero/germany.jpg",
+    "country": "Germany",
+    "countryFlagIcon": "twemoji:flag-germany"
+  },
+  {
+    "id": 9,
+    "imagePath": "/img/hero/united-kingdom.jpg",
+    "country": "United Kingdom",
+    "countryFlagIcon": "twemoji:flag-united-kingdom"
+  },
+  {
+    "id": 10,
+    "imagePath": "/img/hero/egypt.jpg",
+    "country": "Egypt",
+    "countryFlagIcon": "twemoji:flag-egypt"
+  }
+]
