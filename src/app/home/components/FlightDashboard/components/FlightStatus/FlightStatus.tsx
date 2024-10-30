@@ -37,6 +37,9 @@ const FlightStatus: React.FC = () => {
                 <option value="flightNo">Flight No</option>
                 <option value="route">Route</option>
               </select>
+              <span className="custom-arrow">
+                <Icon icon="mdi:chevron-down" />
+              </span>
             </div>
           </div>
           {selectedOption === "arrival" && (

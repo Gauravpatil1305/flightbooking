@@ -1212,20 +1212,28 @@
                                 display: flex;
                                 align-items: center;
                                 gap: 10px;
+                                .flight-status-dropdown-wrapper {
+                                    flex: 1;
+                                }
                                 .flight-status-arrival, 
                                 .flight-status-departure, 
                                 .flight-status-route  {
                                     display: grid;
                                     grid-template-columns: repeat(3, 1fr);
                                     grid-gap: 10px;
+                                    width: -webkit-fill-available;
+                                    flex: 6;
                                 }
                                 .flight-status-flightNo {
                                     display: grid;
                                     grid-template-columns: repeat(2, 1fr);
                                     grid-gap: 10px;
+                                    width: -webkit-fill-available;
+                                    flex: 6;
                                 }
                                 .input-container {
                                     position: relative;
+                                    display: inline-block;
                                     width: 100%;
                                     .floating-input {
                                         width: 100%;
@@ -1270,8 +1278,14 @@
                                         background-color: $white;
                                         border: 1px solid $light-gray;
                                         border-radius: 4px;
+                                        color: $dark-gray;
                                         outline: none;
                                         transition: border-color 0.3s ease;
+                                        -webkit-appearance: none;
+                                        -moz-appearance: none;
+                                        appearance: none;
+                                        background: none;
+                                        cursor: pointer;
                                         &:focus {
                                             border-color: $red;
                                         }
@@ -1279,11 +1293,23 @@
                                             padding: 20px;
                                         }
                                     }
+                                    .custom-arrow {
+                                        position: absolute;
+                                        top: 50%;
+                                        right: 10px; 
+                                        transform: translateY(-50%);
+                                        pointer-events: none; 
+                                        color: $dark-gray;
+                                        svg {
+                                            font-size: 1.2rem;
+                                        }
+                                    }
                                 }
                                 .flight-status-button {
                                     display: flex;
                                     align-items: center;
                                     justify-content: center;
+                                    flex: 1;
                                     gap: 5px;
                                     font-size: 1.2rem;
                                     padding: 20px;
