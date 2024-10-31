@@ -74,7 +74,7 @@ export interface CampaignItem {
   title: string;
   description: string;
   imageUrl: string;
-  url: string
+  url: string;
 }
 
 export interface FaqItem {
@@ -84,10 +84,12 @@ export interface FaqItem {
 }
 
 export interface PopularDestination {
+  id: number;
   country: string;
 }
 
 export interface PopularDestinationsRegion {
+  id: number;
   region: string;
   destinations: PopularDestination[];
 }
@@ -97,5 +99,5 @@ export interface BlogItem {
   title: string;
   description: string;
   imageUrl: string;
-  url: string
+  url: string;
 }

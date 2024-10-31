@@ -18,7 +18,7 @@ const PopularDestinations: React.FC = () => {
     return (
       <div className="countries">
         {regionData.destinations.map((destination) => (
-          <div key={destination.country} className="countryCard">
+          <div key={destination.id} className="countryCard">
             <Icon icon="mdi:location-on-outline" className="icon" />
             <span>{destination.country}</span>
           </div>
@@ -41,7 +41,7 @@ const PopularDestinations: React.FC = () => {
           <div className="tabs">
             {popularDestinationsData.map((region) => (
               <button
-                key={region.region}
+                key={region.id}
                 className={`tab ${
                   activeRegion === region.region ? "active" : ""
                 }`}
