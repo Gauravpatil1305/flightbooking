@@ -1105,10 +1105,16 @@
                     .check-in-wrapper {
                         padding: 30px;
                         border-radius: 8px;
+                        @media (max-width: 320px) {
+                            padding: 15px;
+                        }
                         .check-in {
                             display: grid;
                             grid-template-columns: repeat(3, 1fr);
                             grid-gap: 10px;
+                            @media (max-width: 320px) {
+                                grid-template-columns: 1fr;
+                            }
                             .input-container {
                                 position: relative;
                                 width: 100%;
@@ -1122,6 +1128,9 @@
                                     border-radius: 4px;
                                     outline: none;
                                     transition: border-color 0.3s ease;
+                                    @media (max-width: 320px) {
+                                        max-height: 50px;
+                                    }
                                     &:focus {
                                         border-color: $red;
                                         background-color: $white;
@@ -1163,6 +1172,10 @@
                                 transition: background-color 0.3s ease;
                                 border: solid 1px transparent;
                                 cursor: pointer;
+                                @media (max-width: 320px) {
+                                    max-height: 50px;
+                                    font-size: 1rem;
+                                }
                                 &:hover {
                                     background-color: $white;
                                     color: $red;
@@ -1170,6 +1183,9 @@
                                 }
                                 svg {
                                     font-size: 1.5rem;
+                                    @media (max-width: 320px) {
+                                        font-size: 1rem;
+                                    }
                                 }
                             }
                         }
