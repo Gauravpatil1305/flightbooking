@@ -889,6 +889,9 @@
                     .flight-search-wrapper {
                         padding: 30px;
                         border-radius: 8px;
+                        @media (max-width: 320px) {
+                            padding: 15px;
+                        }
                         .flight-search {
                             .trip-type-selector {
                                 margin-bottom: 20px;
@@ -906,6 +909,9 @@
                                     padding: 5px;
                                     cursor: pointer;
                                     user-select: none;
+                                    @media (max-width: 320px) {
+                                        width: 100%;
+                                    }
                                     .toggle-bg {
                                         position: absolute;
                                         left: 5px;
@@ -957,6 +963,9 @@
                                 display: grid;
                                 grid-template-columns: repeat(6, 1fr);
                                 grid-gap: 10px;
+                                @media (max-width: 320px) {
+                                    grid-template-columns: 1fr;
+                                }
                                 .input-container {
                                     position: relative;
                                     width: 100%;
@@ -970,6 +979,9 @@
                                         border-radius: 4px;
                                         outline: none;
                                         transition: border-color 0.3s ease;
+                                        @media (max-width: 320px) {
+                                            max-height: 50px;
+                                        }
                                         &:focus {
                                             border-color: $red;
                                             background-color: $white;
@@ -1011,6 +1023,10 @@
                                     transition: background-color 0.3s ease;
                                     border: solid 1px transparent;
                                     cursor: pointer;
+                                    @media (max-width: 320px) {
+                                        max-height: 50px;
+                                        font-size: 1rem;
+                                    }
                                     &:hover {
                                         background-color: $white;
                                         color: $red;
@@ -1018,6 +1034,9 @@
                                     }
                                     svg {
                                         font-size: 1.5rem;
+                                        @media (max-width: 320px) {
+                                            font-size: 1rem;
+                                        }
                                     }
                                 }
                             }
@@ -1034,6 +1053,9 @@
                                 align-items: center;
                                 gap: 10px;
                                 margin-top: 10px;
+                                @media (max-width: 320px) {
+                                    flex-direction: column;
+                                }
                                 .search-history-item {
                                     background-color: $very-light-gray;
                                     border-radius: 8px;
@@ -1041,6 +1063,9 @@
                                     transition-duration: 300ms;
                                     padding: 5px 10px;
                                     cursor: pointer;
+                                    @media (max-width: 320px) {
+                                        width: 100%;
+                                    }
                                     &:hover {
                                         border: solid 2px $red;
                                     }
