@@ -757,11 +757,17 @@
             gap: 10px;
             padding-top: 60px;
             padding-bottom: 20px;
+            @media (max-width: 320px) {
+                padding-top: 40px;
+            }
             .title {
                 color: $dark-gray;
                 text-align: center;
                 font-size: 2.5rem;
                 font-weight: 600;
+                @media (max-width: 320px) {
+                    font-size: 1.5rem;
+                }
             }
             .description {
                 color: $dark-gray;
@@ -787,6 +793,11 @@
                 grid-template-columns: repeat(6, 1fr);
                 grid-gap: 30px;
                 margin-bottom: 35px;
+                @media (max-width: 320px) {
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-gap: 15px;
+                    margin-bottom: 20px;
+                }
                 .tab {
                     padding: 15px 25px;
                     color: $dark-gray;
@@ -796,6 +807,10 @@
                     border-radius: 5px;
                     cursor: pointer;
                     font-size: 1rem;
+                    @media (max-width: 320px) {
+                        font-size: 0.9rem;
+                        padding: 10px;
+                    }
                     &.active {
                         background-color: $red;
                         color: $white;
@@ -810,6 +825,10 @@
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
                 grid-gap: 20px;
+                @media (max-width: 320px) {
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-gap: 10px;
+                }
                 .countryCard {
                     display: flex;
                     align-items: center;
@@ -820,9 +839,16 @@
                     border: 1px solid $red;
                     border-radius: 5px;
                     font-size: 1rem;
+                    @media (max-width: 320px) {
+                        font-size: 0.7rem;
+                        padding: 5px;
+                    }
                     .icon {
                         color: $red;
                         font-size: 1.5rem;
+                        @media (max-width: 320px) {
+                            font-size: 1rem;
+                        }
                     }
                     &:hover {
                         background-color: $red;
