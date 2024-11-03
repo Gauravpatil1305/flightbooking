@@ -240,6 +240,9 @@
         z-index: 1;
         background-color: $white;
         padding-bottom: 60px;
+        @media (max-width: 320px) {
+            padding-bottom: 20px;
+        }
         .headline {
             display: flex;
             flex-direction: column;
@@ -388,6 +391,9 @@
         position: relative;
         overflow: hidden;
         height: 645px;
+        @media (max-width: 320px) {
+            height: 100%;
+        }
         .headline {
             display: flex;
             flex-direction: column;
@@ -396,11 +402,17 @@
             gap: 10px;
             padding-top: 60px;
             padding-bottom: 20px;
+            @media (max-width: 320px) {
+                padding-top: 40px;
+            }
             .title {
                 color: $dark-gray;
                 text-align: center;
                 font-size: 2.5rem;
                 font-weight: 600;
+                @media (max-width: 320px) {
+                    font-size: 1.5rem;
+                }
             }
             .description {
                 color: $dark-gray;
@@ -421,6 +433,9 @@
         }
         .content {
             padding: 20px 0px;
+            @media (max-width: 320px) {
+                padding-bottom: 40px;
+            }
             .about-us-background {
                 background-image: url('/img/about-us/about-bg.jpg');
                 background-size: cover;
@@ -440,6 +455,10 @@
                 gap: 30px;
                 position: relative;
                 z-index: 1;
+                @media (max-width: 320px) {
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(4, auto);
+                }
                 .data {
                     display: flex;
                     align-items: center;
@@ -454,10 +473,17 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        @media (max-width: 320px) {
+                            width: 120px;
+                            height: 120px;
+                        }
                         div {
                             color: $dark-gray;
                             font-size: 2.5rem;
                             font-weight: bold;
+                            @media (max-width: 320px) {
+                                font-size: 1.8rem;
+                            }
                         }
                     }
                     .title {
@@ -466,6 +492,12 @@
                         font-size: 1.2rem;
                         text-align: center;
                         line-height: 1.2;
+                        @media (max-width: 320px) {
+                            font-size: 1rem;
+                            min-height: 40px;
+                            display: flex;
+                            align-items: center;
+                        }
                     }
                 }
             }
