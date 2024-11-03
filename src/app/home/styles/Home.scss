@@ -107,11 +107,17 @@
             gap: 10px;
             padding-top: 60px;
             padding-bottom: 20px;
+            @media (max-width: 320px) {
+                padding-top: 40px;
+            }
             .title {
                 color: $dark-gray;
                 text-align: center;
                 font-size: 2.5rem;
                 font-weight: 600;
+                @media (max-width: 320px) {
+                    font-size: 1.5rem;
+                }
             }
             .description {
                 color: $dark-gray;
@@ -136,6 +142,9 @@
             grid-template-rows: repeat(2, auto);
             gap: 20px;
             padding: 20px 0px;
+            @media (max-width: 320px) {
+                grid-template-columns: 1fr;
+            }
             .extra-service-card {
                 position: relative;
                 overflow: hidden;
