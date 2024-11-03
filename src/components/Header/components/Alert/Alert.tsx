@@ -63,21 +63,6 @@ const Alert: React.FC = () => {
             </div>
           </div>
           <div className="alert-navigation">
-            <div className="alert-link">
-              {filteredAlerts[currentAlertIndex].link && (
-                <a
-                  href={filteredAlerts[currentAlertIndex].link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="more-button"
-                >
-                  <p>
-                    <span className="plus">+</span>
-                    <span className="more">More</span>
-                  </p>
-                </a>
-              )}
-            </div>
             <div className="navigation-buttons">
               {filteredAlerts.length > 1 && (
                 <>
@@ -90,9 +75,26 @@ const Alert: React.FC = () => {
                 </>
               )}
             </div>
-            <button onClick={handleClose} className="close-button">
-              <Icon icon="mdi:cancel-bold" />
-            </button>
+            <div className="alert-button-group">
+              <div className="alert-link">
+                {filteredAlerts[currentAlertIndex].link && (
+                  <a
+                    href={filteredAlerts[currentAlertIndex].link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="more-button"
+                  >
+                    <p>
+                      <span className="plus">+</span>
+                      <span className="more">More</span>
+                    </p>
+                  </a>
+                )}
+              </div>
+              <button onClick={handleClose} className="close-button">
+                <Icon icon="mdi:cancel-bold" />
+              </button>
+            </div>
           </div>
         </div>
       </div>

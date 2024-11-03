@@ -228,38 +228,8 @@
                 align-items: center;
                 gap: 10px;
                 @media (max-width: $md-breakpoint) {
+                    flex-direction: column-reverse;
                     gap: 5px;
-                }
-                .alert-link {
-                    .more-button {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        background-color: $white;
-                        color: $red;
-                        border-radius: 4px;
-                        width: 55px;
-                        height: 25px;
-                        font-size: 0.8rem;
-                        font-weight: bold;
-                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                        p {
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            gap: 2px;
-                            line-height: 0;
-                            @media (max-width: $md-breakpoint) {
-                                .more {
-                                    display: none;
-                                }
-                            }
-                        }
-                        @media (max-width: $md-breakpoint) {
-                            width: 25px;
-                            font-size: 1.3rem;
-                        }
-                    }
                 }
                 .navigation-buttons {
                     display: flex;
@@ -282,21 +252,57 @@
                         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
                     }
                 }
-                .close-button {
+                .alert-button-group {
                     display: flex;
                     align-items: center;
-                    justify-content: center;
-                    background-color: $white;
-                    color: $red;
-                    border: none;
-                    border-radius: 4px;
-                    cursor: pointer;
-                    width: 25px;
-                    height: 25px;
-                    font-size: 1rem;
-                    font-weight: bold;
-                    line-height: 0;
-                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                    gap: 5px;
+                    .alert-link {
+                        .more-button {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: $white;
+                            color: $red;
+                            border-radius: 4px;
+                            width: 55px;
+                            height: 25px;
+                            font-size: 0.8rem;
+                            font-weight: bold;
+                            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                            p {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 2px;
+                                line-height: 0;
+                                @media (max-width: $md-breakpoint) {
+                                    .more {
+                                        display: none;
+                                    }
+                                }
+                            }
+                            @media (max-width: $md-breakpoint) {
+                                width: 25px;
+                                font-size: 1.3rem;
+                            }
+                        }
+                    }
+                    .close-button {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: $white;
+                        color: $red;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        width: 25px;
+                        height: 25px;
+                        font-size: 1rem;
+                        font-weight: bold;
+                        line-height: 0;
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                    }
                 }
             }
         }
