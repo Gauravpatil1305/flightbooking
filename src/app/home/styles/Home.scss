@@ -867,6 +867,9 @@
         z-index: 1;
         background-color: $white;
         padding-bottom: 60px;
+        @media (max-width: 320px) {
+            padding-bottom: 40px;
+        }
         .headline {
             display: flex;
             flex-direction: column;
@@ -875,11 +878,17 @@
             gap: 10px;
             padding-top: 60px;
             padding-bottom: 20px;
+            @media (max-width: 320px) {
+                padding-top: 40px;
+            }
             .title {
                 color: $dark-gray;
                 text-align: center;
                 font-size: 2.5rem;
                 font-weight: 600;
+                @media (max-width: 320px) {
+                    font-size: 1.5rem;
+                }
             }
             .description {
                 color: $dark-gray;
