@@ -24,6 +24,17 @@ const Campaign: React.FC = () => {
             spaceBetween={20}
             navigation={true}
             modules={[Navigation]}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+              },
+              640: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 4,
+              },
+            }}
             className="campaignSwiper"
           >
             {campaigns.map((campaign) => (
