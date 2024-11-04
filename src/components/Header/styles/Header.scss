@@ -192,6 +192,9 @@
             align-items: center;
             justify-content: space-between;
             padding: 10px 0px;
+            @media (max-width: $sm-breakpoint) {
+                gap: 10px;
+            }
             .alert-item {
                 display: flex;
                 align-items: center;
@@ -214,12 +217,23 @@
                     gap: 5px;
                     .alert-date {
                         font-size: 0.6rem;
+                        @media (max-width: $sm-breakpoint) {
+                            font-size: 0.6rem;
+                        }
                     }
                     .alert-title {
                         font-size: 0.8rem;
+                        @media (max-width: $sm-breakpoint) {
+                            font-size: 0.7rem;
+                        }
                     }
                     .alert-description {
                         font-size: 0.8rem;
+                        @media (max-width: $sm-breakpoint) {
+                            font-size: 0.7rem;
+                            line-height: 1.2;
+                            height: 25px;
+                        }
                     }
                 }
             }
@@ -250,6 +264,11 @@
                         font-weight: bold;
                         line-height: 0;
                         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                        @media (max-width: $sm-breakpoint) {
+                            font-size: 1rem;
+                            width: 20px;
+                            height: 20px;
+                        }
                     }
                 }
                 .alert-button-group {
@@ -285,6 +304,11 @@
                                 width: 25px;
                                 font-size: 1.3rem;
                             }
+                            @media (max-width: $sm-breakpoint) {
+                                font-size: 0.8rem;
+                                width: 20px;
+                                height: 20px;
+                            }
                         }
                     }
                     .close-button {
@@ -302,6 +326,11 @@
                         font-weight: bold;
                         line-height: 0;
                         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                        @media (max-width: $sm-breakpoint) {
+                            font-size: 0.8rem;
+                            width: 20px;
+                            height: 20px;
+                        }
                     }
                 }
             }
