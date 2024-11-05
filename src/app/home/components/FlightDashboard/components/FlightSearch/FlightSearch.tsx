@@ -12,6 +12,7 @@ import TripType from "./components/TripType/TripType";
 import PassengerCount from "./components/PassengerCount/PassengerCount";
 import SearchHistory from "./components/SearchHistory/SearchHistory";
 import { Icon } from "@iconify/react";
+import Loading from "@/components/Loading/Loading";
 
 interface RootState {
   flight: {
@@ -31,6 +32,8 @@ const FlightSearch = () => {
   const [returnDate, setReturnDate] = useState("");
   const [tripType, setTripType] = useState("roundtrip");
   const [passengerCount, setPassengerCount] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
 
   useEffect(() => {
     const today = new Date().toISOString().split("T")[0];
@@ -45,14 +48,23 @@ const FlightSearch = () => {
   }, [storedSearchHistory, dispatch]);
 
   const handleSearch = () => {
-    const query = `/flights?fromCountry=${fromCountry}&toCountry=${toCountry}&departureDate=${departureDate}&returnDate=${returnDate}&tripType=${tripType}&passengerCount=${passengerCount}`;
-
-    const newHistory = [query, ...storedSearchHistory].slice(0, 4);
-    dispatch(setSearchHistory(newHistory));
-    localStorage.setItem("searchHistory", JSON.stringify(newHistory));
-
-    router.push(query);
+    setLoading(true);
+    setTimeout(() => {
+      const query = `/flights?fromCountry=${fromCountry}&toCountry=${toCountry}&departureDate=${departureDate}&returnDate=${returnDate}&tripType=${tripType}&passengerCount=${passengerCount}`;
+      const newHistory = [query, ...storedSearchHistory].slice(0, 4);
+      dispatch(setSearchHistory(newHistory));
+      localStorage.setItem("searchHistory", JSON.stringify(newHistory));
+      setLoading(false);
+      router.push(query);
+    }, 2000);
   };
+
+  useEffect(() => {
+    if (isNavigating) {
+      setLoading(false);
+      setIsNavigating(false);
+    }
+  }, [isNavigating]);
 
   const handleHistoryClick = (query: string) => {
     const params = new URLSearchParams(query.split("?")[1]);
@@ -109,6 +121,7 @@ const FlightSearch = () => {
 
   return (
     <div className="flight-search-wrapper">
+      {loading && <Loading />}
       <div className="flight-search">
         <div className="trip-type-selector">
           <TripType tripType={tripType} setTripType={setTripType} />
