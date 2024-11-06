@@ -187,130 +187,141 @@ const FlightsPage = () => {
   };
 
   return (
-    <div>
-      <h1>Flight Results</h1>
-      <p>
-        Search results for flights from {fromCountry} to {toCountry}.
-      </p>
-
-      <h2>Outbound Flights</h2>
-      {outboundFlights.length > 0 ? (
-        <ul>
-          <li>
-            <strong>Airline</strong> - <strong>Flight Number</strong> -{" "}
-            <strong>From</strong> - <strong>To</strong> -{" "}
-            <strong>Departure Time</strong> - <strong>Arrival Time</strong> -{" "}
-            <strong>Price</strong> - <strong>Passengers</strong>
-          </li>
-          {outboundFlights.map((flight, index) => (
-            <li key={index} onClick={() => handleSelectOutboundFlight(flight)}>
-              {flight.airline} - {flight.flightNumber} - {flight.from} -{" "}
-              {flight.to} - {new Date(flight.departureTime).toLocaleString()} -{" "}
-              {new Date(flight.arrivalTime).toLocaleString()} - $
-              {flight.price.toFixed(2)} - {flight.passengers} passengers
-              {selectedOutboundFlight === flight && showOutboundClasses && (
-                <div>
-                  <h4>Select Class:</h4>
-                  {flightClasses.map((cls) => (
-                    <button
-                      key={cls}
-                      onClick={() => handleSelectClass("outbound", cls)}
-                    >
-                      {cls} - $
-                      {(
-                        flight.price *
-                        classPriceMultiplier[flightClasses.indexOf(cls)]
-                      ).toFixed(2)}
-                    </button>
-                  ))}
-                </div>
-              )}
+    <div className="flights-wrapper">
+      <div className="flights-headline">
+        <h1>Flight Results</h1>
+        <p>
+          Search results for flights from {fromCountry} to {toCountry}.
+        </p>
+      </div>
+      <div className="departure-wrapper">
+        <h2>Outbound Flights</h2>
+        {outboundFlights.length > 0 ? (
+          <ul>
+            <li>
+              <strong>Airline</strong> - <strong>Flight Number</strong> -{" "}
+              <strong>From</strong> - <strong>To</strong> -{" "}
+              <strong>Departure Time</strong> - <strong>Arrival Time</strong> -{" "}
+              <strong>Price</strong> - <strong>Passengers</strong>
             </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No outbound flights found.</p>
-      )}
-
-      {tripType === "roundtrip" && (
-        <>
-          <h2>Return Flights</h2>
-          {returnFlights.length > 0 ? (
-            <ul>
-              <li>
-                <strong>Airline</strong> - <strong>Flight Number</strong> -{" "}
-                <strong>From</strong> - <strong>To</strong> -{" "}
-                <strong>Departure Time</strong> - <strong>Arrival Time</strong>{" "}
-                - <strong>Price</strong> - <strong>Passengers</strong>
+            {outboundFlights.map((flight, index) => (
+              <li
+                key={index}
+                onClick={() => handleSelectOutboundFlight(flight)}
+              >
+                {flight.airline} - {flight.flightNumber} - {flight.from} -{" "}
+                {flight.to} - {new Date(flight.departureTime).toLocaleString()}{" "}
+                - {new Date(flight.arrivalTime).toLocaleString()} - $
+                {flight.price.toFixed(2)} - {flight.passengers} passengers
+                {selectedOutboundFlight === flight && showOutboundClasses && (
+                  <div>
+                    <h4>Select Class:</h4>
+                    {flightClasses.map((cls) => (
+                      <button
+                        key={cls}
+                        onClick={() => handleSelectClass("outbound", cls)}
+                      >
+                        {cls} - $
+                        {(
+                          flight.price *
+                          classPriceMultiplier[flightClasses.indexOf(cls)]
+                        ).toFixed(2)}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </li>
-              {returnFlights.map((flight, index) => (
-                <li
-                  key={index}
-                  onClick={() => handleSelectReturnFlight(flight)}
-                >
-                  {flight.airline} - {flight.flightNumber} - {flight.from} -{" "}
-                  {flight.to} -{" "}
-                  {new Date(flight.departureTime).toLocaleString()} -{" "}
-                  {new Date(flight.arrivalTime).toLocaleString()} - $
-                  {flight.price.toFixed(2)} - {flight.passengers} passengers
-                  {selectedReturnFlight === flight && showReturnClasses && (
-                    <div>
-                      <h4>Select Class:</h4>
-                      {flightClasses.map((cls) => (
-                        <button
-                          key={cls}
-                          onClick={() => handleSelectClass("return", cls)}
-                        >
-                          {cls} - $
-                          {(
-                            flight.price *
-                            classPriceMultiplier[flightClasses.indexOf(cls)]
-                          ).toFixed(2)}
-                        </button>
-                      ))}
-                    </div>
-                  )}
+            ))}
+          </ul>
+        ) : (
+          <p>No outbound flights found.</p>
+        )}
+      </div>
+      <div className="return-wrapper">
+        {tripType === "roundtrip" && (
+          <>
+            <h2>Return Flights</h2>
+            {returnFlights.length > 0 ? (
+              <ul>
+                <li>
+                  <strong>Airline</strong> - <strong>Flight Number</strong> -{" "}
+                  <strong>From</strong> - <strong>To</strong> -{" "}
+                  <strong>Departure Time</strong> -{" "}
+                  <strong>Arrival Time</strong> - <strong>Price</strong> -{" "}
+                  <strong>Passengers</strong>
                 </li>
-              ))}
-            </ul>
-          ) : (
-            <p>No return flights found.</p>
-          )}
-        </>
-      )}
+                {returnFlights.map((flight, index) => (
+                  <li
+                    key={index}
+                    onClick={() => handleSelectReturnFlight(flight)}
+                  >
+                    {flight.airline} - {flight.flightNumber} - {flight.from} -{" "}
+                    {flight.to} -{" "}
+                    {new Date(flight.departureTime).toLocaleString()} -{" "}
+                    {new Date(flight.arrivalTime).toLocaleString()} - $
+                    {flight.price.toFixed(2)} - {flight.passengers} passengers
+                    {selectedReturnFlight === flight && showReturnClasses && (
+                      <div>
+                        <h4>Select Class:</h4>
+                        {flightClasses.map((cls) => (
+                          <button
+                            key={cls}
+                            onClick={() => handleSelectClass("return", cls)}
+                          >
+                            {cls} - $
+                            {(
+                              flight.price *
+                              classPriceMultiplier[flightClasses.indexOf(cls)]
+                            ).toFixed(2)}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>No return flights found.</p>
+            )}
+          </>
+        )}
+      </div>
+      <div className="summary-wrapper">
+        <h2>Summary</h2>
+        {selectedOutboundFlight && outboundClass && (
+          <div>
+            <h4>Selected Outbound Flight:</h4>
+            <p>
+              {selectedOutboundFlight.airline} -{" "}
+              {selectedOutboundFlight.flightNumber} -{" "}
+              {selectedOutboundFlight.from} - {selectedOutboundFlight.to} -{" "}
+              {new Date(selectedOutboundFlight.departureTime).toLocaleString()}{" "}
+              - {new Date(selectedOutboundFlight.arrivalTime).toLocaleString()}{" "}
+              - ${selectedOutboundFlight.price.toFixed(2)} -{" "}
+              {selectedOutboundFlight.passengers} passengers - Class:{" "}
+              {outboundClass}
+            </p>
+          </div>
+        )}
+        {tripType === "roundtrip" && selectedReturnFlight && returnClass && (
+          <div>
+            <h4>Selected Return Flight:</h4>
+            <p>
+              {selectedReturnFlight.airline} -{" "}
+              {selectedReturnFlight.flightNumber} - {selectedReturnFlight.from}{" "}
+              - {selectedReturnFlight.to} -{" "}
+              {new Date(selectedReturnFlight.departureTime).toLocaleString()} -{" "}
+              {new Date(selectedReturnFlight.arrivalTime).toLocaleString()} - $
+              {selectedReturnFlight.price.toFixed(2)} -{" "}
+              {selectedReturnFlight.passengers} passengers - Class:{" "}
+              {returnClass}
+            </p>
+          </div>
+        )}
 
-      <h2>Summary</h2>
-      {selectedOutboundFlight && outboundClass && (
-        <div>
-          <h4>Selected Outbound Flight:</h4>
-          <p>
-            {selectedOutboundFlight.airline} -{" "}
-            {selectedOutboundFlight.flightNumber} -{" "}
-            {selectedOutboundFlight.from} - {selectedOutboundFlight.to} -{" "}
-            {new Date(selectedOutboundFlight.departureTime).toLocaleString()} -{" "}
-            {new Date(selectedOutboundFlight.arrivalTime).toLocaleString()} - $
-            {selectedOutboundFlight.price.toFixed(2)} -{" "}
-            {selectedOutboundFlight.passengers} passengers - Class:{" "}
-            {outboundClass}
-          </p>
-        </div>
-      )}
-      {tripType === "roundtrip" && selectedReturnFlight && returnClass && (
-        <div>
-          <h4>Selected Return Flight:</h4>
-          <p>
-            {selectedReturnFlight.airline} - {selectedReturnFlight.flightNumber}{" "}
-            - {selectedReturnFlight.from} - {selectedReturnFlight.to} -{" "}
-            {new Date(selectedReturnFlight.departureTime).toLocaleString()} -{" "}
-            {new Date(selectedReturnFlight.arrivalTime).toLocaleString()} - $
-            {selectedReturnFlight.price.toFixed(2)} -{" "}
-            {selectedReturnFlight.passengers} passengers - Class: {returnClass}
-          </p>
-        </div>
-      )}
-
-      <h4>Total Price: ${totalPrice.toFixed(2)}</h4>
-      <button onClick={handleContinue}>Continue to Reservation</button>
+        <h4>Total Price: ${totalPrice.toFixed(2)}</h4>
+        <button onClick={handleContinue}>Continue to Reservation</button>
+      </div>
     </div>
   );
 };
