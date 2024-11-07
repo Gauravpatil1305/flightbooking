@@ -1,0 +1,18 @@
+@import "../../../styles/variables.scss";
+
+.flights {
+    .flights-wrapper {
+        .flights-headline {
+            text-align: center;
+        }
+        .departure-wrapper {
+            text-align: center;
+        }
+        .return-wrapper {
+            text-align: center;
+        }
+        .summary-wrapper {
+            text-align: center;
+        }
+    }
+}
