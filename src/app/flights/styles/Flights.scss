@@ -2,16 +2,39 @@
 
 .flights {
     .flights-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 50px;
+        margin-bottom: 50px;
         .flights-headline {
+            border: solid 1px $light-gray;
+            border-radius: 10px;
+            width: 100%;
+            padding: 20px;
             text-align: center;
         }
         .departure-wrapper {
+            border: solid 1px $light-gray;
+            border-radius: 10px;
+            width: 100%;
+            padding: 20px;
             text-align: center;
         }
         .return-wrapper {
+            border: solid 1px $light-gray;
+            border-radius: 10px;
+            width: 100%;
+            padding: 20px;
             text-align: center;
         }
         .summary-wrapper {
+            border: solid 1px $light-gray;
+            border-radius: 10px;
+            width: 100%;
+            padding: 20px;
             text-align: center;
         }
     }
