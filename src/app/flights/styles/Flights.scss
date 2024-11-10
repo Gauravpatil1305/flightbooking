@@ -45,6 +45,26 @@
                     font-weight: bold;
                 }
             }
+            .flight-detail {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .date {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    .departure {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                    }
+                    .arrival {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                    }
+                }
+            }
         }
         .departure-wrapper {
             border: solid 1px $light-gray;

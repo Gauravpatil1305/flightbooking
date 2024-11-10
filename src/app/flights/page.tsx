@@ -204,11 +204,20 @@ const FlightsPage = () => {
               <Icon icon="mdi:counterclockwise-arrows" />
               <span>{toCountry}</span>
             </div>
-            <div>
-              <div>
-                {departureDate} -- {returnDate}
+            <div className="flight-detail">
+              <div className="date">
+                <div className="departure">
+                  <span>Departure:</span>
+                  <span>{departureDate}</span>
+                </div>
+                <div className="arrival">
+                  <span>Arrival:</span>
+                  <span>{returnDate}</span>
+                </div>
               </div>
-              <div>{passengerCount}</div>
+              <div className="passenger">
+                <span>{passengerCount} Passenger</span>
+              </div>
             </div>
           </div>
 
