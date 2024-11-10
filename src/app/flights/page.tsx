@@ -7,6 +7,7 @@ import { Flight } from "@/types/typesFlight";
 import OutboundFlightList from "./components/OutboundFlightList";
 import ReturnFlightList from "./components/ReturnFlightList";
 import FlightSummary from "./components/FlightSummary";
+import { Icon } from "@iconify/react";
 import "./styles/Flights.scss";
 
 const FlightsPage = () => {
@@ -195,10 +196,20 @@ const FlightsPage = () => {
       <div className="container">
         <div className="flights-wrapper">
           <div className="flights-headline">
-            <h1>Flight Results</h1>
-            <p>
-              Search results for flights from {fromCountry} to {toCountry}.
-            </p>
+            <div className="trip-type">
+              <span>{tripType}</span>
+            </div>
+            <div className="flight-route">
+              <span>{fromCountry}</span>
+              <Icon icon="mdi:counterclockwise-arrows" />
+              <span>{toCountry}</span>
+            </div>
+            <div>
+              <div>
+                {departureDate} -- {returnDate}
+              </div>
+              <div>{passengerCount}</div>
+            </div>
           </div>
 
           <OutboundFlightList

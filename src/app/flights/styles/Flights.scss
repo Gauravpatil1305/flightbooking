@@ -10,11 +10,41 @@
         margin-top: 50px;
         margin-bottom: 50px;
         .flights-headline {
-            border: solid 1px $light-gray;
-            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
             width: 100%;
-            padding: 20px;
-            text-align: center;
+            background-color: $white;
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 30px;
+            .trip-type {
+                span {
+                    display: inline-block;
+                    background-color: $red;
+                    padding: 10px;
+                    border-radius: 5px;
+                    text-transform: capitalize;
+                    color: $white;
+                    font-weight: 500;
+                    font-size: 1.1rem;
+                }
+            }
+            .flight-route {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                span {
+                    font-weight: 600;
+                    color: $dark-gray;
+                    font-size: 1.3rem;
+                }
+                svg {
+                    color: $red;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+            }
         }
         .departure-wrapper {
             border: solid 1px $light-gray;
