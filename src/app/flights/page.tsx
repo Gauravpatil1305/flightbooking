@@ -207,12 +207,12 @@ const FlightsPage = () => {
             <div className="flight-detail">
               <div className="date">
                 <div className="departure">
-                  <span>Departure:</span>
-                  <span>{departureDate}</span>
+                  <span className="title">Departure:</span>
+                  <span className="content">{departureDate}</span>
                 </div>
                 <div className="arrival">
-                  <span>Arrival:</span>
-                  <span>{returnDate}</span>
+                  <span className="title">Arrival:</span>
+                  <span className="content">{returnDate}</span>
                 </div>
               </div>
               <div className="passenger">
