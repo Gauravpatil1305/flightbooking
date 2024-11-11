@@ -10,6 +10,17 @@ import FlightSummary from "./components/FlightSummary";
 import { Icon } from "@iconify/react";
 import "./styles/Flights.scss";
 
+const formatDate = (dateString: string | null) => {
+  if (!dateString) return "No Date Available";
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", {
+    weekday: "short",
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  });
+};
+
 const FlightsPage = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -41,6 +52,9 @@ const FlightsPage = () => {
   const departureDate = searchParams.get("departureDate");
   const returnDate = searchParams.get("returnDate");
   const passengerCount = Number(searchParams.get("passengerCount"));
+
+  const formattedDepartureDate = formatDate(departureDate);
+  const formattedReturnDate = formatDate(returnDate);
 
   useEffect(() => {
     const generateFlights = (isReturn: boolean) => {
@@ -195,7 +209,7 @@ const FlightsPage = () => {
     <div className="flights">
       <div className="container">
         <div className="flights-wrapper">
-          <div className="flights-headline">
+          <div className="flights-brief">
             <div className="trip-type">
               <span>{tripType}</span>
             </div>
@@ -208,11 +222,11 @@ const FlightsPage = () => {
               <div className="date">
                 <div className="departure">
                   <span className="title">Departure:</span>
-                  <span className="content">{departureDate}</span>
+                  <span className="content">{formattedDepartureDate}</span>
                 </div>
                 <div className="arrival">
                   <span className="title">Arrival:</span>
-                  <span className="content">{returnDate}</span>
+                  <span className="content">{formattedReturnDate}</span>
                 </div>
               </div>
               <div className="passenger">
