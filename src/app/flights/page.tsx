@@ -7,6 +7,7 @@ import { Flight } from "@/types/typesFlight";
 import OutboundFlightList from "./components/OutboundFlightList";
 import ReturnFlightList from "./components/ReturnFlightList";
 import FlightSummary from "./components/FlightSummary";
+import FlightReminders from "./components/FlightReminders";
 import { Icon } from "@iconify/react";
 import "./styles/Flights.scss";
 
@@ -208,6 +209,9 @@ const FlightsPage = () => {
   return (
     <div className="flights">
       <div className="container">
+        <div className="flights-reminder">
+          <FlightReminders />
+        </div>
         <div className="flights-wrapper">
           <div className="flights-brief">
             <div className="trip-type">
