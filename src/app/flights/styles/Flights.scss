@@ -1,13 +1,16 @@
 @import "../../../styles/variables.scss";
 
 .flights {
+    .flights-reminder {
+        margin-top: 50px;
+    }
     .flights-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 20px;
-        margin-top: 50px;
+        gap: 30px;
+        margin-top: 30px;
         margin-bottom: 50px;
         .flights-brief {
             display: flex;
@@ -79,25 +82,34 @@
             }
         }
         .departure-wrapper {
-            border: solid 1px $light-gray;
-            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
             width: 100%;
-            padding: 20px;
-            text-align: center;
+            background-color: $white;
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 30px;
         }
         .return-wrapper {
-            border: solid 1px $light-gray;
-            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
             width: 100%;
-            padding: 20px;
-            text-align: center;
+            background-color: $white;
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 30px;
         }
         .summary-wrapper {
-            border: solid 1px $light-gray;
-            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
             width: 100%;
-            padding: 20px;
-            text-align: center;
+            background-color: $white;
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 30px;
         }
     }
 }
