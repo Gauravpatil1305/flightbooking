@@ -209,6 +209,13 @@ const FlightsPage = () => {
   return (
     <div className="flights">
       <div className="container">
+        <div className="headline">
+          <div className="title">Flights</div>
+          <div className="description">
+            Discover the best flight options tailored to your travel needs and
+            make your booking with ease.
+          </div>
+        </div>
         <div className="flights-reminder">
           <FlightReminders />
         </div>
