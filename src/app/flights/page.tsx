@@ -216,7 +216,7 @@ const FlightsPage = () => {
             make your booking with ease.
           </div>
         </div>
-        <div className="flights-reminder">
+        <div className="flights-reminder-wrapper">
           <FlightReminders />
         </div>
         <div className="flights-wrapper">

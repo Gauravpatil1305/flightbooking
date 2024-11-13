@@ -38,8 +38,37 @@
             margin-top: 10px;
         }
     }
-    .flights-reminder {
-        margin-top: 50px;
+    .flights-reminder-wrapper {
+        border: solid 1px $red;
+        border-radius: 8px;
+        padding: 30px;
+        margin-top: 30px;
+        .flight-reminders {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .flight-reminders-icon {
+                line-height: 0;
+                svg {
+                    font-size: 2rem;
+                    color: $red;
+                }
+            }
+            .flight-reminders-content {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                .flight-reminders-label {
+                    font-size: 1.1rem;
+                    color: $red;
+                    font-weight: bold;
+                }
+                .flight-reminders-text {
+                    font-size: 1rem;
+                    color: $dark-gray;
+                }
+            }
+        }
     }
     .flights-wrapper {
         display: flex;
