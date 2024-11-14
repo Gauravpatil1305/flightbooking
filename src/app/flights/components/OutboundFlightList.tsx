@@ -34,7 +34,7 @@ const OutboundFlightList: React.FC<OutboundFlightListProps> = ({
 
   return (
     <div className="departure-wrapper">
-      <h2 className="title">Outbound Flights</h2>
+      <h2 className="title">Departure Flights</h2>
       {outboundFlights.length > 0 ? (
         <div className="flight-table">
           <div className="flight-table-header">

@@ -161,7 +161,21 @@
                 font-weight: 600;
                 color: $dark-gray;
                 margin-bottom: 20px;
-                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                &::after {
+                    content: "";
+                    position: relative;
+                    display: block;
+                    background-color: $red;
+                    width: 40px;
+                    height: 2px;
+                    border-radius: 5px;
+                    margin-top: 10px;
+                }
             }
             .flight-table {
                 display: grid;
@@ -287,7 +301,21 @@
                 font-weight: 600;
                 color: $dark-gray;
                 margin-bottom: 20px;
-                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                &::after {
+                    content: "";
+                    position: relative;
+                    display: block;
+                    background-color: $red;
+                    width: 40px;
+                    height: 2px;
+                    border-radius: 5px;
+                    margin-top: 10px;
+                }
             }
             .flight-table {
                 display: grid;

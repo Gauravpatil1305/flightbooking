@@ -34,7 +34,7 @@ const ReturnFlightList: React.FC<ReturnFlightListProps> = ({
 
   return (
     <div className="return-wrapper">
-      <h2 className="title">Return Flights</h2>
+      <h2 className="title">Arrival Flights</h2>
       {returnFlights.length > 0 ? (
         <div className="flight-table">
           <div className="flight-table-header">
