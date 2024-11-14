@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Flight } from "@/types/typesFlight";
 
 interface ReturnFlightListProps {
@@ -17,44 +17,83 @@ const ReturnFlightList: React.FC<ReturnFlightListProps> = ({
   flightClasses,
   handleSelectClass,
   showReturnClasses,
-}) => (
-  <div className="return-wrapper">
-    <h2>Return Flights</h2>
-    {returnFlights.length > 0 ? (
-      <ul>
-        <li>
-          <strong>Airline</strong> - <strong>Flight Number</strong> -{" "}
-          <strong>From</strong> - <strong>To</strong> -{" "}
-          <strong>Departure Time</strong> - <strong>Arrival Time</strong> -{" "}
-          <strong>Price</strong> - <strong>Passengers</strong>
-        </li>
-        {returnFlights.map((flight, index) => (
-          <li key={index} onClick={() => handleSelectReturnFlight(flight)}>
-            {flight.airline} - {flight.flightNumber} - {flight.from} -{" "}
-            {flight.to} - {new Date(flight.departureTime).toLocaleString()} -{" "}
-            {new Date(flight.arrivalTime).toLocaleString()} - $
-            {flight.price.toFixed(2)} - {flight.passengers} passengers
-            {selectedReturnFlight === flight && showReturnClasses && (
-              <div>
-                <h4>Select Class:</h4>
-                {flightClasses.map((cls) => (
-                  <button
-                    key={cls}
-                    onClick={() => handleSelectClass("return", cls)}
-                  >
-                    {cls} - $
-                    {(flight.price * flightClasses.indexOf(cls)).toFixed(2)}
-                  </button>
-                ))}
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
-    ) : (
-      <p>No return flights found.</p>
-    )}
-  </div>
-);
+}) => {
+  const [isClassSelectionOpen, setClassSelectionOpen] = useState(false);
+
+  const handleClassSelect = (cls: string) => {
+    handleSelectClass("return", cls);
+    setClassSelectionOpen(false);
+  };
+
+  const toggleClassSelection = (flight: Flight) => {
+    handleSelectReturnFlight(flight);
+    setClassSelectionOpen(
+      selectedReturnFlight !== flight || !isClassSelectionOpen
+    );
+  };
+
+  return (
+    <div className="return-wrapper">
+      <h2 className="title">Return Flights</h2>
+      {returnFlights.length > 0 ? (
+        <div className="flight-table">
+          <div className="flight-table-header">
+            <div>Airline</div>
+            <div>Flight Number</div>
+            <div>From</div>
+            <div>To</div>
+            <div>Departure Time</div>
+            <div>Arrival Time</div>
+            <div>Price</div>
+            <div>Passengers</div>
+          </div>
+          {returnFlights.map((flight, index) => (
+            <div
+              key={index}
+              className={`flight-table-row ${
+                selectedReturnFlight === flight ? "selected-flight" : ""
+              }`}
+              onClick={() => toggleClassSelection(flight)}
+            >
+              <div>{flight.airline}</div>
+              <div>{flight.flightNumber}</div>
+              <div>{flight.from}</div>
+              <div>{flight.to}</div>
+              <div>{new Date(flight.departureTime).toLocaleString()}</div>
+              <div>{new Date(flight.arrivalTime).toLocaleString()}</div>
+              <div>${flight.price.toFixed(2)}</div>
+              <div>{flight.passengers} passengers</div>
+              {selectedReturnFlight === flight &&
+                isClassSelectionOpen &&
+                showReturnClasses && (
+                  <div className="class-selection">
+                    <h4 className="class-title">Select Class:</h4>
+                    {flightClasses.map((cls) => (
+                      <button
+                        key={cls}
+                        className="class-button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleClassSelect(cls);
+                        }}
+                      >
+                        {cls} - $
+                        {(
+                          flight.price +
+                          50 * flightClasses.indexOf(cls)
+                        ).toFixed(2)}
+                      </button>
+                    ))}
+                  </div>
+                )}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p className="no-flights">No return flights found.</p>
+      )}
+    </div>
+  );
+};
 
 export default ReturnFlightList;

@@ -282,6 +282,122 @@
             border-radius: 8px;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             padding: 30px;
+            .title {
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: $dark-gray;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            .flight-table {
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+                gap: 10px;
+                font-size: 1rem;
+                color: $dark-gray;
+                .flight-table-header {
+                    display: contents;
+                    font-weight: bold;
+                    background-color: $light-gray;
+                    color: $dark-gray;
+                    padding: 12px 0;
+                    border-bottom: 2px solid $light-gray;
+                    > div {
+                        padding: 10px;
+                        text-align: center;
+                    }
+                }
+                .flight-table-row {
+                    display: contents;
+                    padding: 12px 0;
+                    border-bottom: 1px solid $light-gray;
+                    transition: background-color 0.2s ease-in-out;
+                    cursor: pointer;
+                    > div {
+                        padding: 10px;
+                        text-align: center;
+                    }
+                    &:hover {
+                        background-color: $light-gray;
+                    }
+                    &.selected-flight {
+                        background-color: $light-gray;
+                    }
+                    .class-selection {
+                        grid-column: 1 / -1;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                        padding: 12px;
+                        margin-top: 12px;
+                        background-color: $light-gray;
+                        border-top: 1px solid $light-gray;
+                        .class-title {
+                            font-size: 1.1rem;
+                            font-weight: 500;
+                            color: $dark-gray;
+                        }
+                        .class-button {
+                            background-color: $red;
+                            border: none;
+                            color: $white;
+                            padding: 8px 16px;
+                            font-size: 1.1rem;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            transition: background-color 0.3s;
+                            &:hover {
+                                background-color: $red;
+                            }
+                            &:active {
+                                background-color: $red;
+                            }
+                            &:focus {
+                                outline: 2px solid $red;
+                            }
+                        }
+                    }
+                }
+            }
+            .no-flights {
+                font-size: 1.1rem;
+                color: $dark-gray;
+                text-align: center;
+                margin-top: 20px;
+            }
+            @media (max-width: $sm-breakpoint) {
+                .flight-table {
+                    grid-template-columns: 1fr;
+                    .flight-table-header,
+                    .flight-table-row {
+                        display: flex;
+                        flex-direction: column;
+                        padding: 10px;
+                    }
+                    .flight-table-header > div,
+                    .flight-table-row > div {
+                        text-align: left;
+                        padding: 8px 0;
+                        border-bottom: none;
+                    }
+                    .flight-table-header {
+                        border-bottom: 1px solid $light-gray;
+                    }
+                    .flight-table-row {
+                        border: 1px solid $light-gray;
+                        border-radius: 6px;
+                        margin-bottom: 10px;
+                        padding: 10px;
+                    }
+                    .class-selection {
+                        margin-top: 8px;
+                        .class-button {
+                            font-size: 1rem;
+                            padding: 10px;
+                        }
+                    }
+                }
+            }
         }
         .summary-wrapper {
             display: flex;
