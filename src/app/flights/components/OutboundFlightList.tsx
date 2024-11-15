@@ -55,14 +55,16 @@ const OutboundFlightList: React.FC<OutboundFlightListProps> = ({
               }`}
               onClick={() => toggleClassSelection(flight)}
             >
-              <div>{flight.airline}</div>
-              <div>{flight.flightNumber}</div>
-              <div>{flight.from}</div>
-              <div>{flight.to}</div>
-              <div>{new Date(flight.departureTime).toLocaleString()}</div>
-              <div>{new Date(flight.arrivalTime).toLocaleString()}</div>
-              <div>${flight.price.toFixed(2)}</div>
-              <div>{flight.passengers} passengers</div>
+              <div className="flight-row-detail">
+                <div>{flight.airline}</div>
+                <div>{flight.flightNumber}</div>
+                <div>{flight.from}</div>
+                <div>{flight.to}</div>
+                <div>{new Date(flight.departureTime).toLocaleString()}</div>
+                <div>{new Date(flight.arrivalTime).toLocaleString()}</div>
+                <div>${flight.price.toFixed(2)}</div>
+                <div>{flight.passengers} passengers</div>
+              </div>
               {selectedOutboundFlight === flight &&
                 isClassSelectionOpen &&
                 showOutboundClasses && (

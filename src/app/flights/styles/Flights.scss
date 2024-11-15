@@ -178,30 +178,34 @@
                 }
             }
             .flight-table {
-                display: grid;
-                grid-template-columns: repeat(8, 1fr);
+                display: flex;
+                flex-direction: column;
                 gap: 10px;
                 font-size: 1rem;
                 color: $dark-gray;
                 .flight-table-header {
-                    display: contents;
+                    display: flex;
+                    justify-content: space-between;
                     font-weight: bold;
                     background-color: $light-gray;
                     color: $dark-gray;
                     padding: 12px 0;
                     border-bottom: 2px solid $light-gray;
                     > div {
+                        flex: 1;
                         padding: 10px;
                         text-align: center;
                     }
                 }
                 .flight-table-row {
-                    display: contents;
+                    display: flex;
+                    flex-direction: column;
                     padding: 12px 0;
                     border-bottom: 1px solid $light-gray;
                     transition: background-color 0.2s ease-in-out;
                     cursor: pointer;
                     > div {
+                        flex: 1;
                         padding: 10px;
                         text-align: center;
                     }
@@ -210,6 +214,19 @@
                     }
                     &.selected-flight {
                         background-color: $light-gray;
+                    }
+                    .flight-row-detail {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 12px 0;
+                        border-bottom: 1px solid $light-gray;
+                        transition: background-color 0.2s ease-in-out;
+                        cursor: pointer;
+                        > div {
+                            flex: 1;
+                            padding: 10px;
+                            text-align: center;
+                        }
                     }
                     .class-selection {
                         grid-column: 1 / -1;
@@ -318,30 +335,34 @@
                 }
             }
             .flight-table {
-                display: grid;
-                grid-template-columns: repeat(8, 1fr);
+                display: flex;
+                flex-direction: column;
                 gap: 10px;
                 font-size: 1rem;
                 color: $dark-gray;
                 .flight-table-header {
-                    display: contents;
+                    display: flex;
+                    justify-content: space-between;
                     font-weight: bold;
                     background-color: $light-gray;
                     color: $dark-gray;
                     padding: 12px 0;
                     border-bottom: 2px solid $light-gray;
                     > div {
+                        flex: 1;
                         padding: 10px;
                         text-align: center;
                     }
                 }
                 .flight-table-row {
-                    display: contents;
+                    display: flex;
+                    flex-direction: column;
                     padding: 12px 0;
                     border-bottom: 1px solid $light-gray;
                     transition: background-color 0.2s ease-in-out;
                     cursor: pointer;
                     > div {
+                        flex: 1;
                         padding: 10px;
                         text-align: center;
                     }
@@ -350,6 +371,19 @@
                     }
                     &.selected-flight {
                         background-color: $light-gray;
+                    }
+                    .flight-row-detail {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 12px 0;
+                        border-bottom: 1px solid $light-gray;
+                        transition: background-color 0.2s ease-in-out;
+                        cursor: pointer;
+                        > div {
+                            flex: 1;
+                            padding: 10px;
+                            text-align: center;
+                        }
                     }
                     .class-selection {
                         grid-column: 1 / -1;
