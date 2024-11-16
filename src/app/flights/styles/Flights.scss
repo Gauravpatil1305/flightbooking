@@ -305,7 +305,7 @@
         .arrival-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 5px;
             width: 100%;
             background-color: $white;
             border-radius: 8px;
@@ -335,17 +335,16 @@
             .flight-table {
                 display: flex;
                 flex-direction: column;
-                gap: 10px;
-                font-size: 1rem;
                 color: $dark-gray;
                 .flight-table-header {
                     display: flex;
                     justify-content: space-between;
-                    font-weight: bold;
-                    background-color: $light-gray;
-                    color: $dark-gray;
-                    padding: 12px 0;
-                    border-bottom: 2px solid $light-gray;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    background-color: $red;
+                    color: $white;
+                    padding: 10px 0;
+                    border-radius: 8px 8px 0px 0px;
                     > div {
                         flex: 1;
                         padding: 10px;
@@ -355,7 +354,6 @@
                 .flight-table-row {
                     display: flex;
                     flex-direction: column;
-                    padding: 12px 0;
                     border-bottom: 1px solid $light-gray;
                     transition: background-color 0.2s ease-in-out;
                     cursor: pointer;
@@ -372,9 +370,9 @@
                     }
                     .flight-row-detail {
                         display: flex;
+                        align-items: center;
                         justify-content: space-between;
                         padding: 12px 0;
-                        border-bottom: 1px solid $light-gray;
                         transition: background-color 0.2s ease-in-out;
                         cursor: pointer;
                         > div {
