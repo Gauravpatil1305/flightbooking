@@ -33,7 +33,7 @@ const ReturnFlightList: React.FC<ReturnFlightListProps> = ({
   };
 
   return (
-    <div className="return-wrapper">
+    <div className="arrival-wrapper">
       <h2 className="title">Arrival Flights</h2>
       {returnFlights.length > 0 ? (
         <div className="flight-table">
@@ -63,7 +63,7 @@ const ReturnFlightList: React.FC<ReturnFlightListProps> = ({
                 <div>{new Date(flight.departureTime).toLocaleString()}</div>
                 <div>{new Date(flight.arrivalTime).toLocaleString()}</div>
                 <div>${flight.price.toFixed(2)}</div>
-                <div>{flight.passengers} passengers</div>
+                <div>{flight.passengers} Passenger</div>
               </div>
               {selectedReturnFlight === flight &&
                 isClassSelectionOpen &&

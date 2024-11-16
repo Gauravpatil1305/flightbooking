@@ -63,7 +63,7 @@ const OutboundFlightList: React.FC<OutboundFlightListProps> = ({
                 <div>{new Date(flight.departureTime).toLocaleString()}</div>
                 <div>{new Date(flight.arrivalTime).toLocaleString()}</div>
                 <div>${flight.price.toFixed(2)}</div>
-                <div>{flight.passengers} passengers</div>
+                <div>{flight.passengers} Passenger</div>
               </div>
               {selectedOutboundFlight === flight &&
                 isClassSelectionOpen &&
