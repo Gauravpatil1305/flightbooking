@@ -201,6 +201,7 @@
                     flex-direction: column;
                     border-bottom: 1px solid $light-gray;
                     transition: background-color 0.2s ease-in-out;
+                    font-size: 0.9rem;
                     cursor: pointer;
                     > div {
                         flex: 1;
@@ -208,10 +209,10 @@
                         text-align: center;
                     }
                     &:hover {
-                        background-color: $light-gray;
+                        background-color: $very-light-gray;
                     }
                     &.selected-flight {
-                        background-color: $light-gray;
+                        background-color: $very-light-gray;
                     }
                     .flight-row-detail {
                         display: flex;
@@ -233,7 +234,7 @@
                         gap: 8px;
                         padding: 12px;
                         margin-top: 12px;
-                        background-color: $light-gray;
+                        background-color: $very-light-gray;
                         border-top: 1px solid $light-gray;
                         .class-title {
                             font-size: 1.1rem;
@@ -356,6 +357,7 @@
                     flex-direction: column;
                     border-bottom: 1px solid $light-gray;
                     transition: background-color 0.2s ease-in-out;
+                    font-size: 0.9rem;
                     cursor: pointer;
                     > div {
                         flex: 1;
@@ -363,10 +365,10 @@
                         text-align: center;
                     }
                     &:hover {
-                        background-color: $light-gray;
+                        background-color: $very-light-gray;
                     }
                     &.selected-flight {
-                        background-color: $light-gray;
+                        background-color: $very-light-gray;
                     }
                     .flight-row-detail {
                         display: flex;
@@ -388,7 +390,7 @@
                         gap: 8px;
                         padding: 12px;
                         margin-top: 12px;
-                        background-color: $light-gray;
+                        background-color: $very-light-gray;
                         border-top: 1px solid $light-gray;
                         .class-title {
                             font-size: 1.1rem;
