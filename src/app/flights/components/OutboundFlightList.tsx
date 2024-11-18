@@ -20,6 +20,12 @@ const OutboundFlightList: React.FC<OutboundFlightListProps> = ({
 }) => {
   const [isClassSelectionOpen, setClassSelectionOpen] = useState(false);
 
+  const formatDateTime = (date: string) =>
+    new Intl.DateTimeFormat("en-US", {
+      dateStyle: "medium",
+      timeStyle: "short",
+    }).format(new Date(date));
+
   const handleClassSelect = (cls: string) => {
     handleSelectClass("outbound", cls);
     setClassSelectionOpen(false);
@@ -60,8 +66,8 @@ const OutboundFlightList: React.FC<OutboundFlightListProps> = ({
                 <div>{flight.flightNumber}</div>
                 <div>{flight.from}</div>
                 <div>{flight.to}</div>
-                <div>{new Date(flight.departureTime).toLocaleString()}</div>
-                <div>{new Date(flight.arrivalTime).toLocaleString()}</div>
+                <div>{formatDateTime(flight.departureTime)}</div>
+                <div>{formatDateTime(flight.arrivalTime)}</div>
                 <div>${flight.price.toFixed(2)}</div>
                 <div>{flight.passengers} Passenger</div>
               </div>
