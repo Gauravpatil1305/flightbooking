@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Flight } from "@/types/typesFlight";
+import { Tooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
 
 interface ReturnFlightListProps {
   returnFlights: Flight[];
@@ -25,6 +27,10 @@ const ReturnFlightList: React.FC<ReturnFlightListProps> = ({
       dateStyle: "medium",
       timeStyle: "short",
     }).format(new Date(date));
+
+  const truncateText = (text: string, maxLength: number) => {
+    return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+  };
 
   const handleClassSelect = (cls: string) => {
     handleSelectClass("return", cls);
@@ -62,7 +68,13 @@ const ReturnFlightList: React.FC<ReturnFlightListProps> = ({
               onClick={() => toggleClassSelection(flight)}
             >
               <div className="flight-row-detail">
-                <div>{flight.airline}</div>
+                <div
+                  data-tooltip-id={`tooltip-airline-${index}`}
+                  data-tooltip-content={flight.airline}
+                >
+                  {truncateText(flight.airline, 15)}
+                </div>
+                <Tooltip id={`tooltip-airline-${index}`} place="top" />
                 <div>{flight.flightNumber}</div>
                 <div>{flight.from}</div>
                 <div>{flight.to}</div>
