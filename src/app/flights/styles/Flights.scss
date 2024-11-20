@@ -209,10 +209,10 @@
                         text-align: center;
                     }
                     &:hover {
-                        background-color: $very-light-gray;
+                        background-color: $h-gray;
                     }
                     &.selected-flight {
-                        background-color: $very-light-gray;
+                        background-color: $h-gray;
                     }
                     .flight-row-detail {
                         display: flex;
@@ -233,9 +233,8 @@
                         flex-direction: column;
                         gap: 8px;
                         padding: 12px;
-                        margin-top: 12px;
-                        background-color: $very-light-gray;
-                        border-top: 1px solid $light-gray;
+                        background-color: $h-gray;
+                        border-top: 1px solid $red;
                         .class-title {
                             font-size: 1.1rem;
                             font-weight: 500;
@@ -365,10 +364,10 @@
                         text-align: center;
                     }
                     &:hover {
-                        background-color: $very-light-gray;
+                        background-color: $h-gray;
                     }
                     &.selected-flight {
-                        background-color: $very-light-gray;
+                        background-color: $h-gray;
                     }
                     .flight-row-detail {
                         display: flex;
@@ -389,9 +388,8 @@
                         flex-direction: column;
                         gap: 8px;
                         padding: 12px;
-                        margin-top: 12px;
-                        background-color: $very-light-gray;
-                        border-top: 1px solid $light-gray;
+                        background-color: $h-gray;
+                        border-top: 1px solid $red;
                         .class-title {
                             font-size: 1.1rem;
                             font-weight: 500;
