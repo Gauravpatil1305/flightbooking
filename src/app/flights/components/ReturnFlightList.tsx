@@ -87,23 +87,25 @@ const ReturnFlightList: React.FC<ReturnFlightListProps> = ({
                 isClassSelectionOpen &&
                 showReturnClasses && (
                   <div className="class-selection">
-                    <h4 className="class-title">Select Class:</h4>
-                    {flightClasses.map((cls) => (
-                      <button
-                        key={cls}
-                        className="class-button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleClassSelect(cls);
-                        }}
-                      >
-                        {cls} - $
-                        {(
-                          flight.price +
-                          50 * flightClasses.indexOf(cls)
-                        ).toFixed(2)}
-                      </button>
-                    ))}
+                    <h4 className="class-title">Select Class</h4>
+                    <div className="classes">
+                      {flightClasses.map((cls) => (
+                        <button
+                          key={cls}
+                          className="class-button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleClassSelect(cls);
+                          }}
+                        >
+                          {cls} - $
+                          {(
+                            flight.price +
+                            50 * flightClasses.indexOf(cls)
+                          ).toFixed(2)}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 )}
             </div>
