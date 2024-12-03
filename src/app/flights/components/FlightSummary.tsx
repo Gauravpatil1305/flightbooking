@@ -17,36 +17,42 @@ const FlightSummary: React.FC<FlightSummaryProps> = ({
   totalPrice,
 }) => (
   <div className="summary-wrapper">
-    <h2>Summary</h2>
-    {selectedOutboundFlight && outboundClass && (
-      <div>
-        <h4>Selected Outbound Flight:</h4>
-        <p>
-          {selectedOutboundFlight.airline} -{" "}
-          {selectedOutboundFlight.flightNumber} - {selectedOutboundFlight.from}{" "}
-          - {selectedOutboundFlight.to} -{" "}
-          {new Date(selectedOutboundFlight.departureTime).toLocaleString()} -{" "}
-          {new Date(selectedOutboundFlight.arrivalTime).toLocaleString()} - $
-          {selectedOutboundFlight.price.toFixed(2)} -{" "}
-          {selectedOutboundFlight.passengers} passengers - Class:{" "}
-          {outboundClass}
-        </p>
-      </div>
-    )}
-    {selectedReturnFlight && returnClass && (
-      <div>
-        <h4>Selected Return Flight:</h4>
-        <p>
-          {selectedReturnFlight.airline} - {selectedReturnFlight.flightNumber} -{" "}
-          {selectedReturnFlight.from} - {selectedReturnFlight.to} -{" "}
-          {new Date(selectedReturnFlight.departureTime).toLocaleString()} -{" "}
-          {new Date(selectedReturnFlight.arrivalTime).toLocaleString()} - $
-          {selectedReturnFlight.price.toFixed(2)} -{" "}
-          {selectedReturnFlight.passengers} passengers - Class: {returnClass}
-        </p>
-      </div>
-    )}
-    <h4>Total Price: ${totalPrice.toFixed(2)}</h4>
+    <h2 className="summary-title">Flight Summary</h2>
+    <div className="summary-table">
+      {selectedOutboundFlight && outboundClass && (
+        <div className="summary-row">
+          <span className="summary-label">Departure Flight:</span>
+          <span className="summary-value">
+            {selectedOutboundFlight.airline} | Flight{" "}
+            {selectedOutboundFlight.flightNumber} | From{" "}
+            {selectedOutboundFlight.from} to {selectedOutboundFlight.to} |
+            {new Date(selectedOutboundFlight.departureTime).toLocaleString()} -{" "}
+            {new Date(selectedOutboundFlight.arrivalTime).toLocaleString()} | $
+            {selectedOutboundFlight.price.toFixed(2)} |
+            {selectedOutboundFlight.passengers} passengers | Class:{" "}
+            {outboundClass}
+          </span>
+        </div>
+      )}
+      {selectedReturnFlight && returnClass && (
+        <div className="summary-row">
+          <span className="summary-label">Arrival Flight:</span>
+          <span className="summary-value">
+            {selectedReturnFlight.airline} | Flight{" "}
+            {selectedReturnFlight.flightNumber} | From{" "}
+            {selectedReturnFlight.from} to {selectedReturnFlight.to} |
+            {new Date(selectedReturnFlight.departureTime).toLocaleString()} -{" "}
+            {new Date(selectedReturnFlight.arrivalTime).toLocaleString()} | $
+            {selectedReturnFlight.price.toFixed(2)} |
+            {selectedReturnFlight.passengers} passengers | Class: {returnClass}
+          </span>
+        </div>
+      )}
+    </div>
+    <div className="summary-row total-price">
+      <span className="summary-label">Total Price:</span>
+      <span className="summary-value">${totalPrice.toFixed(2)}</span>
+    </div>
   </div>
 );
 
