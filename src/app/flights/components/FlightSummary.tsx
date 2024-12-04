@@ -17,7 +17,9 @@ const FlightSummary: React.FC<FlightSummaryProps> = ({
   totalPrice,
 }) => (
   <div className="summary-wrapper">
-    <h2 className="summary-title">Flight Summary</h2>
+    <div className="summary-title">
+      <h2>Flight Summary</h2>
+    </div>
     <div className="summary-table">
       {selectedOutboundFlight && outboundClass && (
         <div className="summary-row">

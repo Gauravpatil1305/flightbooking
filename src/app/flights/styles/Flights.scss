@@ -507,7 +507,6 @@
         }
         .summary-wrapper {
             background-color: $white;
-            padding: 20px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -516,15 +515,20 @@
             border-radius: 8px;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             .summary-title {
-                font-size: 1rem;
-                color: $dark-gray;
-                margin-bottom: 20px;
-                text-align: center;
+                background-color: $red;
+                padding: 20px;
+                border-radius: 8px 8px 0px 0px;
+                h2 {
+                    font-size: 1rem;
+                    color: $white;
+                    text-align: center;
+                }
             }
             .summary-table {
                 display: flex;
                 flex-direction: column;
-                gap: 15px;
+                gap: 20px;
+                margin: 0px 20px;
                 .summary-row {
                     display: flex;
                     justify-content: space-between;
@@ -559,7 +563,6 @@
                         .summary-label {
                             flex-basis: 40%;
                         }
-                
                         .summary-value {
                             flex-basis: 55%;
                         }
