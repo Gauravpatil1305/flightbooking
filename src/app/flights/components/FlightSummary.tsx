@@ -1,5 +1,6 @@
 import React from "react";
 import { Flight } from "@/types/typesFlight";
+import { Icon } from "@iconify/react";
 
 interface FlightSummaryProps {
   selectedOutboundFlight: Flight | null;
@@ -32,40 +33,100 @@ const FlightSummary: React.FC<FlightSummaryProps> = ({
           <>
             {selectedOutboundFlight && outboundClass && (
               <div className="summary-row">
-                <span className="summary-label">Departure Flight:</span>
-                <span className="summary-value">
-                  {selectedOutboundFlight.airline} | Flight{" "}
-                  {selectedOutboundFlight.flightNumber} | From{" "}
-                  {selectedOutboundFlight.from} to {selectedOutboundFlight.to} |{" "}
-                  {new Date(
-                    selectedOutboundFlight.departureTime
-                  ).toLocaleString()}{" "}
-                  -{" "}
-                  {new Date(
-                    selectedOutboundFlight.arrivalTime
-                  ).toLocaleString()}{" "}
-                  | ${selectedOutboundFlight.price.toFixed(2)} |{" "}
-                  {selectedOutboundFlight.passengers} passengers | Class:{" "}
-                  {outboundClass}
+                <span className="summary-label">
+                  <Icon icon="mdi:airplane-takeoff" className="icon" /> Departure
+                  Flight:
                 </span>
+                <div className="summary-value">
+                  <div className="summary-item">
+                    <Icon icon="mdi:airplane" className="icon" />
+                    Airline: {selectedOutboundFlight.airline}
+                  </div>
+                  <div className="summary-item">
+                    <Icon icon="mdi:ticket-outline" className="icon" />
+                    Flight Number: {selectedOutboundFlight.flightNumber}
+                  </div>
+                  <div className="summary-item">
+                    <Icon icon="mdi:map-marker" className="icon" />
+                    From: {selectedOutboundFlight.from} - To:{" "}
+                    {selectedOutboundFlight.to}
+                  </div>
+                  <div className="summary-item">
+                    <Icon icon="mdi:clock-time-four-outline" className="icon" />
+                    Departure:{" "}
+                    {new Date(
+                      selectedOutboundFlight.departureTime
+                    ).toLocaleString()}
+                  </div>
+                  <div className="summary-item">
+                    <Icon icon="mdi:clock-time-four-outline" className="icon" />
+                    Arrival:{" "}
+                    {new Date(
+                      selectedOutboundFlight.arrivalTime
+                    ).toLocaleString()}
+                  </div>
+                  <div className="summary-item">
+                    <Icon icon="mdi:currency-usd" className="icon" />
+                    Price: ${selectedOutboundFlight.price.toFixed(2)}
+                  </div>
+                  <div className="summary-item">
+                    <Icon icon="mdi:account-group" className="icon" />
+                    Passengers: {selectedOutboundFlight.passengers}
+                  </div>
+                  <div className="summary-item">
+                    <Icon icon="mdi:seat-outline" className="icon" />
+                    Class: {outboundClass}
+                  </div>
+                </div>
               </div>
             )}
             {selectedReturnFlight && returnClass && (
               <div className="summary-row">
-                <span className="summary-label">Arrival Flight:</span>
-                <span className="summary-value">
-                  {selectedReturnFlight.airline} | Flight{" "}
-                  {selectedReturnFlight.flightNumber} | From{" "}
-                  {selectedReturnFlight.from} to {selectedReturnFlight.to} |{" "}
-                  {new Date(
-                    selectedReturnFlight.departureTime
-                  ).toLocaleString()}{" "}
-                  -{" "}
-                  {new Date(selectedReturnFlight.arrivalTime).toLocaleString()}{" "}
-                  | ${selectedReturnFlight.price.toFixed(2)} |{" "}
-                  {selectedReturnFlight.passengers} passengers | Class:{" "}
-                  {returnClass}
+                <span className="summary-label">
+                  <Icon icon="mdi:airplane-landing" className="icon" /> Arrival
+                  Flight:
                 </span>
+                <div className="summary-value">
+                  <div className="summary-item">
+                    <Icon icon="mdi:airplane" className="icon" />
+                    Airline: {selectedReturnFlight.airline}
+                  </div>
+                  <div className="summary-item">
+                    <Icon icon="mdi:ticket-outline" className="icon" />
+                    Flight Number: {selectedReturnFlight.flightNumber}
+                  </div>
+                  <div className="summary-item">
+                    <Icon icon="mdi:map-marker" className="icon" />
+                    From: {selectedReturnFlight.from} - To:{" "}
+                    {selectedReturnFlight.to}
+                  </div>
+                  <div className="summary-item">
+                    <Icon icon="mdi:clock-time-four-outline" className="icon" />
+                    Departure:{" "}
+                    {new Date(
+                      selectedReturnFlight.departureTime
+                    ).toLocaleString()}
+                  </div>
+                  <div className="summary-item">
+                    <Icon icon="mdi:clock-time-four-outline" className="icon" />
+                    Arrival:{" "}
+                    {new Date(
+                      selectedReturnFlight.arrivalTime
+                    ).toLocaleString()}
+                  </div>
+                  <div className="summary-item">
+                    <Icon icon="mdi:currency-usd" className="icon" />
+                    Price: ${selectedReturnFlight.price.toFixed(2)}
+                  </div>
+                  <div className="summary-item">
+                    <Icon icon="mdi:account-group" className="icon" />
+                    Passengers: {selectedReturnFlight.passengers}
+                  </div>
+                  <div className="summary-item">
+                    <Icon icon="mdi:seat-outline" className="icon" />
+                    Class: {returnClass}
+                  </div>
+                </div>
               </div>
             )}
           </>
@@ -76,7 +137,9 @@ const FlightSummary: React.FC<FlightSummaryProps> = ({
         )}
       </div>
       <div className="summary-row total-price">
-        <span className="summary-label">Total Price:</span>
+        <span className="summary-label">
+          Total Price:
+        </span>
         <span className="summary-value">${totalPrice.toFixed(2)}</span>
       </div>
     </div>

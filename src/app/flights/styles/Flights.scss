@@ -533,26 +533,34 @@
                 border-bottom: dotted $red 4px;
                 .summary-row {
                     display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap:5px;
-                    padding: 12px;
+                    flex-direction: column;
+                    gap: 15px;
+                    padding: 20px;
                     background-color: $very-light-gray;
                     border-radius: 8px;
                     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                    .summary-label {
-                        font-weight: bold;
-                        color: $dark-gray;
-                        flex-basis: 15%;
-                        text-align: left;
-                        font-size: 1rem;
-                    }
                     .summary-value {
-                        color: $dark-gray;
-                        flex-basis: 85%;
-                        text-align: left;
-                        line-height: 1.5;
-                        font-size: 1rem;
+                        display: grid;
+                        grid-template-columns: repeat(5, 1fr);
+                        grid-template-rows: repeat(2, auto);
+                        grid-gap: 20px;
+                        .summary-item {
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            .item-icon {
+                                font-size: 1.5rem;
+                                color: $red;
+                            }
+                            .item-text {
+                                font-size: 1rem;
+                                color: $dark-gray;
+                                &.highlight {
+                                    font-weight: bold;
+                                    color: $red;
+                                }
+                            }
+                        }
                     }
                 }
                 .no-selection {
