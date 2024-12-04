@@ -555,6 +555,12 @@
                         font-size: 1rem;
                     }
                 }
+                .no-selection {
+                    color: $dark-gray;
+                    font-size: 1.1rem;
+                    text-align: center;
+                    padding-top: 10px;
+                }
             }
             .total-price {
                 display: flex;
