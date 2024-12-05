@@ -1,0 +1,56 @@
+@import "../../../styles/variables.scss";
+
+.reservation-page {
+    padding: 20px;
+    color: $dark-gray;
+    background: $very-light-gray;
+    border-radius: 8px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px $dark-gray-tp;
+    .title {
+        font-size: 2rem;
+        color: $red;
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+    .section {
+        background: $white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        border: 1px solid $light-gray;
+        box-shadow: 0 2px 4px $dark-gray-tp;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px $dark-gray-tp;
+        }
+    }
+    .subtitle {
+        font-size: 1.5rem;
+        color: $dark-gray;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    .detail {
+        font-size: $size;
+        color: $dark-gray;
+        margin-bottom: 8px;
+        strong {
+            color: $red;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .no-data {
+        font-size: $size;
+        color: $dark-gray;
+        text-align: center;
+        padding: 20px;
+        background: $h-gray;
+        border-radius: 8px;
+        font-weight: 600;
+    }
+}
