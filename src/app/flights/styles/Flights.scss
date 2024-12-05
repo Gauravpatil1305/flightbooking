@@ -534,22 +534,33 @@
                 .summary-row {
                     display: flex;
                     flex-direction: column;
-                    gap: 15px;
+                    gap: 20px;
                     padding: 20px;
                     background-color: $very-light-gray;
                     border-radius: 8px;
                     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                    .summary-label {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: 5px;
+                        font-size: 1rem;
+                        color: $dark-gray;
+                        font-weight: bold;
+                        svg {
+                            font-size: 1.2rem;
+                        }
+                    }
                     .summary-value {
                         display: grid;
-                        grid-template-columns: repeat(5, 1fr);
+                        grid-template-columns: repeat(4, 1fr);
                         grid-template-rows: repeat(2, auto);
                         grid-gap: 20px;
                         .summary-item {
                             display: flex;
                             align-items: center;
                             gap: 10px;
-                            .item-icon {
-                                font-size: 1.5rem;
+                            svg {
                                 color: $red;
                             }
                             .item-text {
