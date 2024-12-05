@@ -274,7 +274,7 @@ const FlightsPage = () => {
             totalPrice={totalPrice}
           />
 
-          <button onClick={handleContinue}>
+          <button className="reservation-button" onClick={handleContinue}>
             <Icon
               icon="mdi:calendar-search-outline"
             />
