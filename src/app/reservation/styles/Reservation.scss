@@ -7,14 +7,14 @@
     border-radius: 8px;
     margin: 20px auto;
     box-shadow: 0 4px 6px $dark-gray-tp;
-    .title {
+    .reservation-title {
         font-size: 2rem;
         color: $red;
         text-align: center;
         margin-bottom: 20px;
         font-weight: 700;
     }
-    .section {
+    .reservation-section {
         background: $white;
         padding: 20px;
         border-radius: 8px;
@@ -27,13 +27,13 @@
             box-shadow: 0 4px 8px $dark-gray-tp;
         }
     }
-    .subtitle {
+    .reservation-subtitle {
         font-size: 1.5rem;
         color: $dark-gray;
         margin-bottom: 10px;
         font-weight: 600;
     }
-    .detail {
+    .reservation-detail {
         font-size: $size;
         color: $dark-gray;
         margin-bottom: 8px;
@@ -44,7 +44,51 @@
             margin-bottom: 0;
         }
     }
-    .no-data {
+    .reservation-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        .reservation-popup-content {
+            background: $white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            .reservation-popup-title {
+                font-size: 1.5rem;
+                color: $dark-gray;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+            .reservation-popup-message {
+                font-size: $size;
+                color: $dark-gray;
+                margin-bottom: 20px;
+            }
+            .reservation-popup-close {
+                padding: 10px 20px;
+                background: $red;
+                color: $white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: $size;
+                &:hover {
+                    background: darken($red, 10%);
+                }
+            }
+        }
+    }
+    .reservation-no-data {
         font-size: $size;
         color: $dark-gray;
         text-align: center;
@@ -52,5 +96,104 @@
         background: $h-gray;
         border-radius: 8px;
         font-weight: 600;
+    }
+    .payment-section {
+        margin-top: 30px;
+        padding: 20px;
+        background: $white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px $dark-gray-tp;
+        .payment-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: $dark-gray;
+            text-align: center;
+            font-weight: 600;
+        }
+        .credit-card {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            .card-front {
+                width: 300px;
+                height: 180px;
+                background: linear-gradient(135deg, $blue, $light-blue);
+                border-radius: 12px;
+                color: $white;
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                .chip {
+                    width: 40px;
+                    height: 30px;
+                    background: $gold;
+                    border-radius: 4px;
+                }
+                .card-number {
+                    font-size: 1.2rem;
+                    letter-spacing: 2px;
+                }
+                .card-holder {
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                }
+                .expiration {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+        .payment-form {
+            .form-group {
+                margin-bottom: 15px;
+                label {
+                    display: block;
+                    margin-bottom: 5px;
+                    font-size: $size;
+                    color: $dark-gray;
+                }
+                input {
+                    width: 100%;
+                    padding: 10px;
+                    font-size: $size;
+                    border: 1px solid $light-gray;
+                    border-radius: 5px;
+                    &:focus {
+                        border-color: $blue;
+                        outline: none;
+                    }
+                    &.error {
+                        border: 2px solid $red;
+                    }
+                }
+            }
+            .form-row {
+                display: flex;
+                gap: 15px;
+                .form-group {
+                    flex: 1;
+                }
+            }
+            .pay-button {
+                width: 100%;
+                padding: 15px;
+                background: $red;
+                color: $white;
+                font-size: 1rem;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background 0.3s ease;
+                &:hover {
+                    background: darken($red, 10%);
+                }
+            }
+        }
+    }
+    .error-message {
+        color: $red;
+        font-size: 12px;
+        margin-top: 5px;
     }
 }
