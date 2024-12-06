@@ -1,18 +1,42 @@
 @import "../../../styles/variables.scss";
 
-.reservation-page {
-    padding: 20px;
-    color: $dark-gray;
-    background: $very-light-gray;
-    border-radius: 8px;
-    margin: 20px auto;
-    box-shadow: 0 4px 6px $dark-gray-tp;
-    .reservation-title {
-        font-size: 2rem;
-        color: $red;
-        text-align: center;
-        margin-bottom: 20px;
-        font-weight: 700;
+.reservation {
+    .headline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        @media (max-width: $sm-breakpoint) {
+            padding-top: 40px;
+        }
+        .title {
+            color: $dark-gray;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            @media (max-width: $sm-breakpoint) {
+                font-size: 1.5rem;
+            }
+        }
+        .description {
+            color: $dark-gray;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        &::after {
+            content: "";
+            position: relative;
+            display: block;
+            background-color: $red;
+            width: 40px;
+            height: 2px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
     }
     .reservation-section {
         background: $white;

@@ -58,179 +58,191 @@ const ReservationPage = () => {
   };
 
   return (
-    <div className="reservation-page">
-      {showPopup && (
-        <div className="reservation-popup">
-          <div className="reservation-popup-content">
-            <h2 className="reservation-popup-title">Payment Alert</h2>
-            <p className="reservation-popup-message">
-              This project is currently in under development. Payment processing
-              and subsequent steps are not functional at this time. We value
-              your feedback as we continue to improve!
-            </p>
-            <button
-              className="reservation-popup-close"
-              onClick={() => setShowPopup(false)}
-            >
-              Got it
-            </button>
+    <div className="reservation">
+      <div className="container">
+        <div className="headline">
+          <div className="title">Reservation</div>
+          <div className="description">
+            Review your selected flights, provide payment details, and complete
+            your booking with ease.
           </div>
         </div>
-      )}
-      <h1 className="reservation-title">Reservation Summary</h1>
-      {outboundFlightData && (
-        <div className="reservation-card">
-          <div className="reservation-header">
-            <h2 className="reservation-title">Outbound Flight</h2>
-            <span className="reservation-price">
-              ${outboundFlightData.totalPrice.toFixed(2)}
-            </span>
-          </div>
-          <div className="reservation-details">
-            <p>
-              <strong>{outboundFlightData.airline}</strong> -{" "}
-              {outboundFlightData.flightNumber}
-            </p>
-            <p>
-              From <strong>{outboundFlightData.from}</strong> to{" "}
-              <strong>{outboundFlightData.to}</strong>
-            </p>
-            <p>
-              Departure:{" "}
-              <strong>
-                {new Date(outboundFlightData.departureTime).toLocaleString()}
-              </strong>
-            </p>
-            <p>
-              Arrival:{" "}
-              <strong>
-                {new Date(outboundFlightData.arrivalTime).toLocaleString()}
-              </strong>
-            </p>
-            <p>Class: {outboundFlightData.class}</p>
-            <p>Passengers: {outboundFlightData.passengers}</p>
-          </div>
-        </div>
-      )}
-      {returnFlightData && (
-        <div className="reservation-card">
-          <div className="reservation-header">
-            <h2 className="reservation-title">Return Flight</h2>
-            <span className="reservation-price">
-              ${returnFlightData.totalPrice.toFixed(2)}
-            </span>
-          </div>
-          <div className="reservation-details">
-            <p>
-              <strong>{returnFlightData.airline}</strong> -{" "}
-              {returnFlightData.flightNumber}
-            </p>
-            <p>
-              From <strong>{returnFlightData.from}</strong> to{" "}
-              <strong>{returnFlightData.to}</strong>
-            </p>
-            <p>
-              Departure:{" "}
-              <strong>
-                {new Date(returnFlightData.departureTime).toLocaleString()}
-              </strong>
-            </p>
-            <p>
-              Arrival:{" "}
-              <strong>
-                {new Date(returnFlightData.arrivalTime).toLocaleString()}
-              </strong>
-            </p>
-            <p>Class: {returnFlightData.class}</p>
-            <p>Passengers: {returnFlightData.passengers}</p>
-          </div>
-        </div>
-      )}
-      {!outboundFlightData && !returnFlightData && (
-        <p className="reservation-no-data">No flight information available.</p>
-      )}
-      <div className="payment-section">
-        <h2 className="payment-title">Credit Card Payment</h2>
-        <div className="credit-card">
-          <div className="card-front">
-            <div className="chip"></div>
-            <div className="card-number">
-              {cardNumber || "**** **** **** ****"}
+        {outboundFlightData && (
+          <div className="reservation-card">
+            <div className="reservation-header">
+              <h2 className="reservation-title">Outbound Flight</h2>
+              <span className="reservation-price">
+                ${outboundFlightData.totalPrice.toFixed(2)}
+              </span>
             </div>
-            <div className="card-holder">{cardholderName || "Cardholder"}</div>
-            <div className="expiration">{expiryDate || "MM/YY"}</div>
-            <div className="cvv">{cvv || "***"}</div>
+            <div className="reservation-details">
+              <p>
+                <strong>{outboundFlightData.airline}</strong> -{" "}
+                {outboundFlightData.flightNumber}
+              </p>
+              <p>
+                From <strong>{outboundFlightData.from}</strong> to{" "}
+                <strong>{outboundFlightData.to}</strong>
+              </p>
+              <p>
+                Departure:{" "}
+                <strong>
+                  {new Date(outboundFlightData.departureTime).toLocaleString()}
+                </strong>
+              </p>
+              <p>
+                Arrival:{" "}
+                <strong>
+                  {new Date(outboundFlightData.arrivalTime).toLocaleString()}
+                </strong>
+              </p>
+              <p>Class: {outboundFlightData.class}</p>
+              <p>Passengers: {outboundFlightData.passengers}</p>
+            </div>
           </div>
-        </div>
-        <form className="payment-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="cardNumber">Card Number</label>
-            <input
-              type="text"
-              id="cardNumber"
-              placeholder="1234 5678 9012 3456"
-              maxLength={16}
-              value={cardNumber}
-              onChange={handleCardNumberChange}
-              className={formErrors.cardNumber ? "error" : ""}
-            />
-            {formErrors.cardNumber && (
-              <p className="error-message">Card number must be 16 digits.</p>
-            )}
+        )}
+        {returnFlightData && (
+          <div className="reservation-card">
+            <div className="reservation-header">
+              <h2 className="reservation-title">Return Flight</h2>
+              <span className="reservation-price">
+                ${returnFlightData.totalPrice.toFixed(2)}
+              </span>
+            </div>
+            <div className="reservation-details">
+              <p>
+                <strong>{returnFlightData.airline}</strong> -{" "}
+                {returnFlightData.flightNumber}
+              </p>
+              <p>
+                From <strong>{returnFlightData.from}</strong> to{" "}
+                <strong>{returnFlightData.to}</strong>
+              </p>
+              <p>
+                Departure:{" "}
+                <strong>
+                  {new Date(returnFlightData.departureTime).toLocaleString()}
+                </strong>
+              </p>
+              <p>
+                Arrival:{" "}
+                <strong>
+                  {new Date(returnFlightData.arrivalTime).toLocaleString()}
+                </strong>
+              </p>
+              <p>Class: {returnFlightData.class}</p>
+              <p>Passengers: {returnFlightData.passengers}</p>
+            </div>
           </div>
-          <div className="form-row">
+        )}
+        {!outboundFlightData && !returnFlightData && (
+          <p className="reservation-no-data">
+            No flight information available.
+          </p>
+        )}
+        <div className="payment-section">
+          <h2 className="payment-title">Credit Card Payment</h2>
+          <div className="credit-card">
+            <div className="card-front">
+              <div className="chip"></div>
+              <div className="card-number">
+                {cardNumber || "**** **** **** ****"}
+              </div>
+              <div className="card-holder">
+                {cardholderName || "Cardholder"}
+              </div>
+              <div className="expiration">{expiryDate || "MM/YY"}</div>
+              <div className="cvv">{cvv || "***"}</div>
+            </div>
+          </div>
+          <form className="payment-form" onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="expiryDate">Expiry Date</label>
+              <label htmlFor="cardNumber">Card Number</label>
               <input
                 type="text"
-                id="expiryDate"
-                placeholder="MM/YY"
-                value={expiryDate}
-                onChange={handleExpiryDateChange}
-                className={formErrors.expiryDate ? "error" : ""}
+                id="cardNumber"
+                placeholder="1234 5678 9012 3456"
+                maxLength={16}
+                value={cardNumber}
+                onChange={handleCardNumberChange}
+                className={formErrors.cardNumber ? "error" : ""}
               />
-              {formErrors.expiryDate && (
+              {formErrors.cardNumber && (
+                <p className="error-message">Card number must be 16 digits.</p>
+              )}
+            </div>
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="expiryDate">Expiry Date</label>
+                <input
+                  type="text"
+                  id="expiryDate"
+                  placeholder="MM/YY"
+                  value={expiryDate}
+                  onChange={handleExpiryDateChange}
+                  className={formErrors.expiryDate ? "error" : ""}
+                />
+                {formErrors.expiryDate && (
+                  <p className="error-message">
+                    Expiry date must be in MM/YY format.
+                  </p>
+                )}
+              </div>
+              <div className="form-group">
+                <label htmlFor="cvv">CVV</label>
+                <input
+                  type="text"
+                  id="cvv"
+                  placeholder="123"
+                  maxLength={3}
+                  value={cvv}
+                  onChange={handleCvvChange}
+                  className={formErrors.cvv ? "error" : ""}
+                />
+                {formErrors.cvv && (
+                  <p className="error-message">CVV must be 3 digits.</p>
+                )}
+              </div>
+            </div>
+            <div className="form-group">
+              <label htmlFor="cardholderName">Cardholder Name</label>
+              <input
+                type="text"
+                id="cardholderName"
+                placeholder="John Doe"
+                value={cardholderName}
+                onChange={handleCardholderNameChange}
+                className={formErrors.cardholderName ? "error" : ""}
+              />
+              {formErrors.cardholderName && (
                 <p className="error-message">
-                  Expiry date must be in MM/YY format.
+                  Cardholder name must be at least 3 characters.
                 </p>
               )}
             </div>
-            <div className="form-group">
-              <label htmlFor="cvv">CVV</label>
-              <input
-                type="text"
-                id="cvv"
-                placeholder="123"
-                maxLength={3}
-                value={cvv}
-                onChange={handleCvvChange}
-                className={formErrors.cvv ? "error" : ""}
-              />
-              {formErrors.cvv && (
-                <p className="error-message">CVV must be 3 digits.</p>
-              )}
+            <button type="submit" className="pay-button">
+              Pay Now
+            </button>
+          </form>
+        </div>
+        {showPopup && (
+          <div className="reservation-popup">
+            <div className="reservation-popup-content">
+              <h2 className="reservation-popup-title">Payment Alert</h2>
+              <p className="reservation-popup-message">
+                This project is currently in under development. Payment
+                processing and subsequent steps are not functional at this time.
+                We value your feedback as we continue to improve!
+              </p>
+              <button
+                className="reservation-popup-close"
+                onClick={() => setShowPopup(false)}
+              >
+                Got it
+              </button>
             </div>
           </div>
-          <div className="form-group">
-            <label htmlFor="cardholderName">Cardholder Name</label>
-            <input
-              type="text"
-              id="cardholderName"
-              placeholder="John Doe"
-              value={cardholderName}
-              onChange={handleCardholderNameChange}
-              className={formErrors.cardholderName ? "error" : ""}
-            />
-            {formErrors.cardholderName && (
-              <p className="error-message">
-                Cardholder name must be at least 3 characters.
-              </p>
-            )}
-          </div>
-          <button type="submit" className="pay-button">
-            Pay Now
-          </button>
-        </form>
+        )}
       </div>
     </div>
   );
