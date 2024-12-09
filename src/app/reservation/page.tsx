@@ -32,15 +32,26 @@ const ReservationPage: React.FC = () => {
             your booking with ease.
           </div>
         </div>
-        {outboundFlightData && (
-          <ReservationCard flightData={outboundFlightData} title="Outbound Flight" />
-        )}
-        {returnFlightData && (
-          <ReservationCard flightData={returnFlightData} title="Return Flight" />
-        )}
-        {!outboundFlightData && !returnFlightData && (
-          <p className="reservation-no-data">No flight information available.</p>
-        )}
+        <div className="flights-wrapper">
+          {outboundFlightData && (
+            <ReservationCard
+              flightData={outboundFlightData}
+              title="Departure Flight"
+            />
+          )}
+          {returnFlightData && (
+            <ReservationCard
+              flightData={returnFlightData}
+              title="Arrival Flight"
+            />
+          )}
+          {!outboundFlightData && !returnFlightData && (
+            <p className="reservation-no-data">
+              No flight information available.
+            </p>
+          )}
+        </div>
+
         <PaymentForm onPayment={() => setShowPopup(true)} />
         {showPopup && (
           <Popup

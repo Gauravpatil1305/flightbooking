@@ -38,6 +38,32 @@
             margin-top: 10px;
         }
     }
+    .flights-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        margin-top: 30px;
+        .reservation-card {
+            background-color: $white;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            .reservation-title {
+                background-color: $red;
+                padding: 15px;
+                border-radius: 8px 8px 0px 0px;
+                h2 {
+                    font-size: 1rem;
+                    color: $white;
+                    text-align: center;
+                }
+            }
+        }
+    }
     .reservation-section {
         background: $white;
         padding: 20px;
