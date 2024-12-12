@@ -52,14 +52,31 @@
             width: 100%;
             border-radius: 8px;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            .reservation-title {
-                background-color: $red;
+            .reservation-header {
+                .reservation-title {
+                    background-color: $red;
+                    padding: 15px;
+                    border-radius: 8px 8px 0px 0px;
+                    h2 {
+                        font-size: 1rem;
+                        color: $white;
+                        text-align: center;
+                    }
+                }
+            }
+            .reservation-details {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, auto);
+                grid-gap: 10px;
                 padding: 15px;
-                border-radius: 8px 8px 0px 0px;
-                h2 {
-                    font-size: 1rem;
-                    color: $white;
-                    text-align: center;
+                .reservation-row {
+                    display: flex;
+                    align-items: center;
+                    .reservation-label {
+                        display: flex;
+                        align-items: center;
+                    }
                 }
             }
         }
