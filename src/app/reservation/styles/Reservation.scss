@@ -116,6 +116,119 @@
             margin-bottom: 0;
         }
     }
+    .payment-wrapper {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        .payment-header {
+            .payment-title {
+                background-color: $red;
+                padding: 15px;
+                border-radius: 8px 8px 0px 0px;
+                h2 {
+                    font-size: 1rem;
+                    color: $white;
+                    text-align: center;
+                }
+            }
+        }
+        .payment-details {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 30px;
+            .credit-card {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+                .card-front {
+                    width: 300px;
+                    height: 180px;
+                    background: linear-gradient(135deg, $blue, $light-blue);
+                    border-radius: 12px;
+                    color: $white;
+                    padding: 15px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    .chip {
+                        width: 40px;
+                        height: 30px;
+                        background: $gold;
+                        border-radius: 4px;
+                    }
+                    .card-number {
+                        font-size: 1.2rem;
+                        letter-spacing: 2px;
+                    }
+                    .card-holder {
+                        font-size: 1rem;
+                        text-transform: uppercase;
+                    }
+                    .expiration {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+            .payment-form {
+                .form-group {
+                    margin-bottom: 15px;
+                    label {
+                        display: block;
+                        margin-bottom: 5px;
+                        font-size: $size;
+                        color: $dark-gray;
+                    }
+                    input {
+                        width: 100%;
+                        padding: 10px;
+                        font-size: $size;
+                        border: 1px solid $light-gray;
+                        border-radius: 5px;
+                        &:focus {
+                            border-color: $blue;
+                            outline: none;
+                        }
+                        &.error {
+                            border: 2px solid $red;
+                        }
+                    }
+                }
+                .form-row {
+                    display: flex;
+                    gap: 15px;
+                    .form-group {
+                        flex: 1;
+                    }
+                }
+                .pay-button {
+                    width: 100%;
+                    padding: 15px;
+                    background: $red;
+                    color: $white;
+                    font-size: 1rem;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background 0.3s ease;
+                    &:hover {
+                        background: darken($red, 10%);
+                    }
+                }
+            }
+        }
+        .error-message {
+            color: $red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    }
     .reservation-popup {
         position: fixed;
         top: 0;
@@ -161,112 +274,11 @@
         }
     }
     .reservation-no-data {
-        font-size: $size;
         color: $dark-gray;
         text-align: center;
         padding: 20px;
         background: $h-gray;
         border-radius: 8px;
         font-weight: 600;
-    }
-    .payment-section {
-        margin-top: 30px;
-        margin-bottom: 30px;
-        padding: 20px;
-        background: $white;
-        border-radius: 8px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        .payment-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: $dark-gray;
-            text-align: center;
-            font-weight: 600;
-        }
-        .credit-card {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-            .card-front {
-                width: 300px;
-                height: 180px;
-                background: linear-gradient(135deg, $blue, $light-blue);
-                border-radius: 12px;
-                color: $white;
-                padding: 15px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                .chip {
-                    width: 40px;
-                    height: 30px;
-                    background: $gold;
-                    border-radius: 4px;
-                }
-                .card-number {
-                    font-size: 1.2rem;
-                    letter-spacing: 2px;
-                }
-                .card-holder {
-                    font-size: 1rem;
-                    text-transform: uppercase;
-                }
-                .expiration {
-                    font-size: 0.9rem;
-                }
-            }
-        }
-        .payment-form {
-            .form-group {
-                margin-bottom: 15px;
-                label {
-                    display: block;
-                    margin-bottom: 5px;
-                    font-size: $size;
-                    color: $dark-gray;
-                }
-                input {
-                    width: 100%;
-                    padding: 10px;
-                    font-size: $size;
-                    border: 1px solid $light-gray;
-                    border-radius: 5px;
-                    &:focus {
-                        border-color: $blue;
-                        outline: none;
-                    }
-                    &.error {
-                        border: 2px solid $red;
-                    }
-                }
-            }
-            .form-row {
-                display: flex;
-                gap: 15px;
-                .form-group {
-                    flex: 1;
-                }
-            }
-            .pay-button {
-                width: 100%;
-                padding: 15px;
-                background: $red;
-                color: $white;
-                font-size: 1rem;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: background 0.3s ease;
-                &:hover {
-                    background: darken($red, 10%);
-                }
-            }
-        }
-    }
-    .error-message {
-        color: $red;
-        font-size: 12px;
-        margin-top: 5px;
     }
 }

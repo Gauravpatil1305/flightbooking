@@ -57,8 +57,13 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ onPayment }) => {
   };
 
   return (
-    <div className="payment-section">
-      <h2 className="payment-title">Payment Details</h2>
+    <div className="payment-wrapper">
+      <div className="payment-header">
+        <div className="payment-title">
+          <h2>Payment Details</h2>
+        </div>
+      </div>
+      <div className="payment-details">
       <div className="credit-card">
         <div className="card-front">
           <div className="chip"></div>
@@ -141,6 +146,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ onPayment }) => {
           Pay Now
         </button>
       </form>
+      </div>
     </div>
   );
 };
