@@ -21,19 +21,19 @@ const ReservationCard: React.FC<ReservationCardProps> = ({
       <div className="reservation-details">
         <div className="reservation-row">
           <span className="reservation-label">
-            <Icon icon="mdi:airplane" className="icon" /> Airline:
+            <Icon icon="mdi:airplane" className="icon" />
           </span>
           <span className="reservation-value">{flightData.airline}</span>
         </div>
         <div className="reservation-row">
           <span className="reservation-label">
-            <Icon icon="mdi:ticket-outline" className="icon" /> Flight Number:
+            <Icon icon="mdi:ticket-outline" className="icon" />
           </span>
           <span className="reservation-value">{flightData.flightNumber}</span>
         </div>
         <div className="reservation-row">
           <span className="reservation-label">
-            <Icon icon="mdi:map-marker" className="icon" /> From/To:
+            <Icon icon="mdi:map-marker" className="icon" />
           </span>
           <span className="reservation-value">
             {flightData.from} - {flightData.to}
@@ -41,8 +41,7 @@ const ReservationCard: React.FC<ReservationCardProps> = ({
         </div>
         <div className="reservation-row">
           <span className="reservation-label">
-            <Icon icon="mdi:clock-time-four-outline" className="icon" />{" "}
-            Departure:
+            <Icon icon="mdi:clock-time-four-outline" className="icon" />
           </span>
           <span className="reservation-value">
             {new Date(flightData.departureTime).toLocaleString()}
@@ -50,8 +49,7 @@ const ReservationCard: React.FC<ReservationCardProps> = ({
         </div>
         <div className="reservation-row">
           <span className="reservation-label">
-            <Icon icon="mdi:clock-time-four-outline" className="icon" />{" "}
-            Arrival:
+            <Icon icon="mdi:clock-time-four-outline" className="icon" />
           </span>
           <span className="reservation-value">
             {new Date(flightData.arrivalTime).toLocaleString()}
@@ -59,7 +57,7 @@ const ReservationCard: React.FC<ReservationCardProps> = ({
         </div>
         <div className="reservation-row">
           <span className="reservation-label">
-            <Icon icon="mdi:currency-usd" className="icon" /> Price:
+            <Icon icon="mdi:currency-usd" className="icon" />
           </span>
           <span className="reservation-value">
             {flightData.totalPrice.toFixed(2)}
@@ -67,13 +65,15 @@ const ReservationCard: React.FC<ReservationCardProps> = ({
         </div>
         <div className="reservation-row">
           <span className="reservation-label">
-            <Icon icon="mdi:account-group" className="icon" /> Passenger:
+            <Icon icon="mdi:account-group" className="icon" />
           </span>
-          <span className="reservation-value">{flightData.passengers}</span>
+          <span className="reservation-value">
+            {flightData.passengers} Passenger
+          </span>
         </div>
         <div className="reservation-row">
           <span className="reservation-label">
-            <Icon icon="mdi:seat-outline" className="icon" /> Class:
+            <Icon icon="mdi:seat-outline" className="icon" />
           </span>
           <span className="reservation-value">{flightData.class}</span>
         </div>
