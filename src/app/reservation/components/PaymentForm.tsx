@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Icon } from "@iconify/react";
 interface PaymentFormProps {
   onPayment: () => void;
 }
@@ -156,6 +156,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ onPayment }) => {
             )}
           </div>
           <button type="submit" className="pay-button">
+            <Icon icon="fluent-emoji-high-contrast:money-bag" />
             Pay Now
           </button>
         </form>
