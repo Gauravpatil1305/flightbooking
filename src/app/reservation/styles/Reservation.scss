@@ -149,26 +149,6 @@
             .payment-form {
                 .form-group {
                     margin-bottom: 15px;
-                    label {
-                        display: block;
-                        margin-bottom: 5px;
-                        font-size: $size;
-                        color: $dark-gray;
-                    }
-                    input {
-                        width: 100%;
-                        padding: 10px;
-                        font-size: $size;
-                        border: 1px solid $light-gray;
-                        border-radius: 5px;
-                        &:focus {
-                            border-color: $blue;
-                            outline: none;
-                        }
-                        &.error {
-                            border: 2px solid $red;
-                        }
-                    }
                 }
                 .form-row {
                     display: flex;
@@ -201,38 +181,41 @@
                     width: 100%;
                     .floating-input {
                         width: 100%;
-                        padding: 10px;
+                        max-height: 60px;
+                        padding: 20px;
                         font-size: 1rem;
                         background-color: $white;
                         border: 1px solid $light-gray;
-                        border-radius: 5px;
+                        border-radius: 4px;
                         outline: none;
                         transition: border-color 0.3s ease;
-                        &:focus {
-                            border-color: $blue;
+                        @media (max-width: $sm-breakpoint) {
+                            max-height: 50px;
                         }
-                        &.error {
-                            border: 2px solid $red;
+                        &:focus {
+                            border-color: $red;
+                            background-color: $white;
                         }
                     }
                     .floating-label {
                         position: absolute;
                         top: 50%;
                         left: 10px;
-                        transform: translateY(-50%);
                         font-size: 1rem;
                         color: $dark-gray;
                         pointer-events: none;
+                        background-color: transparent;
+                        padding: 0 4px;
                         transition: all 0.3s ease;
+                        transform: translateY(-50%);
                     }
                     .floating-input:focus + .floating-label,
                     .floating-input:not(:placeholder-shown) + .floating-label {
-                        top: -10px;
-                        left: 8px;
+                        top: 0px;
+                        left: 15px;
                         font-size: 0.8rem;
-                        color: $blue;
+                        color: $red;
                         background-color: $white;
-                        padding: 0 4px;
                     }
                 }
             }
