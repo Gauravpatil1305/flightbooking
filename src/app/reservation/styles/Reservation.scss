@@ -86,36 +86,6 @@
             }
         }
     }
-    .reservation-section {
-        background: $white;
-        padding: 20px;
-        border-radius: 8px;
-        margin-bottom: 20px;
-        border: 1px solid $light-gray;
-        box-shadow: 0 2px 4px $dark-gray-tp;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        &:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px $dark-gray-tp;
-        }
-    }
-    .reservation-subtitle {
-        font-size: 1.5rem;
-        color: $dark-gray;
-        margin-bottom: 10px;
-        font-weight: 600;
-    }
-    .reservation-detail {
-        font-size: $size;
-        color: $dark-gray;
-        margin-bottom: 8px;
-        strong {
-            color: $red;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
     .payment-wrapper {
         margin-top: 30px;
         margin-bottom: 30px;
@@ -221,12 +191,12 @@
                         background: darken($red, 10%);
                     }
                 }
+                .error-message {
+                    color: $red;
+                    font-size: 12px;
+                    margin-top: 5px;
+                }
             }
-        }
-        .error-message {
-            color: $red;
-            font-size: 12px;
-            margin-top: 5px;
         }
     }
     .reservation-popup {
