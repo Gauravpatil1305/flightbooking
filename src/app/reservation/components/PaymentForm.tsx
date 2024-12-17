@@ -64,88 +64,101 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ onPayment }) => {
         </div>
       </div>
       <div className="payment-details">
-      <div className="credit-card">
-        <div className="card-front">
-          <div className="chip"></div>
-          <div className="card-number">
-            {cardNumber || "**** **** **** ****"}
+        <div className="credit-card">
+          <div className="card-front">
+            <div className="chip"></div>
+            <div className="card-number">
+              {cardNumber || "**** **** **** ****"}
+            </div>
+            <div className="cardholder-name">
+              {cardholderName || "Cardholder"}
+            </div>
+            <div className="expiry">{expiryDate || "MM/YY"}</div>
+            <div className="cvv">{cvv || "***"}</div>
           </div>
-          <div className="cardholder-name">
-            {cardholderName || "Cardholder"}
-          </div>
-          <div className="expiry">{expiryDate || "MM/YY"}</div>
-          <div className="cvv">{cvv || "***"}</div>
         </div>
-      </div>
-      <form className="payment-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="cardNumber">Card Number</label>
-          <input
-            type="text"
-            id="cardNumber"
-            placeholder="1234 5678 9012 3456"
-            maxLength={16}
-            value={cardNumber}
-            onChange={handleCardNumberChange}
-            className={formErrors.cardNumber ? "error" : ""}
-          />
-          {formErrors.cardNumber && (
-            <p className="error-message">Card number must be 16 digits.</p>
-          )}
-        </div>
-        <div className="form-row">
-          <div className="form-group">
-            <label htmlFor="expiryDate">Expiry Date</label>
+        <form className="payment-form" onSubmit={handleSubmit}>
+          <div className="form-group input-container">
             <input
               type="text"
-              id="expiryDate"
-              placeholder="MM/YY"
-              value={expiryDate}
-              onChange={handleExpiryDateChange}
-              className={formErrors.expiryDate ? "error" : ""}
+              id="cardNumber"
+              value={cardNumber}
+              onChange={handleCardNumberChange}
+              className={`floating-input ${
+                formErrors.cardNumber ? "error" : ""
+              }`}
+              placeholder=" "
+              maxLength={16}
             />
-            {formErrors.expiryDate && (
+            <label htmlFor="cardNumber" className="floating-label">
+              Card Number
+            </label>
+            {formErrors.cardNumber && (
+              <p className="error-message">Card number must be 16 digits.</p>
+            )}
+          </div>
+          <div className="form-row">
+            <div className="form-group input-container">
+              <input
+                type="text"
+                id="expiryDate"
+                value={expiryDate}
+                onChange={handleExpiryDateChange}
+                className={`floating-input ${
+                  formErrors.expiryDate ? "error" : ""
+                }`}
+                placeholder=" "
+              />
+              <label htmlFor="expiryDate" className="floating-label">
+                Expiry Date
+              </label>
+              {formErrors.expiryDate && (
+                <p className="error-message">
+                  Expiry date must be in MM/YY format.
+                </p>
+              )}
+            </div>
+            <div className="form-group input-container">
+              <input
+                type="text"
+                id="cvv"
+                value={cvv}
+                onChange={handleCvvChange}
+                className={`floating-input ${formErrors.cvv ? "error" : ""}`}
+                placeholder=" "
+              />
+              <label htmlFor="cvv" className="floating-label">
+                CVV
+              </label>
+              {formErrors.cvv && (
+                <p className="error-message">CVV must be 3 digits.</p>
+              )}
+            </div>
+          </div>
+          <div className="form-group input-container">
+            <input
+              type="text"
+              id="cardholderName"
+              value={cardholderName}
+              onChange={handleCardholderNameChange}
+              className={`floating-input ${
+                formErrors.cardholderName ? "error" : ""
+              }`}
+              placeholder=" "
+            />
+            <label htmlFor="cardholderName" className="floating-label">
+              Cardholder Name
+            </label>
+            {formErrors.cardholderName && (
               <p className="error-message">
-                Expiry date must be in MM/YY format.
+                Cardholder name must be at least 3 characters.
               </p>
             )}
           </div>
-          <div className="form-group">
-            <label htmlFor="cvv">CVV</label>
-            <input
-              type="text"
-              id="cvv"
-              placeholder="123"
-              maxLength={3}
-              value={cvv}
-              onChange={handleCvvChange}
-              className={formErrors.cvv ? "error" : ""}
-            />
-            {formErrors.cvv && (
-              <p className="error-message">CVV must be 3 digits.</p>
-            )}
-          </div>
-        </div>
-        <div className="form-group">
-          <label htmlFor="cardholderName">Cardholder Name</label>
-          <input
-            type="text"
-            id="cardholderName"
-            placeholder="John Doe"
-            value={cardholderName}
-            onChange={handleCardholderNameChange}
-            className={formErrors.cardholderName ? "error" : ""}
-          />
-          {formErrors.cardholderName && (
-            <p className="error-message">
-              Cardholder name must be at least 3 characters.
-            </p>
-          )}
-        </div>
-        <button type="submit" className="pay-button">
-          Pay Now
-        </button>
-      </form>
+          <button type="submit" className="pay-button">
+            Pay Now
+          </button>
+        </form>
       </div>
     </div>
   );

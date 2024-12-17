@@ -196,6 +196,45 @@
                     font-size: 12px;
                     margin-top: 5px;
                 }
+                .input-container {
+                    position: relative;
+                    width: 100%;
+                    .floating-input {
+                        width: 100%;
+                        padding: 10px;
+                        font-size: 1rem;
+                        background-color: $white;
+                        border: 1px solid $light-gray;
+                        border-radius: 5px;
+                        outline: none;
+                        transition: border-color 0.3s ease;
+                        &:focus {
+                            border-color: $blue;
+                        }
+                        &.error {
+                            border: 2px solid $red;
+                        }
+                    }
+                    .floating-label {
+                        position: absolute;
+                        top: 50%;
+                        left: 10px;
+                        transform: translateY(-50%);
+                        font-size: 1rem;
+                        color: $dark-gray;
+                        pointer-events: none;
+                        transition: all 0.3s ease;
+                    }
+                    .floating-input:focus + .floating-label,
+                    .floating-input:not(:placeholder-shown) + .floating-label {
+                        top: -10px;
+                        left: 8px;
+                        font-size: 0.8rem;
+                        color: $blue;
+                        background-color: $white;
+                        padding: 0 4px;
+                    }
+                }
             }
         }
     }
