@@ -28,8 +28,13 @@
             padding: 5px 10px;
             cursor: pointer;
             svg {
+                display: block;
                 width: 30px;
                 height: 30px;
+                @media (max-width: $sm-breakpoint) {
+                    width: 20px;
+                    height: 20px;
+                }
                 color: $red;
             }
         }
@@ -37,6 +42,9 @@
             img {
                 width: 100%;
                 height: 70px;
+                @media (max-width: $sm-breakpoint) {
+                    height: 40px;
+                }
                 object-fit: cover;
             }
             @media (max-width: $md-breakpoint) {
@@ -76,6 +84,9 @@
                     align-items: center;
                     justify-content: center;
                     gap: 20px;
+                    @media (max-width: $sm-breakpoint) {
+                        gap: 10px;
+                    }
                     @media (max-width: $md-breakpoint) {
                         flex-direction: column;
                         list-style: none;
@@ -92,6 +103,9 @@
                             font-weight: 600;
                             color: $white;
                             font-size: 1.15rem;
+                            @media (max-width: $sm-breakpoint) {
+                                font-size: 0.9rem;
+                            }
                             padding: 4px 8px;
                             transition-duration: 200ms;
                             border-radius: 7px;
@@ -101,6 +115,10 @@
                             svg {
                                 width: 30px;
                                 height: 30px;
+                                @media (max-width: $sm-breakpoint) {
+                                    width: 20px;
+                                    height: 20px;
+                                }
                             }
                             &:hover {
                                 border-radius: 7px;
@@ -137,6 +155,14 @@
                     }
                 }
             }
+            @media (max-width: $sm-breakpoint) {
+                .close-btn {
+                    svg {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
         }
         .account {
             @media (max-width: $md-breakpoint) {
@@ -168,6 +194,10 @@
                         height: 30px;
                         color: $red;
                     }
+                    @media (max-width: $sm-breakpoint) {
+                        width: 20px;
+                        height: 20px;
+                    }
                     width: 24px;
                     height: 24px;
                 }
@@ -187,6 +217,9 @@
     .alert {
         background-color: $red;
         color: $white;
+        @media (max-width: $sm-breakpoint) {
+            display: none;
+        }
         .alert-content {
             display: flex;
             align-items: center;
