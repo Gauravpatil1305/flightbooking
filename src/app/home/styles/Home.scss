@@ -645,13 +645,16 @@
                 font-size: 2.5rem;
                 font-weight: 600;
                 @media (max-width: $sm-breakpoint) {
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                 }
             }
             .description {
                 color: $dark-gray;
                 text-align: center;
                 font-size: 1rem;
+                @media (max-width: $sm-breakpoint) {
+                    font-size: 0.85rem;
+                }
                 font-weight: 500;
             }
             &::after {
@@ -707,6 +710,9 @@
                         justify-content: center;
                         gap: 5px;
                         font-size: 1rem;
+                        @media (max-width: $sm-breakpoint) {
+                            font-size: 0.85rem;
+                        }
                         padding: 10px 15px;
                         background-color: $red;
                         color:  $white;
@@ -741,6 +747,10 @@
                             h3 {
                                 margin: 0;
                                 font-size: 1rem;
+                                @media (max-width: $sm-breakpoint) {
+                                    font-size: 0.85rem;
+                                    flex: 1;
+                                }
                             }
                             .accordion-icon {
                                 font-size: 2rem;
@@ -755,6 +765,9 @@
                             p {
                                 margin: 10px 0;
                                 font-size: 1rem;
+                                @media (max-width: $sm-breakpoint) {
+                                    font-size: 0.85rem;
+                                }
                                 line-height: 1.5;
                             }
                         }
