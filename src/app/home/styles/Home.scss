@@ -269,13 +269,16 @@
                 font-size: 2.5rem;
                 font-weight: 600;
                 @media (max-width: $sm-breakpoint) {
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                 }
             }
             .description {
                 color: $dark-gray;
                 text-align: center;
                 font-size: 1rem;
+                @media (max-width: $sm-breakpoint) {
+                    font-size: 0.85rem;
+                }
                 font-weight: 500;
             }
             &::after {
@@ -331,6 +334,7 @@
                         font-size: 1.2rem;
                         margin-bottom: 20px;
                         @media (max-width: $sm-breakpoint) {
+                            font-size: 1rem;
                             text-align: center;
                         }
                     }
@@ -342,6 +346,9 @@
                             gap: 10px;
                             padding-left: 0;
                             font-size: 1rem;
+                            @media (max-width: $sm-breakpoint) {
+                                font-size: 0.85rem;
+                            }
                             margin-bottom: 15px;
                             .check-icon {
                                 color: $red;
@@ -364,6 +371,7 @@
                             transition: background-color 0.3s ease;
                             border: solid 1px transparent;
                             @media (max-width: $sm-breakpoint) {
+                                font-size: 0.85rem;
                                 width: 100%;
                                 text-align: center;
                             }
