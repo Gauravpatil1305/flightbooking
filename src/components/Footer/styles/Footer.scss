@@ -13,6 +13,10 @@
             padding: 50px 15px;
             gap: 50px;
         }
+        @media (max-width: $sm-breakpoint) {
+            padding: 30px 15px;
+            gap: 30px;
+        }
         .footer-info {
             display: flex;
             align-items: center;
@@ -22,11 +26,21 @@
                 flex-direction: column;
                 gap: 45px;
             }
+            @media (max-width: $sm-breakpoint) {
+                gap: 30px;
+            }
             .footer-logo {
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;
                 flex: 1;
+                @media (max-width: $sm-breakpoint) {
+                    img {
+                        width: 100%;
+                        height: 40px;
+                        object-fit: cover;
+                    }
+                }
             }
             .footer-newsletter {
                 display: flex;
@@ -38,11 +52,18 @@
                 }
                 .title {
                     font-size: 1.5rem;
+                    @media (max-width: $sm-breakpoint) {
+                        font-size: 1.2rem;
+                    }
                     margin-bottom: 10px;
                     color: $white;
+                    text-align: center;
                 }
                 .description {
                     font-size: 1rem;
+                    @media (max-width: $sm-breakpoint) {
+                        font-size: 0.9rem;
+                    }
                     margin-bottom: 20px;
                     color: $white;
                     line-height: 1.5;
@@ -54,12 +75,18 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    @media (max-width: $sm-breakpoint) {
+                        flex-direction: column;
+                    }
                     gap: 10px;
                     width: 100%;
                     .input {
                         font-size: 1rem;
+                        @media (max-width: $sm-breakpoint) {
+                            font-size: 0.85rem;
+                        }
                         padding: 15px;
-                        border-radius: 5px;
+                        border-radius: 8px;
                         border: none;
                         width: 100%;
                     }
@@ -68,10 +95,14 @@
                         background-color: $red;
                         color: $white;
                         border: none;
-                        border-radius: 5px;
+                        border-radius: 8px;
                         font-size: 1rem;
                         font-weight: bold;
                         cursor: pointer;
+                        @media (max-width: $sm-breakpoint) {
+                            width: 100%;
+                            font-size: 0.85rem;
+                        }
                     }
                 }
                 .popUpMessage {
@@ -79,7 +110,7 @@
                     bottom: 20px;
                     right: 20px;
                     padding: 15px;
-                    border-radius: 5px;
+                    border-radius: 8px;
                     color: $white;
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                     z-index: 1000;
@@ -114,6 +145,12 @@
                 justify-content: flex-end;
                 flex: 1;
                 gap: 8px;
+                @media (max-width: $sm-breakpoint) {
+                    img {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
             }
         }
         .footer-navbar {
@@ -127,6 +164,9 @@
                     grid-template-columns: repeat(1, 1fr);
                     grid-template-rows: repeat(1, 1fr);
                 }
+                @media (max-width: $sm-breakpoint) {
+                    gap: 12px;
+                }
                 .navbar-content {
                     display: flex;
                     flex-direction: column;
@@ -135,9 +175,16 @@
                         gap: 0;
                         background-color: $white;
                         padding: 12px;
+                        border-radius: 8px;
+                    }
+                    @media (max-width: $sm-breakpoint) {
+                        padding: 8px;
                     }
                     .navbar-title {
                         font-size: 1.2rem;
+                        @media (max-width: $sm-breakpoint) {
+                            font-size: 0.9rem;
+                        }
                         color: $white;
                         .navbar-icon {
                             display: none;
@@ -182,6 +229,9 @@
                                     color: $red;
                                     font-size: 1.1rem;
                                 }
+                                @media (max-width: $sm-breakpoint) {
+                                    font-size: 0.85rem;
+                                }
                                 transition-duration: 300ms;
                                 &:hover {
                                     color: $red;
@@ -204,6 +254,10 @@
                 }
                 .copyright {
                     font-size: 1rem;
+                    text-align: center;
+                    @media (max-width: $sm-breakpoint) {
+                        font-size: 0.85rem;
+                    }
                     color: $white;
                 }
                 .markets {
