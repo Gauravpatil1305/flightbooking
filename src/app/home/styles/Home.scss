@@ -11,6 +11,9 @@
         @media (max-width: $sm-breakpoint) {
             height: 150px;
         }
+        @media (max-width: $md-breakpoint) {
+            height: 300px;
+        }
         .imageWrapper {
             position: relative;
             width: 100%;
@@ -147,6 +150,10 @@
             padding: 20px 0px;
             @media (max-width: $sm-breakpoint) {
                 grid-template-columns: 1fr;
+            }
+            @media (max-width: $md-breakpoint) {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(5, auto);
             }
             .extra-service-card {
                 position: relative;
@@ -301,6 +308,9 @@
             @media (max-width: $sm-breakpoint) {
                 grid-template-columns: 1fr;
             }
+            @media (max-width: $md-breakpoint) {
+                grid-template-columns: 1fr;
+            }
             .cabin-card {
                 display: flex;
                 align-items: center;
@@ -411,6 +421,9 @@
         @media (max-width: $sm-breakpoint) {
             height: 100%;
         }
+        @media (max-width: $md-breakpoint) {
+            height: 100%;
+        }
         .headline {
             display: flex;
             flex-direction: column;
@@ -476,6 +489,10 @@
                 position: relative;
                 z-index: 1;
                 @media (max-width: $sm-breakpoint) {
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(4, auto);
+                }
+                @media (max-width: $md-breakpoint) {
                     grid-template-columns: repeat(2, 1fr);
                     grid-template-rows: repeat(4, auto);
                 }
@@ -843,6 +860,11 @@
                     grid-gap: 15px;
                     margin-bottom: 20px;
                 }
+                @media (max-width: $md-breakpoint) {
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-gap: 15px;
+                    margin-bottom: 20px;
+                }
                 .tab {
                     padding: 15px 25px;
                     color: $dark-gray;
@@ -871,6 +893,10 @@
                 grid-template-columns: repeat(5, 1fr);
                 grid-gap: 20px;
                 @media (max-width: $sm-breakpoint) {
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-gap: 10px;
+                }
+                @media (max-width: $md-breakpoint) {
                     grid-template-columns: repeat(2, 1fr);
                     grid-gap: 10px;
                 }
@@ -1047,6 +1073,11 @@
                             gap: 10px;
                             padding: 12px 10px;
                         }
+                        @media (max-width: $md-breakpoint) {
+                            flex-direction: column;
+                            text-align: center;
+                            font-size: 0.9rem;
+                        }
                         &:first-child {
                             border-left: none;
                             border-radius: 8px 0px 0px 0px;
@@ -1160,6 +1191,9 @@
                                 @media (max-width: $sm-breakpoint) {
                                     grid-template-columns: 1fr;
                                 }
+                                @media (max-width: $md-breakpoint) {
+                                    grid-template-columns: 1fr;
+                                }
                                 .input-container {
                                     position: relative;
                                     width: 100%;
@@ -1255,6 +1289,9 @@
                                 gap: 10px;
                                 margin-top: 10px;
                                 @media (max-width: $sm-breakpoint) {
+                                    flex-direction: column;
+                                }
+                                @media (max-width: $md-breakpoint) {
                                     flex-direction: column;
                                 }
                                 .search-history-item {
