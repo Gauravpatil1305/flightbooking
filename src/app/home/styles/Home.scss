@@ -338,7 +338,7 @@
                     color: $dark-gray;
                     min-width: 400px;
                     @media (max-width: $md-breakpoint) {
-                        min-width: 300px;
+                        min-width: calc(100% - 200px);
                     }
                     @media (max-width: $sm-breakpoint) {
                         min-width: 100%;
