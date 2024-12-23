@@ -8,11 +8,11 @@
         overflow: hidden;
         z-index: 1;
         background-color: $white;
-        @media (max-width: $sm-breakpoint) {
-            height: 150px;
-        }
         @media (max-width: $md-breakpoint) {
             height: 300px;
+        }
+        @media (max-width: $sm-breakpoint) {
+            height: 150px;
         }
         .imageWrapper {
             position: relative;
@@ -148,12 +148,12 @@
             grid-template-rows: repeat(2, auto);
             gap: 20px;
             padding: 20px 0px;
-            @media (max-width: $sm-breakpoint) {
-                grid-template-columns: 1fr;
-            }
             @media (max-width: $md-breakpoint) {
                 grid-template-columns: repeat(2, 1fr);
                 grid-template-rows: repeat(5, auto);
+            }
+            @media (max-width: $sm-breakpoint) {
+                grid-template-columns: 1fr;
             }
             .extra-service-card {
                 position: relative;
@@ -305,10 +305,10 @@
             grid-template-rows: repeat(2, auto);
             grid-gap: 30px;
             padding: 20px 0px;
-            @media (max-width: $sm-breakpoint) {
+            @media (max-width: $md-breakpoint) {
                 grid-template-columns: 1fr;
             }
-            @media (max-width: $md-breakpoint) {
+            @media (max-width: $sm-breakpoint) {
                 grid-template-columns: 1fr;
             }
             .cabin-card {
@@ -337,22 +337,22 @@
                     padding: 20px;
                     color: $dark-gray;
                     min-width: 400px;
-                    @media (max-width: $sm-breakpoint) {
-                        min-width: 100%;
-                    }
                     @media (max-width: $md-breakpoint) {
                         min-width: 300px;
+                    }
+                    @media (max-width: $sm-breakpoint) {
+                        min-width: 100%;
                     }
                     h3 {
                         font-size: 1.2rem;
                         margin-bottom: 20px;
-                        @media (max-width: $sm-breakpoint) {
-                            font-size: 1rem;
-                            text-align: center;
-                        }
                         @media (max-width: $md-breakpoint) {
                             font-size: 1rem;
                             margin-bottom: 12px;
+                        }
+                        @media (max-width: $sm-breakpoint) {
+                            font-size: 1rem;
+                            text-align: center;
                         }
                     }
                     ul {
@@ -363,13 +363,13 @@
                             gap: 10px;
                             padding-left: 0;
                             font-size: 1rem;
-                            @media (max-width: $sm-breakpoint) {
-                                font-size: 0.85rem;
-                                margin-bottom: 15px;
-                            }
                             @media (max-width: $md-breakpoint) {
                                 font-size: 0.9rem;
                                 margin-bottom: 12px;
+                            }
+                            @media (max-width: $sm-breakpoint) {
+                                font-size: 0.85rem;
+                                margin-bottom: 15px;
                             }
                             margin-bottom: 15px;
                             .check-icon {
@@ -382,11 +382,11 @@
                         align-items: center;
                         justify-content: flex-start;
                         margin-top: 20px;
-                        @media (max-width: $sm-breakpoint) {
-                            margin-top: 20px;
-                        }
                         @media (max-width: $md-breakpoint) {
                             margin-top: 12px;
+                        }
+                        @media (max-width: $sm-breakpoint) {
+                            margin-top: 20px;
                         }
                         .more-button {
                             display: inline-block;
@@ -423,13 +423,13 @@
                         height: 200px;
                         border-radius: 50%;
                         object-fit: cover;
-                        @media (max-width: $sm-breakpoint) {
-                            width: 100%;
-                            border-radius: 8px;
-                        }
                         @media (max-width: $md-breakpoint) {
                             width: 190px;
                             height: 190px;
+                        }
+                        @media (max-width: $sm-breakpoint) {
+                            width: 100%;
+                            border-radius: 8px;
                         }
                     }
                 }
@@ -440,10 +440,10 @@
         position: relative;
         overflow: hidden;
         height: 645px;
-        @media (max-width: $sm-breakpoint) {
+        @media (max-width: $md-breakpoint) {
             height: 100%;
         }
-        @media (max-width: $md-breakpoint) {
+        @media (max-width: $sm-breakpoint) {
             height: 100%;
         }
         .headline {
@@ -488,6 +488,9 @@
         }
         .content {
             padding: 20px 0px;
+            @media (max-width: $md-breakpoint) {
+                padding-bottom: 50px;
+            }
             @media (max-width: $sm-breakpoint) {
                 padding-bottom: 40px;
             }
@@ -510,11 +513,11 @@
                 gap: 30px;
                 position: relative;
                 z-index: 1;
-                @media (max-width: $sm-breakpoint) {
+                @media (max-width: $md-breakpoint) {
                     grid-template-columns: repeat(2, 1fr);
                     grid-template-rows: repeat(4, auto);
                 }
-                @media (max-width: $md-breakpoint) {
+                @media (max-width: $sm-breakpoint) {
                     grid-template-columns: repeat(2, 1fr);
                     grid-template-rows: repeat(4, auto);
                 }
@@ -532,6 +535,10 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        @media (max-width: $md-breakpoint) {
+                            width: 130px;
+                            height: 130px;
+                        }
                         @media (max-width: $sm-breakpoint) {
                             width: 120px;
                             height: 120px;
@@ -540,6 +547,9 @@
                             color: $dark-gray;
                             font-size: 2.5rem;
                             font-weight: bold;
+                            @media (max-width: $md-breakpoint) {
+                                font-size: 2rem;
+                            }
                             @media (max-width: $sm-breakpoint) {
                                 font-size: 1.5rem;
                             }
@@ -551,6 +561,9 @@
                         font-size: 1.2rem;
                         text-align: center;
                         line-height: 1.2;
+                        @media (max-width: $md-breakpoint) {
+                            font-size: 1rem;
+                        }
                         @media (max-width: $sm-breakpoint) {
                             font-size: 0.85rem;
                             min-height: 40px;
@@ -632,6 +645,9 @@
                             margin-top: 10px;
                             h3 {
                                 font-size: 1.2rem;
+                                @media (max-width: $md-breakpoint) {
+                                    font-size: 1rem;
+                                }
                                 @media (max-width: $sm-breakpoint) {
                                     font-size: 1rem;
                                 }
@@ -640,6 +656,9 @@
                             }
                             p {
                                 font-size: 1rem;
+                                @media (max-width: $md-breakpoint) {
+                                    font-size: 0.85rem;
+                                }
                                 @media (max-width: $sm-breakpoint) {
                                     font-size: 0.85rem;
                                 }
@@ -713,6 +732,10 @@
                 display: flex;
                 align-items: center;
                 gap: 20px;
+                @media (max-width: $md-breakpoint) {
+                    flex-direction: column-reverse;
+                    gap: 40px;
+                }
                 @media (max-width: $sm-breakpoint) {
                     flex-direction: column-reverse;
                     gap: 40px;
@@ -877,12 +900,12 @@
                 grid-template-columns: repeat(6, 1fr);
                 grid-gap: 30px;
                 margin-bottom: 35px;
-                @media (max-width: $sm-breakpoint) {
+                @media (max-width: $md-breakpoint) {
                     grid-template-columns: repeat(2, 1fr);
                     grid-gap: 15px;
                     margin-bottom: 20px;
                 }
-                @media (max-width: $md-breakpoint) {
+                @media (max-width: $sm-breakpoint) {
                     grid-template-columns: repeat(2, 1fr);
                     grid-gap: 15px;
                     margin-bottom: 20px;
@@ -914,11 +937,11 @@
                 display: grid;
                 grid-template-columns: repeat(5, 1fr);
                 grid-gap: 20px;
-                @media (max-width: $sm-breakpoint) {
+                @media (max-width: $md-breakpoint) {
                     grid-template-columns: repeat(2, 1fr);
                     grid-gap: 10px;
                 }
-                @media (max-width: $md-breakpoint) {
+                @media (max-width: $sm-breakpoint) {
                     grid-template-columns: repeat(2, 1fr);
                     grid-gap: 10px;
                 }
@@ -1029,6 +1052,9 @@
                             margin-top: 10px;
                             h3 {
                                 font-size: 1.2rem;
+                                @media (max-width: $md-breakpoint) {
+                                    font-size: 1rem;
+                                }
                                 @media (max-width: $sm-breakpoint) {
                                     font-size: 1rem;
                                 }
@@ -1037,6 +1063,9 @@
                             }
                             p {
                                 font-size: 1rem;
+                                @media (max-width: $md-breakpoint) {
+                                    font-size: 0.85rem;
+                                }
                                 @media (max-width: $sm-breakpoint) {
                                     font-size: 0.85rem;
                                 }
@@ -1088,13 +1117,6 @@
                         font-size: 1.1rem;
                         font-weight: 600;
                         transition-duration: 200ms;
-                        @media (max-width: $sm-breakpoint) {
-                            flex-direction: column;
-                            text-align: center;
-                            font-size: 0.75rem;
-                            gap: 10px;
-                            padding: 12px 10px;
-                        }
                         @media (max-width: $md-breakpoint) {
                             flex-direction: column;
                             justify-content: flex-start;
@@ -1103,6 +1125,13 @@
                             gap: 10px;
                             padding: 20px 15px;
                             line-height: 1.1;
+                        }
+                        @media (max-width: $sm-breakpoint) {
+                            flex-direction: column;
+                            text-align: center;
+                            font-size: 0.75rem;
+                            gap: 10px;
+                            padding: 12px 10px;
                         }
                         &:first-child {
                             border-left: none;
@@ -1154,10 +1183,10 @@
                                     padding: 5px;
                                     cursor: pointer;
                                     user-select: none;
-                                    @media (max-width: $sm-breakpoint) {
+                                    @media (max-width: $md-breakpoint) {
                                         width: 100%;
                                     }
-                                    @media (max-width: $md-breakpoint) {
+                                    @media (max-width: $sm-breakpoint) {
                                         width: 100%;
                                     }
                                     .toggle-bg {
@@ -1217,11 +1246,11 @@
                                 display: grid;
                                 grid-template-columns: repeat(6, 1fr);
                                 grid-gap: 10px;
-                                @media (max-width: $sm-breakpoint) {
-                                    grid-template-columns: 1fr;
-                                }
                                 @media (max-width: $md-breakpoint) {
                                     grid-template-columns: repeat(2, 1fr);
+                                }
+                                @media (max-width: $sm-breakpoint) {
+                                    grid-template-columns: 1fr;
                                 }
                                 .input-container {
                                     position: relative;
@@ -1287,12 +1316,12 @@
                                     transition: background-color 0.3s ease;
                                     border: solid 1px transparent;
                                     cursor: pointer;
+                                    @media (max-width: $md-breakpoint) {
+                                        font-size: 1rem;
+                                    }
                                     @media (max-width: $sm-breakpoint) {
                                         max-height: 50px;
                                         font-size: 0.9rem;
-                                    }
-                                    @media (max-width: $md-breakpoint) {
-                                        font-size: 1rem;
                                     }
                                     &:hover {
                                         background-color: $white;
@@ -1320,10 +1349,10 @@
                                 align-items: center;
                                 gap: 10px;
                                 margin-top: 10px;
-                                @media (max-width: $sm-breakpoint) {
+                                @media (max-width: $md-breakpoint) {
                                     flex-direction: column;
                                 }
-                                @media (max-width: $md-breakpoint) {
+                                @media (max-width: $sm-breakpoint) {
                                     flex-direction: column;
                                 }
                                 .search-history-item {
@@ -1333,10 +1362,10 @@
                                     transition-duration: 300ms;
                                     padding: 5px 10px;
                                     cursor: pointer;
-                                    @media (max-width: $sm-breakpoint) {
+                                    @media (max-width: $md-breakpoint) {
                                         width: 100%;
                                     }
-                                    @media (max-width: $md-breakpoint) {
+                                    @media (max-width: $sm-breakpoint) {
                                         width: 100%;
                                     }
                                     &:hover {
@@ -1386,10 +1415,10 @@
                             display: grid;
                             grid-template-columns: repeat(3, 1fr);
                             grid-gap: 10px;
-                            @media (max-width: $sm-breakpoint) {
+                            @media (max-width: $md-breakpoint) {
                                 grid-template-columns: 1fr;
                             }
-                            @media (max-width: $md-breakpoint) {
+                            @media (max-width: $sm-breakpoint) {
                                 grid-template-columns: 1fr;
                             }
                             .input-container {
@@ -1456,12 +1485,12 @@
                                 transition: background-color 0.3s ease;
                                 border: solid 1px transparent;
                                 cursor: pointer;
+                                @media (max-width: $md-breakpoint) {
+                                    font-size: 1rem;
+                                }
                                 @media (max-width: $sm-breakpoint) {
                                     max-height: 50px;
                                     font-size: 0.9rem;
-                                }
-                                @media (max-width: $md-breakpoint) {
-                                    font-size: 1rem;
                                 }
                                 &:hover {
                                     background-color: $white;
@@ -1487,10 +1516,10 @@
                             display: grid;
                             grid-template-columns: repeat(3, 1fr);
                             grid-gap: 10px;
-                            @media (max-width: $sm-breakpoint) {
+                            @media (max-width: $md-breakpoint) {
                                 grid-template-columns: 1fr;
                             }
-                            @media (max-width: $md-breakpoint) {
+                            @media (max-width: $sm-breakpoint) {
                                 grid-template-columns: 1fr;
                             }
                             .input-container {
@@ -1557,12 +1586,12 @@
                                 transition: background-color 0.3s ease;
                                 border: solid 1px transparent;
                                 cursor: pointer;
+                                @media (max-width: $md-breakpoint) {
+                                    font-size: 1rem;
+                                }
                                 @media (max-width: $sm-breakpoint) {
                                     max-height: 50px;
                                     font-size: 0.9rem;
-                                }
-                                @media (max-width: $md-breakpoint) {
-                                    font-size: 1rem;
                                 }
                                 &:hover {
                                     background-color: $white;
@@ -1589,18 +1618,18 @@
                                 display: flex;
                                 align-items: center;
                                 gap: 10px;
-                                @media (max-width: $sm-breakpoint) {
+                                @media (max-width: $md-breakpoint) {
                                     flex-direction: column;
                                 }
-                                @media (max-width: $md-breakpoint) {
+                                @media (max-width: $sm-breakpoint) {
                                     flex-direction: column;
                                 }
                                 .flight-status-dropdown-wrapper {
                                     flex: 1;
-                                    @media (max-width: $sm-breakpoint) {
+                                    @media (max-width: $md-breakpoint) {
                                         width: 100%;
                                     }
-                                    @media (max-width: $md-breakpoint) {
+                                    @media (max-width: $sm-breakpoint) {
                                         width: 100%;
                                     }
                                 }
@@ -1612,10 +1641,10 @@
                                     grid-gap: 10px;
                                     width: -webkit-fill-available;
                                     flex: 6;
-                                    @media (max-width: $sm-breakpoint) {
+                                    @media (max-width: $md-breakpoint) {
                                         grid-template-columns: 1fr;
                                     }
-                                    @media (max-width: $md-breakpoint) {
+                                    @media (max-width: $sm-breakpoint) {
                                         grid-template-columns: 1fr;
                                     }
                                 }
@@ -1625,10 +1654,10 @@
                                     grid-gap: 10px;
                                     width: -webkit-fill-available;
                                     flex: 6;
-                                    @media (max-width: $sm-breakpoint) {
+                                    @media (max-width: $md-breakpoint) {
                                         grid-template-columns: 1fr;
                                     }
-                                    @media (max-width: $md-breakpoint) {
+                                    @media (max-width: $sm-breakpoint) {
                                         grid-template-columns: 1fr;
                                     }
                                 }
@@ -1737,13 +1766,13 @@
                                     transition: background-color 0.3s ease;
                                     border: solid 1px transparent;
                                     cursor: pointer;
+                                    @media (max-width: $md-breakpoint) {
+                                        font-size: 1rem;
+                                        width: 100%;
+                                    }
                                     @media (max-width: $sm-breakpoint) {
                                         max-height: 50px;
                                         font-size: 0.9rem;
-                                        width: 100%;
-                                    }
-                                    @media (max-width: $md-breakpoint) {
-                                        font-size: 1rem;
                                         width: 100%;
                                     }
                                     &:hover {

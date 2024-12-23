@@ -29,7 +29,7 @@ const Blog: React.FC = () => {
               320: {
                 slidesPerView: 1,
               },
-              640: {
+              576: {
                 slidesPerView: 2,
               },
               1024: {
