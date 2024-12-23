@@ -1075,8 +1075,12 @@
                         }
                         @media (max-width: $md-breakpoint) {
                             flex-direction: column;
+                            justify-content: flex-start;
                             text-align: center;
                             font-size: 0.9rem;
+                            gap: 10px;
+                            padding: 20px 15px;
+                            line-height: 1.1;
                         }
                         &:first-child {
                             border-left: none;
@@ -1129,6 +1133,9 @@
                                     cursor: pointer;
                                     user-select: none;
                                     @media (max-width: $sm-breakpoint) {
+                                        width: 100%;
+                                    }
+                                    @media (max-width: $md-breakpoint) {
                                         width: 100%;
                                     }
                                     .toggle-bg {
@@ -1192,7 +1199,7 @@
                                     grid-template-columns: 1fr;
                                 }
                                 @media (max-width: $md-breakpoint) {
-                                    grid-template-columns: 1fr;
+                                    grid-template-columns: repeat(2, 1fr);
                                 }
                                 .input-container {
                                     position: relative;
@@ -1262,6 +1269,9 @@
                                         max-height: 50px;
                                         font-size: 0.9rem;
                                     }
+                                    @media (max-width: $md-breakpoint) {
+                                        font-size: 1rem;
+                                    }
                                     &:hover {
                                         background-color: $white;
                                         color: $red;
@@ -1304,6 +1314,9 @@
                                     @media (max-width: $sm-breakpoint) {
                                         width: 100%;
                                     }
+                                    @media (max-width: $md-breakpoint) {
+                                        width: 100%;
+                                    }
                                     &:hover {
                                         border: solid 2px $red;
                                     }
@@ -1326,9 +1339,7 @@
                                         .search-history-details {
                                             display: flex;
                                             align-items: center;
-                                            @media (max-width: $sm-breakpoint) {
-                                                justify-content: space-between;
-                                            }
+                                            justify-content: space-between;
                                             gap: 30px;
                                             font-size: 0.7rem;
                                             color: $dark-gray;
@@ -1354,6 +1365,9 @@
                             grid-template-columns: repeat(3, 1fr);
                             grid-gap: 10px;
                             @media (max-width: $sm-breakpoint) {
+                                grid-template-columns: 1fr;
+                            }
+                            @media (max-width: $md-breakpoint) {
                                 grid-template-columns: 1fr;
                             }
                             .input-container {
@@ -1424,6 +1438,9 @@
                                     max-height: 50px;
                                     font-size: 0.9rem;
                                 }
+                                @media (max-width: $md-breakpoint) {
+                                    font-size: 1rem;
+                                }
                                 &:hover {
                                     background-color: $white;
                                     color: $red;
@@ -1449,6 +1466,9 @@
                             grid-template-columns: repeat(3, 1fr);
                             grid-gap: 10px;
                             @media (max-width: $sm-breakpoint) {
+                                grid-template-columns: 1fr;
+                            }
+                            @media (max-width: $md-breakpoint) {
                                 grid-template-columns: 1fr;
                             }
                             .input-container {
@@ -1519,6 +1539,9 @@
                                     max-height: 50px;
                                     font-size: 0.9rem;
                                 }
+                                @media (max-width: $md-breakpoint) {
+                                    font-size: 1rem;
+                                }
                                 &:hover {
                                     background-color: $white;
                                     color: $red;
@@ -1547,9 +1570,15 @@
                                 @media (max-width: $sm-breakpoint) {
                                     flex-direction: column;
                                 }
+                                @media (max-width: $md-breakpoint) {
+                                    flex-direction: column;
+                                }
                                 .flight-status-dropdown-wrapper {
                                     flex: 1;
                                     @media (max-width: $sm-breakpoint) {
+                                        width: 100%;
+                                    }
+                                    @media (max-width: $md-breakpoint) {
                                         width: 100%;
                                     }
                                 }
@@ -1564,6 +1593,9 @@
                                     @media (max-width: $sm-breakpoint) {
                                         grid-template-columns: 1fr;
                                     }
+                                    @media (max-width: $md-breakpoint) {
+                                        grid-template-columns: 1fr;
+                                    }
                                 }
                                 .flight-status-flightNo {
                                     display: grid;
@@ -1572,6 +1604,9 @@
                                     width: -webkit-fill-available;
                                     flex: 6;
                                     @media (max-width: $sm-breakpoint) {
+                                        grid-template-columns: 1fr;
+                                    }
+                                    @media (max-width: $md-breakpoint) {
                                         grid-template-columns: 1fr;
                                     }
                                 }
@@ -1683,6 +1718,10 @@
                                     @media (max-width: $sm-breakpoint) {
                                         max-height: 50px;
                                         font-size: 0.9rem;
+                                        width: 100%;
+                                    }
+                                    @media (max-width: $md-breakpoint) {
+                                        font-size: 1rem;
                                         width: 100%;
                                     }
                                     &:hover {
