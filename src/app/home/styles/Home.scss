@@ -340,12 +340,19 @@
                     @media (max-width: $sm-breakpoint) {
                         min-width: 100%;
                     }
+                    @media (max-width: $md-breakpoint) {
+                        min-width: 300px;
+                    }
                     h3 {
                         font-size: 1.2rem;
                         margin-bottom: 20px;
                         @media (max-width: $sm-breakpoint) {
                             font-size: 1rem;
                             text-align: center;
+                        }
+                        @media (max-width: $md-breakpoint) {
+                            font-size: 1rem;
+                            margin-bottom: 12px;
                         }
                     }
                     ul {
@@ -358,6 +365,11 @@
                             font-size: 1rem;
                             @media (max-width: $sm-breakpoint) {
                                 font-size: 0.85rem;
+                                margin-bottom: 15px;
+                            }
+                            @media (max-width: $md-breakpoint) {
+                                font-size: 0.9rem;
+                                margin-bottom: 12px;
                             }
                             margin-bottom: 15px;
                             .check-icon {
@@ -370,6 +382,12 @@
                         align-items: center;
                         justify-content: flex-start;
                         margin-top: 20px;
+                        @media (max-width: $sm-breakpoint) {
+                            margin-top: 20px;
+                        }
+                        @media (max-width: $md-breakpoint) {
+                            margin-top: 12px;
+                        }
                         .more-button {
                             display: inline-block;
                             font-size: 0.9rem;
@@ -408,6 +426,10 @@
                         @media (max-width: $sm-breakpoint) {
                             width: 100%;
                             border-radius: 8px;
+                        }
+                        @media (max-width: $md-breakpoint) {
+                            width: 190px;
+                            height: 190px;
                         }
                     }
                 }
