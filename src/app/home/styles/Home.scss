@@ -8,6 +8,9 @@
         overflow: hidden;
         z-index: 1;
         background-color: $white;
+        @media (max-width: $xl-breakpoint) {
+            height: 300px;
+        }
         @media (max-width: $lg-breakpoint) {
             height: 250px;
         }
@@ -1146,6 +1149,9 @@
                         font-size: 1.1rem;
                         font-weight: 600;
                         transition-duration: 200ms;
+                        @media (max-width: $xl-breakpoint) {
+                            font-size: 1rem;
+                        }
                         @media (max-width: $lg-breakpoint) {
                             font-size: 0.85rem;
                         }
@@ -1184,6 +1190,10 @@
                         svg {
                             width: 30px;
                             height: 30px;
+                            @media (max-width: $xl-breakpoint) {
+                                width: 25px;
+                                height: 25px;
+                            }
                             @media (max-width: $lg-breakpoint) {
                                 width: 25px;
                                 height: 25px;
@@ -1286,6 +1296,9 @@
                                 display: grid;
                                 grid-template-columns: repeat(6, 1fr);
                                 grid-gap: 10px;
+                                @media (max-width: $xl-breakpoint) {
+                                    grid-template-columns: repeat(3, 1fr);
+                                }
                                 @media (max-width: $lg-breakpoint) {
                                     grid-template-columns: repeat(3, 1fr);
                                 }
@@ -1417,6 +1430,11 @@
                                 align-items: center;
                                 gap: 10px;
                                 margin-top: 10px;
+                                @media (max-width: $xl-breakpoint) {
+                                    display: grid;
+                                    grid-template-columns: repeat(2, 1fr);
+                                    grid-gap: 10px;
+                                }
                                 @media (max-width: $lg-breakpoint) {
                                     display: grid;
                                     grid-template-columns: repeat(2, 1fr);
@@ -1746,6 +1764,9 @@
                                 display: flex;
                                 align-items: center;
                                 gap: 10px;
+                                @media (max-width: $xl-breakpoint) {
+                                    flex-direction: column;
+                                }
                                 @media (max-width: $lg-breakpoint) {
                                     flex-direction: column;
                                 }
@@ -1757,6 +1778,9 @@
                                 }
                                 .flight-status-dropdown-wrapper {
                                     flex: 1;
+                                    @media (max-width: $xl-breakpoint) {
+                                        width: 100%;
+                                    }
                                     @media (max-width: $lg-breakpoint) {
                                         width: 100%;
                                     }
@@ -1931,6 +1955,9 @@
                                     transition: background-color 0.3s ease;
                                     border: solid 1px transparent;
                                     cursor: pointer;
+                                    @media (max-width: $xl-breakpoint) {
+                                        width: 100%;
+                                    }
                                     @media (max-width: $lg-breakpoint) {
                                         height: 60px;
                                         font-size: 1rem;
