@@ -2,9 +2,6 @@
 
 .header {
     background-color: $dark-gray;
-    @media (max-width: $md-breakpoint) {
-        background-color: $dark-gray;
-    }
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -267,10 +264,13 @@
     .alert {
         background-color: $red;
         color: $white;
-        @media (max-width: $sm-breakpoint) {
+        @media (max-width: $lg-breakpoint) {
             display: none;
         }
         @media (max-width: $md-breakpoint) {
+            display: none;
+        }
+        @media (max-width: $sm-breakpoint) {
             display: none;
         }
         .alert-content {
