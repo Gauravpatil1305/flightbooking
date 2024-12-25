@@ -9,6 +9,10 @@
         flex-direction: column;
         gap: 70px;
         padding: 80px 15px;
+        @media (max-width: $lg-breakpoint) {
+            padding: 50px 15px;
+            gap: 50px;
+        }
         @media (max-width: $md-breakpoint) {
             padding: 50px 15px;
             gap: 50px;
@@ -22,6 +26,10 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
+            @media (max-width: $lg-breakpoint) {
+                flex-direction: column;
+                gap: 45px;
+            }
             @media (max-width: $md-breakpoint) {
                 flex-direction: column;
                 gap: 45px;
@@ -160,6 +168,10 @@
                 grid-template-columns: repeat(5, 1fr);
                 grid-template-rows: repeat(2, 1fr);
                 gap: 20px; 
+                @media (max-width: $lg-breakpoint) {
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-template-rows: repeat(3, 1fr);
+                }
                 @media (max-width: $md-breakpoint) {
                     grid-template-columns: repeat(1, 1fr);
                     grid-template-rows: repeat(1, 1fr);
@@ -182,6 +194,12 @@
                     }
                     .navbar-title {
                         font-size: 1.2rem;
+                        @media (max-width: $lg-breakpoint) {
+                            font-size: 1rem;
+                        }
+                        @media (max-width: $md-breakpoint) {
+                            font-size: 1.2rem;
+                        }
                         @media (max-width: $sm-breakpoint) {
                             font-size: 0.9rem;
                         }
@@ -225,6 +243,9 @@
                             .navbar-link {
                                 font-size: 1rem;
                                 color: $light-gray;
+                                @media (max-width: $lg-breakpoint) {
+                                    font-size: 0.85rem;
+                                }
                                 @media (max-width: $md-breakpoint) {
                                     color: $red;
                                     font-size: 1.1rem;
@@ -255,6 +276,12 @@
                 .copyright {
                     font-size: 1rem;
                     text-align: center;
+                    @media (max-width: $lg-breakpoint) {
+                        font-size: 0.85rem;
+                    }
+                    @media (max-width: $md-breakpoint) {
+                        font-size: 0.85rem;
+                    }
                     @media (max-width: $sm-breakpoint) {
                         font-size: 0.85rem;
                     }
