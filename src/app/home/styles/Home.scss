@@ -1117,6 +1117,9 @@
                         font-size: 1.1rem;
                         font-weight: 600;
                         transition-duration: 200ms;
+                        @media (max-width: $lg-breakpoint) {
+                            font-size: 0.85rem;
+                        }
                         @media (max-width: $md-breakpoint) {
                             flex-direction: column;
                             justify-content: flex-start;
@@ -1152,6 +1155,14 @@
                         svg {
                             width: 30px;
                             height: 30px;
+                            @media (max-width: $lg-breakpoint) {
+                                width: 25px;
+                                height: 25px;
+                            }
+                            @media (max-width: $md-breakpoint) {
+                                width: 30px;
+                                height: 30px;
+                            }
                             @media (max-width: $sm-breakpoint) {
                                 width: 20px;
                                 height: 20px;
@@ -1246,6 +1257,9 @@
                                 display: grid;
                                 grid-template-columns: repeat(6, 1fr);
                                 grid-gap: 10px;
+                                @media (max-width: $lg-breakpoint) {
+                                    grid-template-columns: repeat(3, 1fr);
+                                }
                                 @media (max-width: $md-breakpoint) {
                                     grid-template-columns: repeat(2, 1fr);
                                 }
@@ -1265,8 +1279,16 @@
                                         border-radius: 4px;
                                         outline: none;
                                         transition: border-color 0.3s ease;
+                                        @media (max-width: $lg-breakpoint) {
+                                            height: 60px;
+                                            font-size: 0.85rem;
+                                        }
+                                        @media (max-width: $md-breakpoint) {
+                                            height: 60px;
+                                            font-size: 1rem;
+                                        }
                                         @media (max-width: $sm-breakpoint) {
-                                            max-height: 50px;
+                                            height: 50px;
                                             font-size: 0.7rem;
                                         }
                                         &:focus {
@@ -1279,6 +1301,12 @@
                                         top: 50%;
                                         left: 10px;
                                         font-size: 1rem;
+                                        @media (max-width: $lg-breakpoint) {
+                                            font-size: 0.85rem;
+                                        }
+                                        @media (max-width: $md-breakpoint) {
+                                            font-size: 1rem;
+                                        }
                                         @media (max-width: $sm-breakpoint) {
                                             font-size: 0.7rem;
                                         }
@@ -1294,6 +1322,12 @@
                                         top: 0px;
                                         left: 15px;
                                         font-size: 0.8rem;
+                                        @media (max-width: $lg-breakpoint) {
+                                            font-size: 0.85rem;
+                                        }
+                                        @media (max-width: $md-breakpoint) {
+                                            font-size: 1rem;
+                                        }
                                         @media (max-width: $sm-breakpoint) {
                                             font-size: 0.7rem;
                                         }
@@ -1316,11 +1350,16 @@
                                     transition: background-color 0.3s ease;
                                     border: solid 1px transparent;
                                     cursor: pointer;
+                                    @media (max-width: $lg-breakpoint) {
+                                        height: 60px;
+                                        font-size: 1rem;
+                                    }
                                     @media (max-width: $md-breakpoint) {
+                                        height: 60px;
                                         font-size: 1rem;
                                     }
                                     @media (max-width: $sm-breakpoint) {
-                                        max-height: 50px;
+                                        height: 50px;
                                         font-size: 0.9rem;
                                     }
                                     &:hover {
@@ -1349,10 +1388,17 @@
                                 align-items: center;
                                 gap: 10px;
                                 margin-top: 10px;
+                                @media (max-width: $lg-breakpoint) {
+                                    display: grid;
+                                    grid-template-columns: repeat(2, 1fr);
+                                    grid-gap: 10px;
+                                }
                                 @media (max-width: $md-breakpoint) {
+                                    display: flex;
                                     flex-direction: column;
                                 }
                                 @media (max-width: $sm-breakpoint) {
+                                    display: flex;
                                     flex-direction: column;
                                 }
                                 .search-history-item {
@@ -1362,6 +1408,9 @@
                                     transition-duration: 300ms;
                                     padding: 5px 10px;
                                     cursor: pointer;
+                                    @media (max-width: $lg-breakpoint) {
+                                        width: 100%;
+                                    }
                                     @media (max-width: $md-breakpoint) {
                                         width: 100%;
                                     }
@@ -1434,8 +1483,16 @@
                                     border-radius: 4px;
                                     outline: none;
                                     transition: border-color 0.3s ease;
+                                    @media (max-width: $lg-breakpoint) {
+                                        height: 60px;
+                                        font-size: 0.85rem;
+                                    }
+                                    @media (max-width: $md-breakpoint) {
+                                        height: 60px;
+                                        font-size: 1rem;
+                                    }
                                     @media (max-width: $sm-breakpoint) {
-                                        max-height: 50px;
+                                        height: 50px;
                                         font-size: 0.7rem;
                                     }
                                     &:focus {
@@ -1448,6 +1505,12 @@
                                     top: 50%;
                                     left: 10px;
                                     font-size: 1rem;
+                                    @media (max-width: $lg-breakpoint) {
+                                        font-size: 0.85rem;
+                                    }
+                                    @media (max-width: $md-breakpoint) {
+                                        font-size: 1rem;
+                                    }
                                     @media (max-width: $sm-breakpoint) {
                                         font-size: 0.7rem;
                                     }
@@ -1463,6 +1526,12 @@
                                     top: 0px;
                                     left: 15px;
                                     font-size: 0.8rem;
+                                    @media (max-width: $lg-breakpoint) {
+                                        font-size: 0.85rem;
+                                    }
+                                    @media (max-width: $md-breakpoint) {
+                                        font-size: 1rem;
+                                    }
                                     @media (max-width: $sm-breakpoint) {
                                         font-size: 0.7rem;
                                     }
@@ -1485,11 +1554,16 @@
                                 transition: background-color 0.3s ease;
                                 border: solid 1px transparent;
                                 cursor: pointer;
+                                @media (max-width: $lg-breakpoint) {
+                                    height: 60px;
+                                    font-size: 1rem;
+                                }
                                 @media (max-width: $md-breakpoint) {
+                                    height: 60px;
                                     font-size: 1rem;
                                 }
                                 @media (max-width: $sm-breakpoint) {
-                                    max-height: 50px;
+                                    height: 50px;
                                     font-size: 0.9rem;
                                 }
                                 &:hover {
@@ -1535,8 +1609,16 @@
                                     border-radius: 4px;
                                     outline: none;
                                     transition: border-color 0.3s ease;
+                                    @media (max-width: $lg-breakpoint) {
+                                        height: 60px;
+                                        font-size: 0.85rem;
+                                    }
+                                    @media (max-width: $md-breakpoint) {
+                                        height: 60px;
+                                        font-size: 1rem;
+                                    }
                                     @media (max-width: $sm-breakpoint) {
-                                        max-height: 50px;
+                                        height: 50px;
                                         font-size: 0.7rem;
                                     }
                                     &:focus {
@@ -1549,6 +1631,12 @@
                                     top: 50%;
                                     left: 10px;
                                     font-size: 1rem;
+                                    @media (max-width: $lg-breakpoint) {
+                                        font-size: 0.85rem;
+                                    }
+                                    @media (max-width: $md-breakpoint) {
+                                        font-size: 1rem;
+                                    }
                                     @media (max-width: $sm-breakpoint) {
                                         font-size: 0.7rem;
                                     }
@@ -1564,6 +1652,12 @@
                                     top: 0px;
                                     left: 15px;
                                     font-size: 0.8rem;
+                                    @media (max-width: $lg-breakpoint) {
+                                        font-size: 0.85rem;
+                                    }
+                                    @media (max-width: $md-breakpoint) {
+                                        font-size: 1rem;
+                                    }
                                     @media (max-width: $sm-breakpoint) {
                                         font-size: 0.7rem;
                                     }
@@ -1586,11 +1680,16 @@
                                 transition: background-color 0.3s ease;
                                 border: solid 1px transparent;
                                 cursor: pointer;
+                                @media (max-width: $lg-breakpoint) {
+                                    height: 60px;
+                                    font-size: 1rem;
+                                }
                                 @media (max-width: $md-breakpoint) {
+                                    height: 60px;
                                     font-size: 1rem;
                                 }
                                 @media (max-width: $sm-breakpoint) {
-                                    max-height: 50px;
+                                    height: 50px;
                                     font-size: 0.9rem;
                                 }
                                 &:hover {
@@ -1618,6 +1717,9 @@
                                 display: flex;
                                 align-items: center;
                                 gap: 10px;
+                                @media (max-width: $lg-breakpoint) {
+                                    flex-direction: column;
+                                }
                                 @media (max-width: $md-breakpoint) {
                                     flex-direction: column;
                                 }
@@ -1626,6 +1728,9 @@
                                 }
                                 .flight-status-dropdown-wrapper {
                                     flex: 1;
+                                    @media (max-width: $lg-breakpoint) {
+                                        width: 100%;
+                                    }
                                     @media (max-width: $md-breakpoint) {
                                         width: 100%;
                                     }
@@ -1641,6 +1746,9 @@
                                     grid-gap: 10px;
                                     width: -webkit-fill-available;
                                     flex: 6;
+                                    @media (max-width: $lg-breakpoint) {
+                                        grid-template-columns: 1fr;
+                                    }
                                     @media (max-width: $md-breakpoint) {
                                         grid-template-columns: 1fr;
                                     }
@@ -1675,8 +1783,16 @@
                                         border-radius: 4px;
                                         outline: none;
                                         transition: border-color 0.3s ease;
+                                        @media (max-width: $lg-breakpoint) {
+                                            height: 60px;
+                                            font-size: 0.85rem;
+                                        }
+                                        @media (max-width: $md-breakpoint) {
+                                            height: 60px;
+                                            font-size: 1rem;
+                                        }
                                         @media (max-width: $sm-breakpoint) {
-                                            max-height: 50px;
+                                            height: 50px;
                                             font-size: 0.7rem;
                                         }
                                         &:focus {
@@ -1689,6 +1805,12 @@
                                         top: 50%;
                                         left: 10px;
                                         font-size: 1rem;
+                                        @media (max-width: $lg-breakpoint) {
+                                            font-size: 0.85rem;
+                                        }
+                                        @media (max-width: $md-breakpoint) {
+                                            font-size: 1rem;
+                                        }
                                         @media (max-width: $sm-breakpoint) {
                                             font-size: 0.7rem;
                                         }
@@ -1704,6 +1826,12 @@
                                         top: 0px;
                                         left: 15px;
                                         font-size: 0.8rem;
+                                        @media (max-width: $lg-breakpoint) {
+                                            font-size: 0.85rem;
+                                        }
+                                        @media (max-width: $md-breakpoint) {
+                                            font-size: 1rem;
+                                        }
                                         @media (max-width: $sm-breakpoint) {
                                             font-size: 0.7rem;
                                         }
@@ -1726,8 +1854,16 @@
                                         appearance: none;
                                         background: none;
                                         cursor: pointer;
+                                        @media (max-width: $lg-breakpoint) {
+                                            height: 60px;
+                                            font-size: 0.85rem;
+                                        }
+                                        @media (max-width: $md-breakpoint) {
+                                            height: 60px;
+                                            font-size: 1rem;
+                                        }
                                         @media (max-width: $sm-breakpoint) {
-                                            max-height: 50px;
+                                            height: 50px;
                                             font-size: 0.7rem;
                                             padding: 15px;
                                         }
@@ -1766,12 +1902,18 @@
                                     transition: background-color 0.3s ease;
                                     border: solid 1px transparent;
                                     cursor: pointer;
+                                    @media (max-width: $lg-breakpoint) {
+                                        height: 60px;
+                                        font-size: 1rem;
+                                        width: 100%;
+                                    }
                                     @media (max-width: $md-breakpoint) {
+                                        height: 60px;
                                         font-size: 1rem;
                                         width: 100%;
                                     }
                                     @media (max-width: $sm-breakpoint) {
-                                        max-height: 50px;
+                                        height: 50px;
                                         font-size: 0.9rem;
                                         width: 100%;
                                     }
@@ -1782,6 +1924,12 @@
                                     }
                                     svg {
                                         font-size: 1.5rem;
+                                        @media (max-width: $lg-breakpoint) {
+                                            font-size: 1rem;
+                                        }
+                                        @media (max-width: $md-breakpoint) {
+                                            font-size: 1rem;
+                                        }
                                         @media (max-width: $sm-breakpoint) {
                                             font-size: 1rem;
                                         }
