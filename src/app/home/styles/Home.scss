@@ -382,13 +382,13 @@
                     color: $dark-gray;
                     min-width: 400px;
                     @media (max-width: $xxl-breakpoint) {
-                        min-width: 340px;
+                        min-width: calc(100% - 200px);
                     }
                     @media (max-width: $xl-breakpoint) {
-                        min-width: 400px;
+                        min-width: calc(100% - 200px);;
                     }
                     @media (max-width: $lg-breakpoint) {
-                        min-width: 400px;
+                        min-width: calc(100% - 200px);
                     }
                     @media (max-width: $md-breakpoint) {
                         min-width: calc(100% - 200px);
@@ -468,6 +468,7 @@
                     position: relative;
                     border-radius: 50%;
                     padding: 5px;
+                    width: 100%;
                     @media (max-width: $sm-breakpoint) {
                         border-radius: 8px;
                     }
@@ -697,6 +698,7 @@
                     align-items: center;
                     .campaign-slide {
                         text-align: center;
+                        width: 100%;
                         .image-container {
                             position: relative;
                             width: 100%;
@@ -1143,6 +1145,7 @@
                     align-items: center;
                     .blog-slide {
                         text-align: center;
+                        width: 100%;
                         .image-container {
                             position: relative;
                             width: 100%;
