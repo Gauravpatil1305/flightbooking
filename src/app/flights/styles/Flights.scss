@@ -296,6 +296,18 @@
             border-radius: 8px;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             padding: 30px;
+            @media (max-width: $xl-breakpoint) {
+                padding: 25px;
+            }
+            @media (max-width: $lg-breakpoint) {
+                padding: 20px;
+            }
+            @media (max-width: $md-breakpoint) {
+                padding: 15px;
+            }
+            @media (max-width: $sm-breakpoint) {
+                padding: 12px;
+            }
             .title {
                 font-size: 1.2rem;
                 font-weight: 600;
@@ -335,6 +347,18 @@
                         padding: 10px;
                         text-align: center;
                     }
+                    @media (max-width: $xl-breakpoint) {
+                        display: flex;
+                    }
+                    @media (max-width: $lg-breakpoint) {
+                        display: flex;
+                    }
+                    @media (max-width: $md-breakpoint) {
+                        display: none !important;
+                    }
+                    @media (max-width: $sm-breakpoint) {
+                        display: none !important;
+                    }
                 }
                 .flight-table-row {
                     display: flex;
@@ -361,6 +385,12 @@
                         padding: 12px 0;
                         transition: background-color 0.2s ease-in-out;
                         cursor: pointer;
+                        @media (max-width: $md-breakpoint) {
+                            flex-direction: column;
+                        }
+                        @media (max-width: $sm-breakpoint) {
+                            flex-direction: column;
+                        }
                         > div {
                             flex: 1;
                             padding: 10px;
@@ -475,6 +505,18 @@
             border-radius: 8px;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             padding: 30px;
+            @media (max-width: $xl-breakpoint) {
+                padding: 25px;
+            }
+            @media (max-width: $lg-breakpoint) {
+                padding: 20px;
+            }
+            @media (max-width: $md-breakpoint) {
+                padding: 15px;
+            }
+            @media (max-width: $sm-breakpoint) {
+                padding: 12px;
+            }
             .title {
                 font-size: 1.2rem;
                 font-weight: 600;
@@ -514,6 +556,18 @@
                         padding: 10px;
                         text-align: center;
                     }
+                    @media (max-width: $xl-breakpoint) {
+                        display: flex;
+                    }
+                    @media (max-width: $lg-breakpoint) {
+                        display: flex;
+                    }
+                    @media (max-width: $md-breakpoint) {
+                        display: none !important;
+                    }
+                    @media (max-width: $sm-breakpoint) {
+                        display: none !important;
+                    }
                 }
                 .flight-table-row {
                     display: flex;
@@ -540,6 +594,12 @@
                         padding: 12px 0;
                         transition: background-color 0.2s ease-in-out;
                         cursor: pointer;
+                        @media (max-width: $md-breakpoint) {
+                            flex-direction: column;
+                        }
+                        @media (max-width: $sm-breakpoint) {
+                            flex-direction: column;
+                        }
                         > div {
                             flex: 1;
                             padding: 10px;
