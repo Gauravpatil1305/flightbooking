@@ -367,6 +367,12 @@
                     transition: background-color 0.2s ease-in-out;
                     font-size: 0.9rem;
                     cursor: pointer;
+                    @media (max-width: $md-breakpoint) {
+                        font-size: 0.85rem;
+                    }
+                    @media (max-width: $sm-breakpoint) {
+                        font-size: 0.85rem;
+                    }
                     > div {
                         flex: 1;
                         padding: 10px;
@@ -386,15 +392,25 @@
                         transition: background-color 0.2s ease-in-out;
                         cursor: pointer;
                         @media (max-width: $md-breakpoint) {
-                            flex-direction: column;
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            padding: 5px 0;
                         }
                         @media (max-width: $sm-breakpoint) {
-                            flex-direction: column;
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            padding: 5px 0;
                         }
                         > div {
                             flex: 1;
                             padding: 10px;
                             text-align: center;
+                            @media (max-width: $md-breakpoint) {
+                                padding: 8px;
+                            }
+                            @media (max-width: $sm-breakpoint) {
+                                padding: 8px;
+                            }
                         }
                     }
                     .class-selection {
@@ -484,7 +500,7 @@
                         border: 1px solid $light-gray;
                         border-radius: 6px;
                         margin-bottom: 10px;
-                        padding: 10px;
+                        padding: 5px;
                     }
                     .class-selection {
                         margin-top: 8px;
@@ -576,6 +592,12 @@
                     transition: background-color 0.2s ease-in-out;
                     font-size: 0.9rem;
                     cursor: pointer;
+                    @media (max-width: $md-breakpoint) {
+                        font-size: 0.85rem;
+                    }
+                    @media (max-width: $sm-breakpoint) {
+                        font-size: 0.85rem;
+                    }
                     > div {
                         flex: 1;
                         padding: 10px;
@@ -595,15 +617,25 @@
                         transition: background-color 0.2s ease-in-out;
                         cursor: pointer;
                         @media (max-width: $md-breakpoint) {
-                            flex-direction: column;
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            padding: 5px 0;
                         }
                         @media (max-width: $sm-breakpoint) {
-                            flex-direction: column;
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            padding: 5px 0;
                         }
                         > div {
                             flex: 1;
                             padding: 10px;
                             text-align: center;
+                            @media (max-width: $md-breakpoint) {
+                                padding: 8px;
+                            }
+                            @media (max-width: $sm-breakpoint) {
+                                padding: 8px;
+                            }
                         }
                     }
                     .class-selection {
@@ -693,7 +725,7 @@
                         border: 1px solid $light-gray;
                         border-radius: 6px;
                         margin-bottom: 10px;
-                        padding: 10px;
+                        padding: 5px;
                     }
                     .class-selection {
                         margin-top: 8px;
