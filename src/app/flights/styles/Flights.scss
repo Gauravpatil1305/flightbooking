@@ -154,7 +154,7 @@
                     font-weight: 500;
                     font-size: 1rem;
                     @media (max-width: $lg-breakpoint) {
-                        font-size: 1rem;
+                        font-size: 0.9rem;
                         padding: 10px;
                     }
                     @media (max-width: $md-breakpoint) {
@@ -273,11 +273,11 @@
                     font-size: 1.1rem;
                     color: $dark-gray;
                     @media (max-width: $lg-breakpoint) {
-                        font-size: 1rem;
+                        font-size: 0.85rem;
                         width: 100%;
                     }
                     @media (max-width: $md-breakpoint) {
-                        font-size: 1rem;
+                        font-size: 0.85rem;
                         width: 100%;
                     }
                     @media (max-width: $sm-breakpoint) {
@@ -349,12 +349,14 @@
                         flex: 1;
                         padding: 10px;
                         text-align: center;
+                        line-height: 1.2;
                     }
                     @media (max-width: $xl-breakpoint) {
                         display: flex;
+                        align-items: center;
                     }
                     @media (max-width: $lg-breakpoint) {
-                        display: flex;
+                        display: none !important;
                     }
                     @media (max-width: $md-breakpoint) {
                         display: none !important;
@@ -394,9 +396,14 @@
                         padding: 12px 0;
                         transition: background-color 0.2s ease-in-out;
                         cursor: pointer;
-                        @media (max-width: $md-breakpoint) {
+                        @media (max-width: $lg-breakpoint) {
                             display: grid;
                             grid-template-columns: repeat(3, 1fr);
+                            padding: 5px 0;
+                        }
+                        @media (max-width: $md-breakpoint) {
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
                             padding: 5px 0;
                         }
                         @media (max-width: $sm-breakpoint) {
@@ -449,6 +456,9 @@
                             grid-template-columns: repeat(4, 1fr);
                             grid-gap: 20px;
                             padding-bottom: 15px;
+                            @media (max-width: $lg-breakpoint) {
+                                grid-template-columns: repeat(2, 1fr);
+                            }
                             @media (max-width: $md-breakpoint) {
                                 grid-template-columns: repeat(2, 1fr);
                             }
@@ -583,12 +593,14 @@
                         flex: 1;
                         padding: 10px;
                         text-align: center;
+                        line-height: 1.2;
                     }
                     @media (max-width: $xl-breakpoint) {
                         display: flex;
+                        align-items: center;
                     }
                     @media (max-width: $lg-breakpoint) {
-                        display: flex;
+                        display: none !important;
                     }
                     @media (max-width: $md-breakpoint) {
                         display: none !important;
@@ -628,9 +640,14 @@
                         padding: 12px 0;
                         transition: background-color 0.2s ease-in-out;
                         cursor: pointer;
-                        @media (max-width: $md-breakpoint) {
+                        @media (max-width: $lg-breakpoint) {
                             display: grid;
                             grid-template-columns: repeat(3, 1fr);
+                            padding: 5px 0;
+                        }
+                        @media (max-width: $md-breakpoint) {
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
                             padding: 5px 0;
                         }
                         @media (max-width: $sm-breakpoint) {
@@ -683,6 +700,9 @@
                             grid-template-columns: repeat(4, 1fr);
                             grid-gap: 20px;
                             padding-bottom: 15px;
+                            @media (max-width: $lg-breakpoint) {
+                                grid-template-columns: repeat(2, 1fr);
+                            }
                             @media (max-width: $md-breakpoint) {
                                 grid-template-columns: repeat(2, 1fr);
                             }
@@ -824,6 +844,18 @@
                         grid-template-columns: repeat(4, 1fr);
                         grid-template-rows: repeat(2, auto);
                         grid-gap: 20px;
+                        @media (max-width: $xl-breakpoint) {
+                            grid-template-columns: repeat(3, 1fr);
+                            grid-template-rows: repeat(3, auto);
+                        }
+                        @media (max-width: $lg-breakpoint) {
+                            grid-template-columns: repeat(2, 1fr);
+                            grid-template-rows: repeat(4, auto);
+                        }
+                        @media (max-width: $md-breakpoint) {
+                            grid-template-columns: repeat(1, 1fr);
+                            grid-template-rows: repeat(8, auto);
+                        }
                         @media (max-width: $sm-breakpoint) {
                             grid-template-columns: repeat(1, 1fr);
                             grid-template-rows: repeat(8, auto);
