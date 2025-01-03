@@ -9,9 +9,6 @@
         gap: 10px;
         padding-top: 30px;
         padding-bottom: 20px;
-        @media (max-width: $sm-breakpoint) {
-            padding-top: 40px;
-        }
         .title {
             color: $dark-gray;
             text-align: center;
@@ -49,6 +46,7 @@
         }
         @media (max-width: $sm-breakpoint) {
             flex-direction: column;
+            margin-top: 10px;
         }
         .reservation-card {
             background-color: $white;
@@ -168,13 +166,28 @@
                     .card-number {
                         font-size: 1.2rem;
                         letter-spacing: 2px;
+                        @media (max-width: $sm-breakpoint) {
+                            font-size: 0.85rem;
+                        }
                     }
-                    .card-holder {
+                    .cardholder-name {
                         font-size: 1rem;
                         text-transform: uppercase;
+                        @media (max-width: $sm-breakpoint) {
+                            font-size: 0.85rem;
+                        }
                     }
-                    .expiration {
+                    .expiry {
                         font-size: 0.9rem;
+                        @media (max-width: $sm-breakpoint) {
+                            font-size: 0.8rem;
+                        }
+                    }
+                    .cvv {
+                        font-size: 0.9rem;
+                        @media (max-width: $sm-breakpoint) {
+                            font-size: 0.8rem;
+                        }
                     }
                 }
             }
@@ -211,6 +224,7 @@
                         transition: border-color 0.3s ease;
                         @media (max-width: $sm-breakpoint) {
                             max-height: 50px;
+                            font-size: 0.85rem;
                         }
                         &:focus {
                             border-color: $red;
@@ -228,6 +242,9 @@
                         padding: 0 4px;
                         transition: all 0.3s ease;
                         transform: translateY(-50%);
+                        @media (max-width: $sm-breakpoint) {
+                            font-size: 0.85rem;
+                        }
                     }
                     .floating-input:focus + .floating-label,
                     .floating-input:not(:placeholder-shown) + .floating-label {
@@ -273,8 +290,11 @@
                 .error-message {
                     position: absolute;
                     color: $red;
-                    font-size: 12px;
+                    font-size: 0.75rem;
                     margin-top: 5px;
+                    @media (max-width: $sm-breakpoint) {
+                        font-size: 0.65rem;
+                    }
                 }
             }
         }
@@ -298,16 +318,25 @@
             text-align: center;
             max-width: 400px;
             width: 100%;
+            @media (max-width: $sm-breakpoint) {
+                max-width: 300px;
+            }
             .reservation-popup-title {
                 font-size: 1.5rem;
                 color: $dark-gray;
                 margin-bottom: 10px;
                 font-weight: bold;
+                @media (max-width: $sm-breakpoint) {
+                    font-size: 1.1rem;
+                }
             }
             .reservation-popup-message {
                 font-size: $size;
                 color: $dark-gray;
                 margin-bottom: 20px;
+                @media (max-width: $sm-breakpoint) {
+                    font-size: 0.85rem;
+                }
             }
             .reservation-popup-close {
                 padding: 10px 20px;
@@ -319,6 +348,10 @@
                 font-size: $size;
                 &:hover {
                     background: darken($red, 10%);
+                }
+                @media (max-width: $sm-breakpoint) {
+                    padding: 8px 15px;
+                    font-size: 0.85rem;
                 }
             }
         }
