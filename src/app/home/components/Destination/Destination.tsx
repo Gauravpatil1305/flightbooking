@@ -52,10 +52,13 @@ const PopularDestinations: React.FC = () => {
             ))}
           </div>
           <div className="destinationsContainer">
-            {popularDestinationsData.map(
-              (region) =>
-                activeRegion === region.region && renderDestinations(region)
-            )}
+            {popularDestinationsData
+              .filter((region) => region.region === activeRegion)
+              .map((region) => (
+                <div key={region.id}>
+                  {renderDestinations(region)}
+                </div>
+              ))}
           </div>
         </div>
       </div>

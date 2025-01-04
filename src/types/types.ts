@@ -84,12 +84,12 @@ export interface FaqItem {
 }
 
 export interface PopularDestination {
-  id: number;
+  id: string;
   country: string;
 }
 
 export interface PopularDestinationsRegion {
-  id: number;
+  id: string;
   region: string;
   destinations: PopularDestination[];
 }
