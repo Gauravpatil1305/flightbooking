@@ -22,7 +22,7 @@ const formatDate = (dateString: string | null) => {
   });
 };
 
-const FlightsPage = () => {
+const FlightsPageContent = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [outboundFlights, setOutboundFlights] = useState<Flight[]>([]);
@@ -285,5 +285,12 @@ const FlightsPage = () => {
     </Suspense>
   );
 };
+
+const FlightsPage: React.FC = () => (
+  <Suspense fallback={<p>Loading reservation data...</p>}>
+    <FlightsPageContent />
+  </Suspense>
+);
+
 
 export default FlightsPage;

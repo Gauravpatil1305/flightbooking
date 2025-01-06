@@ -9,7 +9,7 @@ import Popup from "./components/Popup";
 import { popupMessages } from "@/data/popupMessages";
 import { FlightData } from "@/types/typesFlight";
 
-const ReservationPage: React.FC = () => {
+const ReservationPageContent: React.FC = () => {
   const searchParams = useSearchParams();
   const outboundFlight = searchParams.get("outboundFlight");
   const returnFlight = searchParams.get("returnFlight");
@@ -32,28 +32,25 @@ const ReservationPage: React.FC = () => {
             your booking with ease.
           </div>
         </div>
-        <Suspense fallback={<p>Loading flights...</p>}>
-          <div className="flights-wrapper">
-            {outboundFlightData && (
-              <ReservationCard
-                flightData={outboundFlightData}
-                title="Departure Flight"
-              />
-            )}
-            {returnFlightData && (
-              <ReservationCard
-                flightData={returnFlightData}
-                title="Arrival Flight"
-              />
-            )}
-            {!outboundFlightData && !returnFlightData && (
-              <p className="reservation-no-data">
-                No flight information available.
-              </p>
-            )}
-          </div>
-        </Suspense>
-
+        <div className="flights-wrapper">
+          {outboundFlightData && (
+            <ReservationCard
+              flightData={outboundFlightData}
+              title="Departure Flight"
+            />
+          )}
+          {returnFlightData && (
+            <ReservationCard
+              flightData={returnFlightData}
+              title="Arrival Flight"
+            />
+          )}
+          {!outboundFlightData && !returnFlightData && (
+            <p className="reservation-no-data">
+              No flight information available.
+            </p>
+          )}
+        </div>
         <PaymentForm onPayment={() => setShowPopup(true)} />
         {showPopup && (
           <Popup
@@ -66,5 +63,11 @@ const ReservationPage: React.FC = () => {
     </div>
   );
 };
+
+const ReservationPage: React.FC = () => (
+  <Suspense fallback={<p>Loading reservation data...</p>}>
+    <ReservationPageContent />
+  </Suspense>
+);
 
 export default ReservationPage;
