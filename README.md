@@ -33,7 +33,7 @@ To clone the project, run the following commands:
 git clone https://github.com/mehmetbacik/flight-routes.git
 ```
 ```
-cd easybank-page
+cd flight-routes
 ```
 
 ## Installation and Running

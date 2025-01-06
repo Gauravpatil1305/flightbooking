@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import "./styles/Reservation.scss";
 import ReservationCard from "./components/ReservationCard";
@@ -32,25 +32,27 @@ const ReservationPage: React.FC = () => {
             your booking with ease.
           </div>
         </div>
-        <div className="flights-wrapper">
-          {outboundFlightData && (
-            <ReservationCard
-              flightData={outboundFlightData}
-              title="Departure Flight"
-            />
-          )}
-          {returnFlightData && (
-            <ReservationCard
-              flightData={returnFlightData}
-              title="Arrival Flight"
-            />
-          )}
-          {!outboundFlightData && !returnFlightData && (
-            <p className="reservation-no-data">
-              No flight information available.
-            </p>
-          )}
-        </div>
+        <Suspense fallback={<p>Loading flights...</p>}>
+          <div className="flights-wrapper">
+            {outboundFlightData && (
+              <ReservationCard
+                flightData={outboundFlightData}
+                title="Departure Flight"
+              />
+            )}
+            {returnFlightData && (
+              <ReservationCard
+                flightData={returnFlightData}
+                title="Arrival Flight"
+              />
+            )}
+            {!outboundFlightData && !returnFlightData && (
+              <p className="reservation-no-data">
+                No flight information available.
+              </p>
+            )}
+          </div>
+        </Suspense>
 
         <PaymentForm onPayment={() => setShowPopup(true)} />
         {showPopup && (

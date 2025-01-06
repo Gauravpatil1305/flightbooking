@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { faker } from "@faker-js/faker";
 import { Flight } from "@/types/typesFlight";
@@ -207,82 +207,82 @@ const FlightsPage = () => {
   };
 
   return (
-    <div className="flights">
-      <div className="container">
-        <div className="headline">
-          <div className="title">Flights</div>
-          <div className="description">
-            Discover the best flight options tailored to your travel needs and
-            make your booking with ease.
-          </div>
-        </div>
-        <div className="flights-reminder-wrapper">
-          <FlightReminders />
-        </div>
-        <div className="flights-wrapper">
-          <div className="flights-brief">
-            <div className="trip-type">
-              <span>{tripType}</span>
-            </div>
-            <div className="flight-route">
-              <span>{fromCountry}</span>
-              <Icon icon="mdi:counterclockwise-arrows" />
-              <span>{toCountry}</span>
-            </div>
-            <div className="flight-detail">
-              <div className="date">
-                <div className="departure">
-                  <span className="title">Departure:</span>
-                  <span className="content">{formattedDepartureDate}</span>
-                </div>
-                <div className="arrival">
-                  <span className="title">Arrival:</span>
-                  <span className="content">{formattedReturnDate}</span>
-                </div>
-              </div>
-              <div className="passenger">
-                <span>{passengerCount} Passenger</span>
-              </div>
+    <Suspense fallback={<p>Loading flights...</p>}>
+      <div className="flights">
+        <div className="container">
+          <div className="headline">
+            <div className="title">Flights</div>
+            <div className="description">
+              Discover the best flight options tailored to your travel needs and
+              make your booking with ease.
             </div>
           </div>
+          <div className="flights-reminder-wrapper">
+            <FlightReminders />
+          </div>
+          <div className="flights-wrapper">
+            <div className="flights-brief">
+              <div className="trip-type">
+                <span>{tripType}</span>
+              </div>
+              <div className="flight-route">
+                <span>{fromCountry}</span>
+                <Icon icon="mdi:counterclockwise-arrows" />
+                <span>{toCountry}</span>
+              </div>
+              <div className="flight-detail">
+                <div className="date">
+                  <div className="departure">
+                    <span className="title">Departure:</span>
+                    <span className="content">{formattedDepartureDate}</span>
+                  </div>
+                  <div className="arrival">
+                    <span className="title">Arrival:</span>
+                    <span className="content">{formattedReturnDate}</span>
+                  </div>
+                </div>
+                <div className="passenger">
+                  <span>{passengerCount} Passenger</span>
+                </div>
+              </div>
+            </div>
 
-          <OutboundFlightList
-            outboundFlights={outboundFlights}
-            selectedOutboundFlight={selectedOutboundFlight}
-            handleSelectOutboundFlight={handleSelectOutboundFlight}
-            flightClasses={flightClasses}
-            handleSelectClass={handleSelectClass}
-            showOutboundClasses={showOutboundClasses}
-          />
-
-          {tripType === "roundtrip" && (
-            <ReturnFlightList
-              returnFlights={returnFlights}
-              selectedReturnFlight={selectedReturnFlight}
-              handleSelectReturnFlight={handleSelectReturnFlight}
+            <OutboundFlightList
+              outboundFlights={outboundFlights}
+              selectedOutboundFlight={selectedOutboundFlight}
+              handleSelectOutboundFlight={handleSelectOutboundFlight}
               flightClasses={flightClasses}
               handleSelectClass={handleSelectClass}
-              showReturnClasses={showReturnClasses}
+              showOutboundClasses={showOutboundClasses}
             />
-          )}
 
-          <FlightSummary
-            selectedOutboundFlight={selectedOutboundFlight}
-            selectedReturnFlight={selectedReturnFlight}
-            outboundClass={outboundClass}
-            returnClass={returnClass}
-            totalPrice={totalPrice}
-          />
+            {tripType === "roundtrip" && (
+              <ReturnFlightList
+                returnFlights={returnFlights}
+                selectedReturnFlight={selectedReturnFlight}
+                handleSelectReturnFlight={handleSelectReturnFlight}
+                flightClasses={flightClasses}
+                handleSelectClass={handleSelectClass}
+                showReturnClasses={showReturnClasses}
+              />
+            )}
 
-          <button className="reservation-button" onClick={handleContinue}>
-            <Icon
-              icon="mdi:calendar-search-outline"
+            <FlightSummary
+              selectedOutboundFlight={selectedOutboundFlight}
+              selectedReturnFlight={selectedReturnFlight}
+              outboundClass={outboundClass}
+              returnClass={returnClass}
+              totalPrice={totalPrice}
             />
-            Continue to Reservation
-          </button>
+
+            <button className="reservation-button" onClick={handleContinue}>
+              <Icon icon="mdi:calendar-search-outline" />
+              Continue to Reservation
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </Suspense>
   );
 };
 
