@@ -7,7 +7,7 @@ const Logo = () => {
     <div className="header-logo">
       <Link href="/">
         <Image
-          src="/img/logo.png"
+          src="/img/air-ticketing-logo.webp"
           alt="FlightRoutes Logo"
           width={200}
           height={200}

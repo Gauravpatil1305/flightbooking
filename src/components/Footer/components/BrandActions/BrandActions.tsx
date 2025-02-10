@@ -9,7 +9,7 @@ const BrandActions: React.FC = () => {
   return (
     <div className="brand-actions-content">
       <div className="copyright">
-        <p>© 2024 Flight Routes. All Rights Reserved.</p>
+        <p>© 2025 GlobalTech. All Rights Reserved.</p>
       </div>
       <div className="markets">
         {marketLinks.map((market: MarketLink) => (
